@@ -1,7 +1,7 @@
 /**
  *              Images Page - StatefulWidget
  *
- * 1. Under pages package, create new dart page: images_page.dart
+ * 1. Under pages package, create new dart file: images_page.dart
  * 2. In the new file create ImagesPage class,
  * 3. Make the class extends StatefulWidget
  * 4. Override the createState method.
@@ -14,5 +14,28 @@
  * 7. In the State class, replace the Container() with a Scaffold() widget.
  * 8. Add an AppBar with a title: "Images page" (checkout Ex_3 for reminder)
  * 9. Add a body, with a Container() widget
- *
+ * 10. Expand the Container constructor, add padding:
+      body: Container(
+          padding: const EdgeInsets.all(8.0), ...
+   11. Next, set the Container child to Column()
+   12. Set the Column attributes to:
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center ...
+    13. Add children empty array to the Column
+        The Scaffold now should look like this:
+          Container(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+                     mainAxisSize: MainAxisSize.max,
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                     children: <Widget>[
+
+                        ],
+                       ),
+                      ),
+                     );
+    14.
  * * */
