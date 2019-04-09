@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workshop/solutions/sol_8/images_page.dart';
+
+import '../../../sol_5/image_page/images_page.dart';
 
 class MyApp extends StatelessWidget{
   @override

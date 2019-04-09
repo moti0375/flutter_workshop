@@ -9,10 +9,10 @@
       body: Center(
        child: RaisedButton(
          child: Text("Hello Flutter"),
-       ),
-      )
+          ),
+         a)
     5. Do hot reload, notice the new disabled button.
-    6. Lets set the button streched to the screen width.
+    6. Lets set the button stretched to the screen width.
     7. Wrap the button with a Column, click on the RaisedButton, select wrap with Column
     8. Hot reload, the button jumped to the left of the screen.
     9. In the Row constructor above the children[] argument, add the following:
@@ -31,7 +31,7 @@
     14. Do hot reload ('r'), the button should now be enabled
     15. Set the button color to the Theme primary color
         In the RaisedButton constructor add:
-          color: Theme.of(context).primaryColor
+          b
 
     16. Set the button text color to the Theme button text color:
         In the RaisedButton constructor, add:

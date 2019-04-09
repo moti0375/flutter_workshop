@@ -2,7 +2,6 @@
 /**
  *         Create Application
  *
- *
  * 1. Under the lib root folder, create application.dart file
  * 2. Import 'package:flutter/material.dart' package
  * 3. Create MyApp class and extends StatelessWidget

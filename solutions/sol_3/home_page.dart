@@ -8,7 +8,12 @@ class HomePage extends StatelessWidget {
         title: Text("Flutter Workshop"),
       ),
       body: Center(
-        child:  Text("Hello Flutter"),
+        child: RaisedButton(
+          child: Text("Login"),
+          onPressed: (){
+
+          },
+        ),
       ),
     );
   }

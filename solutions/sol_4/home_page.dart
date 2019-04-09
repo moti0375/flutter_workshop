@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../sol_5/image_page/images_page.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,14 +16,19 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20.0),
               child: RaisedButton(
                 color: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryTextTheme.button.color,
                 onPressed: (){
                   print("Button Pressed");
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return ImagesPage();
+                    },
+                  ));
                 },
-                child: Text("Hello Flutter"),
+                child: Text("Login"),
               ),
             ),
           ],
