@@ -20,7 +20,7 @@
        mainAxisSize: MainAxisSize.max,
        crossAxisAlignment: CrossAxisAlignment.stretch,
     Do hot reload.
-    10. The button is now streched all the screen width
+    10. The button is now stretched all the screen width
     11. Add Padding to the button, select the button, repeat 1+2 and wrap it with new widget
     12. Select Add padding. Do hot reload
     13. Enable the button by adding a onClick callback:
@@ -31,7 +31,7 @@
     14. Do hot reload ('r'), the button should now be enabled
     15. Set the button color to the Theme primary color
         In the RaisedButton constructor add:
-          b
+          color: Theme.of(context).primaryColor
 
     16. Set the button text color to the Theme button text color:
         In the RaisedButton constructor, add:
