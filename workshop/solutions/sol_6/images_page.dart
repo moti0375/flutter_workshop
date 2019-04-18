@@ -31,24 +31,28 @@ class _ImagesPageState extends State<ImagesPage> {
                 children: <Widget>[
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      padding: const EdgeInsets.all(8.0),
                       child: RaisedButton(
                         child: Text("Previous"),
                       ),
                     ),
                   ),
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: RaisedButton(
-                        child: Text("Next"),
-                      ),
-                    ),
+                    child: _buildButton(),
                   ),
                 ])
           ],
         ),
       ),
     );
+  }
+
+  Padding _buildButton() {
+    return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      child: Text("Next"),
+                    ),
+                  );
   }
 }

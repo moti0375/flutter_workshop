@@ -6,7 +6,6 @@ class ImagesPage extends StatefulWidget {
 }
 
 class _ImagesPageState extends State<ImagesPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,32 +24,33 @@ class _ImagesPageState extends State<ImagesPage> {
               fit: BoxFit.fill,
             ),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: _buildButton(
-                      context: context,
-                      title: "Previous",
-                      callback: () {},
-                    ),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: _buildButton(
+                    context: context,
+                    title: "Previous",
+                    callback: () {},
                   ),
-                  Expanded(
-                    child: _buildButton(
-                      context: context,
-                      title: "Next",
-                      callback: () {},
-                    ),
+                ),
+                Expanded(
+                  child: _buildButton(
+                    context: context,
+                    title: "Next",
+                    callback: () {},
                   ),
-                ])
+                ),
+              ],
+            )
           ],
         ),
       ),
     );
   }
 
-  Padding _buildButton(
+  Widget _buildButton(
       {BuildContext context, String title, Function() callback}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),

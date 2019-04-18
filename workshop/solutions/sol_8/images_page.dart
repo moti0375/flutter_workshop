@@ -26,7 +26,7 @@ class _ImagesPageState extends State<ImagesPage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children:stam()
+          children:_buildContent()
         ),
       ),
     );
@@ -45,7 +45,7 @@ class _ImagesPageState extends State<ImagesPage> {
 //    );
 //  }
 
-  List<Widget> stam() {
+  List<Widget> _buildContent() {
     return <Widget>[
       Image.network(
         images[index],
@@ -68,11 +68,9 @@ class _ImagesPageState extends State<ImagesPage> {
             child: _buildButton(
               Theme.of(context).primaryColor,
               "Previous",
-              index > 0
-                  ? () {
+              index > 0 ? () {
                       _handlePrevious();
-                    }
-                  : null,
+                     } : null,
             ),
           ),
           Expanded(
