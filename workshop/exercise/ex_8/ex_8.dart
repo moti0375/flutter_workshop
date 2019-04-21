@@ -3,14 +3,14 @@
  *
  * 1. Lets add some logic to the buttons to navigate between images
    2. In the ImagesPage State, add a list of 3 images:
-    List<String> images = [
+    List<String> _images = [
     "https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg",
     "https://image.tmdb.org/t/p/w500/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg",
     "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg"
     ];
    3. We will use the buttons to navigate between these images
    4. Add an index integer variable to the State class
-      int index = 0;
+      int _index = 0;
    5. We will use this index to select an image from the list
    6. Add two methods to decrement and increment the index
     void _handleNext() {
@@ -40,15 +40,15 @@
     12  We should do the same to the 'Previous' button when reaching to index 0
     13. In the 'Next' button, set the onPressed callback to null like this:
         _buildButton(
-             Theme.of(context).primaryColor,
+             context,
              "Next",
-             index < (images.length - 1 ? () {
+             index < (images.length - 1) ? () {
              _handleNext();
             } : null,
            )
     14. In the 'Previous' button, set the onPressed callback to null like this:
        _buildButton(
-          Theme.of(context).primaryColor,
+          context,
           "Previous",
           index > 0 ? () {
             _handlePrevious();
