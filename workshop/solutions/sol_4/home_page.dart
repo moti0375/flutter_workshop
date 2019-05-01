@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
         title: Text("Flutter Workshop"),
       ),
       body: Center(
-        child:  Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -20,13 +20,15 @@ class HomePage extends StatelessWidget {
               child: RaisedButton(
                 color: Theme.of(context).primaryColor,
                 textColor: Theme.of(context).primaryTextTheme.button.color,
-                onPressed: (){
+                onPressed: () {
                   print("Button Pressed");
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context) {
-                      return ImagesPage();
-                    },
-                  ));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        ImagesPage();
+                      },
+                    ),
+                  );
                 },
                 child: Text("Login"),
               ),

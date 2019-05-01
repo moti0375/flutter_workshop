@@ -38,4 +38,26 @@
                       ),
                      );
 
+
+    Lets use the Flutter Navigator to open the new ImagesPage
+
+    1. In the home_page.dart file, go to the Login RaisedButton
+    2. In the onPressed: (){}, call the Flutter Navigator to open the ImagesPage
+       Navigator.of(context).push(context, MaterialPageRoute(
+       builder: (context){ new ImagesPage() }
+    ))
+
+    onPressed: () {
+             print("Button Pressed");
+             Navigator.push(MaterialPageRoute( builder: (context) {
+                             return ImagesPage();
+                            },
+                          ),
+                         );
+                        }
+    3. Import the ImagesPage(), use Alt+Enter
+    4. Do hot reload
+    4. Press the login button, the images page should be opened with white screen.
+
+
  * * */

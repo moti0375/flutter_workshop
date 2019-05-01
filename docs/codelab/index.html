@@ -1,0 +1,742 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Tikal TechRadar Flutter Workshop</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Flutter Workshop"
+                  title="Tikal TechRadar Flutter Workshop"
+                  environment="web"
+                  feedback-link="https://github.com/moti0375/flutter_workshop">
+    
+      <google-codelab-step label="Introduction" duration="2">
+        <p>Welcome to Tikal&#39;s TechRadar Flutter Workshop </p>
+<p>Flutter is a great Framework for beautiful apps both for Android and IOS, and in the future, for more platform. </p>
+<p>The apps are based on a single codebase which developed in Google&#39;s Dart language. </p>
+<p><strong>Flutter Key Features:</strong></p>
+<ul>
+<li><strong>Single Codebase: </strong>Develop a beautiful mobile apps based on single codebase </li>
+<li><strong>Open source: </strong>Flutter is an open source SDK</li>
+<li><strong>No UI bridges: </strong>Flutter doesn&#39;t use platform OEM widgets such as TextView or RecyclerView, instead, Flutter draw all widgets directly on device canvas. No bridges are used. </li>
+<li><strong>Dart - </strong>Dart is an object oriented language which utilise modern programming paradigms such as asynchronous <strong><em><code>Future&lt;&gt;, await</code></em></strong>, <strong><em><code>Streams</code></em></strong> and <strong><em><code>Listeners</code></em></strong><em><br>- </em>Use JIT compiler for debug and AOT for production</li>
+<li><strong>Google Support</strong><strong><em> - </em></strong>Flutter developed and supported by Google </li>
+<li><strong><em>Great Documentation - </em></strong>Flutter has reach and detailed documentation </li>
+</ul>
+<p><a href="https://flutter.dev/" target="_blank"><paper-button class="colored" raised>Flutter Home Page</paper-button></a><em>                                                </em><a href="https://www.dartlang.org/" target="_blank"><paper-button class="colored" raised>Dart Home Page</paper-button></a></p>
+<p><strong>What you will build:</strong></p>
+<p>In this workshop - codelab you will learn to install and setup Flutter environment,  create your first app, learn the basic concepts of Flutter such as <em><code>Widget</code></em>, <em><code>Context</code></em> and <em><code>State</code></em></p>
+<p><strong>Your app will: </strong></p>
+<ul>
+<li>Contain two pages - a Login page and an Images page</li>
+<li>Download and show images from the internet</li>
+<li>Use the Flutter <code>Navigator</code> to move between pages</li>
+</ul>
+<p class="image-container"><img style="width: 279.50px" src="img/102fa02792e29897.png"><img style="width: 283.50px" src="img/56b3c2ba4acc13d8.png"></p>
+<p><strong>What you will learn:</strong></p>
+<ul>
+<li>Flutter building blocks - <code>Stateless</code> and <code>Stateful</code> widgets</li>
+<li>Get familiar with <code>Context</code> and <code>State</code></li>
+<li>Build UI </li>
+<li>Handle click events and use Navigator to move between pages</li>
+<li>Learn the Dart programming language</li>
+</ul>
+<p><a href="https://github.com/moti0375/flutter_workshop" target="_blank"><paper-button class="colored" raised>Get the complete Source Code Here</paper-button></a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Flutter SDK Setup" duration="35">
+        <p><a href="https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - MAC</paper-button></a>        <a href="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.2.1-stable.tar.xz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Linux        </paper-button><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Window</paper-button></a></p>
+<ol type="1" start="1">
+<li>Extract the package into a selected folder:  <code>$HOME/development/Flutter</code></li>
+<li>Add the <code>Flutter/bin</code> path to your system <code>$PATH</code> env&#39; variable</li>
+</ol>
+<p>On a Mac, open your <em><code>~/.bash.profile</code></em> and add the following line: </p>
+<pre><code>PATH=$PATH:$HOME/Development/flutter/bin/cache/dart-sdk/bin:
+$HOME/Library/Android/sdk/platform-tools:
+$HOME/Development/flutter/bin</code></pre>
+<ol type="1" start="3">
+<li>Once your $PATH is updated, open a new Terminal and write the following command: <em><code>flutter doctor</code></em><img style="width: 519.50px" src="img/952d046d77fbecf6.png"></li>
+</ol>
+<ol type="1" start="4">
+<li>Flutter doctor helps us to complete the environment setup</li>
+<li>Proceed to IDE installation</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Install Android Studio" duration="25">
+        <p><a href="https://dl.google.com/dl/android/studio/install/3.3.2.0/android-studio-ide-182.5314842-mac.dmg" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio For Mac</paper-button></a> <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Linux</paper-button></a></p>
+<p><a href="https://dl.google.com/dl/android/studio/install/3.4.0.18/android-studio-ide-183.5452501-windows.exe" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Windows</paper-button></a></p>
+<ol type="1" start="1">
+<li>Follow Android Studio wizard to complete Android Studio installation </li>
+<li>Installation is complete, open Android Studio</li>
+<li>In the welcome screen, Plugin from the Configure bottom right menu:</li>
+</ol>
+<p class="image-container"><img style="width: 499.43px" src="img/8a3f138759fae7f7.png"></p>
+<ol type="1" start="4">
+<li>Install the Flutter and Dart plugins:</li>
+<li>Run flutter doctor command again, follow instructions until you will get <strong>[✓] </strong>for Android part<img style="width: 418.97px" src="img/355da2e7611db714.png"><img style="width: 419.00px" src="img/c1f8540ab7f429b1.png"></li>
+</ol>
+<p><strong>Create New Flutter Project</strong></p>
+<ol type="1" start="1">
+<li>Restart Android Studio</li>
+<li>In the welcome Screen Select: Create new Flutter Project</li>
+<li>In the next screen select Flutter Application</li>
+<li>Set project name and location</li>
+<li>Next, Enable Kotlin and Swift Support </li>
+<li>Complete the project initialization<img style="width: 624.00px" src="img/43e86427a47ca7b.png"></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Run Getting Started App" duration="20">
+        <p><strong>What you will do here:</strong></p>
+<ul>
+<li>Create Android emulator</li>
+<li>Run Flutter app from IDE</li>
+<li>Run flutter app from command line </li>
+<li>Explore Flutter project structure</li>
+<li>Experience hot reload </li>
+</ul>
+<p><strong>Explore Flutter Project Structure</strong></p>
+<aside class="special"><p><strong>Flutter Project Structure</strong> : </p>
+<ul>
+<li><strong>Project root: </strong>Include configuration files such as: pubspec.yaml, README.md ect&#39;</li>
+<li><strong>lib - </strong>The folder is where you write app Dart code</li>
+<li><strong>android - </strong>A native android project folder. All Android configuration such as gradle and Manifest will done here</li>
+<li><strong>Ios - </strong>A native IOS project </li>
+<li><strong>test - </strong>This folder used for running tests</li>
+</ul>
+<p class="image-container"><img style="width: 330.36px" src="img/69fd1c8b80f007e1.png"></p>
+</aside>
+<p><strong>Create an Android Emulator</strong></p>
+<ol type="1" start="1">
+<li>Click on the AVD manager icon: <img style="width: 22.84px" src="img/992fae44b0e7de8.png"></li>
+<li>Click on <em><code>+Create Virtual Device</code></em> button</li>
+</ol>
+<p class="image-container"><img style="width: 315.63px" src="img/174da8fe84aff790.png"></p>
+<ol type="1" start="3">
+<li>Select the default emulator and click <em><code>Next </code></em><img style="width: 619.50px" src="img/4fd8f222bbd392c3.png"></li>
+<li>Select a System Image, download it if required (Recommended for this tutorial, 27 - Oreo)</li>
+</ol>
+<p class="image-container"><img style="width: 501.50px" src="img/6279091fd252c4d7.png"></p>
+<ol type="1" start="5">
+<li>Continue to Configuration, set the emulator name, </li>
+<li>Click Finish. </li>
+<li>Click the run button to start the emulator <img style="width: 87.81px" src="img/bf6aff87c4f9cad3.png"></li>
+</ol>
+<p><strong>Run the default app</strong></p>
+<ol type="1" start="1">
+<li>Run the app from the Run icon <img style="width: 30.08px" src="img/c1554848bc8a1c5b.png"></li>
+<li>This is the Flutter default demonstration app</li>
+<li>Check out the counter button operation</li>
+<li>In the project file, under the <strong><em><code>MaterialApp</code></em></strong> modify the theme color from blue to green</li>
+<li>Press <strong><em>Ctrl+S</em></strong> to save, this will do Hot Reload, notice the color change on the screen. </li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 282.56px" src="img/6a1b3b6198aa14d9.png"></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 296.50px" src="img/f2a2ffd1a6ca541e.png"></p>
+</td></tr>
+</table>
+<p><strong>Run the App from the command line</strong></p>
+<ol type="1" start="1">
+<li>Stop the app from the Stop button</li>
+<li>Open IDE terminal</li>
+<li>Write command <strong><em><code>flutter run -d all</code></em></strong></li>
+<li>Wait for the app to run</li>
+<li>Change the <em><code>_counter++</code></em> to decrement <em><code>_counter--</code></em> (on line 59)</li>
+<li>In the terminal, press <em><code>r</code></em> to do hot reload, press the + button, the counter should now decrement. </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create Application" duration="20">
+        <p><strong>What you will do here:</strong></p>
+<ul>
+<li>Create the project Application root </li>
+<li>Learn about the MaterialApp Widget</li>
+<li>Create the main function which is the entry point of the app</li>
+<li>Run Flutter app from the command line</li>
+</ul>
+<p><strong>Get Project Source Code</strong></p>
+<p>The code for this workshop is available on GitHub: <a href="https://github.com/moti0375/flutter_workshop" target="_blank"><paper-button class="colored" raised>Get The Source Code</paper-button></a></p>
+<p>Or you can clone the project: </p>
+<ul>
+<li>Open a terminal on your workspace directory, e.g. <em><code>~/HOME/Development/Projects</code></em></li>
+<li>Clone the project source code:<br></li>
+</ul>
+<pre><code>git clone https://github.com/moti0375/flutter_workshop</code></pre>
+<p><strong>Open Workshop Project</strong></p>
+<ol type="1" start="1">
+<li>Open Android Studio</li>
+<li>Close all projects </li>
+<li>In the welcome screen select <em><code>Open an existing Android Studio Project</code></em></li>
+</ol>
+<p class="image-container"><img style="width: 530.50px" src="img/2fd15ac6e57836cf.png"></p>
+<ol type="1" start="4">
+<li>Select the cloned project directory and click <strong><em><code>Open</code></em></strong></li>
+</ol>
+<p class="image-container"><img style="width: 382.50px" src="img/b5c888b5df19eb1b.png"></p>
+<ol type="1" start="5">
+<li>The workshop project should be opened. </li>
+</ol>
+<p><strong>Create the Application file</strong></p>
+<ol type="1" start="1">
+<li>Under the <em><code>lib</code></em> folder, create <code>application.dart</code> file</li>
+<li>Open the new application file, import the <em><code>package:flutter/material.dart</code></em> package</li>
+<li>Create <code>MyApp</code> class and extend <code>StatelessWidget</code></li>
+<li>Override the <em><code>build()</code></em>method and return a <em><code>MaterialApp</code></em> Widget</li>
+<li>In the MaterialApp constructor, add <code>title: &#34;Flutter Workshop&#34; </code></li>
+<li>Set the <code>home:</code> argument to <em><code>Container()</code></em></li>
+</ol>
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+
+class MyApp extends StatelessWidget{
+ @override
+ Widget build(BuildContext context) {
+   return MaterialApp(
+     title: &#34;Flutter workshop&#34;,
+     home: Container(),
+   );
+ }
+}
+</code></pre>
+<ol type="1" start="7">
+<li>Under the lib folder, create a <code>main.dart</code> file </li>
+<li>Import the material package as in section 2</li>
+<li>In the main file, add main() function and call the runApp function:</li>
+</ol>
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+import &#39;package:flutter_workshop/application.dart&#39;;
+
+void main() =&gt; runApp(MyApp());
+</code></pre>
+<ol type="1" start="10">
+<li>Open Android Studio build in terminal, run the app by typing:  <em><code>flutter run -d all</code></em><code> </code></li>
+</ol>
+<aside class="warning"><p><strong>NOTE</strong>: <strong>The app should run with a black screen now</strong>. This is just fine!</p>
+</aside>
+<aside class="special"><p><strong>StatelessWidget</strong> - This is an immutable widget, once it is created, it cannot be changed. To make changes in a StatelessWidget, we can create a new one with different parameters. <br>StatelessWidget is one of Flutter fundamental building blocks. To learn more about it, check out it&#39;s <a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html" target="_blank">documentation</a> </p>
+</aside>
+<aside class="special"><p><strong>Easy Import</strong> - To import a class, stand on red marked class name, press <strong>Alr+Enter</strong>, select the class to import.</p>
+<p class="image-container"><img style="width: 609.00px" src="img/6c6c8c2bee48940.png"></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Home Page" duration="20">
+        <p><strong>What you will do here</strong></p>
+<ul>
+<li>Create app the app HomePage dart file</li>
+<li>Learn about Flutter page structure, AppBar, Scaffold and Body</li>
+<li>Use Flutter Hot Reload </li>
+<li>Learn about the Stateless Widget</li>
+</ul>
+<p><strong>Create The HomePage</strong></p>
+<ol type="1" start="1">
+<li>Under the lib folder, create a new <code>pages</code> package </li>
+<li>Inside the new <code>pages</code> package, create <code>home_page</code> package</li>
+<li>Under the <em>home_page</em> package, create a new <em><code>home_page.dart</code></em> file</li>
+<li>Open the <em>home_page.dart</em> file, create the <code>HomePage</code> class, extends <code>StatelessWidget</code>, override the <code>build()</code>method and return a <code>Container()</code><br>(Import the <em>material</em> package as necessary)</li>
+</ol>
+<pre><code>import &#39;package:flutter/material.dart&#39;;
+
+class HomePage extends StatelessWidget {
+ @override
+ Widget build(BuildContext context) {
+   return Container();
+ }
+}</code></pre>
+<ol type="1" start="5">
+<li>Go back to the <em>application.dart</em> replace the Container() with the new <em>HomePage()<br>Make import as necessary<br></em></li>
+</ol>
+<pre><code>return MaterialApp(
+ title: &#34;Flutter workshop&#34;,
+ home: HomePage(),
+);
+</code></pre>
+<ol type="1" start="6">
+<li>Do Hot Reload - In the terminal type <em><code>r</code></em>, <strong>app still has black screen</strong>. </li>
+</ol>
+<aside class="special"><p><strong>Note</strong> - In Flutter and Dart, packages and file names are written in lowercase and underscore e.g. <code>home_page/home_page.dart</code></p>
+<p>Classes names are written in CamelCase convention: <strong><em><code>class HomePage{}</code></em></strong></p>
+</aside>
+<p><strong>Home Page Body</strong></p>
+<ol type="1" start="1">
+<li>In the build method of the <em><code>HomePage</code></em> class, replace the Container() widget with a <em><code>Scaffold()</code></em> widget<br>The Scaffold widget represents a Material Design page structure that can have components such as:</li>
+</ol>
+<ul>
+<li>App Bar</li>
+<li>Floating Action Button</li>
+<li>Bottom Navigation Bar</li>
+<li>Body </li>
+</ul>
+<ol type="1" start="2">
+<li>Inside the Scaffold constructor, add the <code>appBar: AppBar()</code></li>
+<li>Set the AppBar title.  <code>title: Text(&#34;Flutter Workshop&#34;)</code></li>
+<li>Inside the Scaffold constructor, under the title: argument, add the body: argument and set it to a <code>Center()</code>Widget</li>
+<li>Set the Center child: widget to Text(&#34;Hello Flutter&#34;)<br></li>
+</ol>
+<pre><code>appBar: AppBar(
+ title: Text(&#34;Flutter Workshop&#34;),
+),
+body: Center(
+ child:  Text(&#34;Hello Flutter&#34;),
+),
+</code></pre>
+<aside class="warning"><p>Note: In Flutter, you can add commas <code>,</code> after the last object&#39;s constructor parameter.</p>
+<p>e.g:  <code>Center(child: Text(&#34;Hello World&#34;)</code><strong><code>,</code></strong><code>)</code></p>
+<p>This helps the editor to format the code so it can be more readable.</p>
+<p>To reformat the code, press Cmd+Shift+L</p>
+</aside>
+<ol type="1" start="6">
+<li>Do hot reload, you should now see the homepage  now: </li>
+</ol>
+<p class="image-container"><img style="width: 347.85px" src="img/af3c412d8b908c52.png"></p>
+<aside class="special"><p><strong>Congratulations</strong> - You&#39;ve just created your very first Flutter app!</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Add Raised Button" duration="15">
+        <table>
+<tr><td colspan="1" rowspan="1"><p><strong>What you will do here</strong></p>
+<ul>
+<li>Add a RaisedButton widget to the homepage</li>
+<li>Design button color and style</li>
+<li>Handle button click event</li>
+<li>Learn about Column and Row widgets</li>
+<li>Use IDE shortcuts </li>
+</ul>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 279.50px" src="img/102fa02792e29897.png"></p>
+</td></tr>
+</table>
+<ol type="1" start="1">
+<li>In the homescreen, click the Text() child widget of the Center widget, press Alt+Enter</li>
+<li>Select <code>‘Wrap with new widget&#39;</code></li>
+</ol>
+<p class="image-container"><img style="width: 324.36px" src="img/41c2962348f6a0d5.png"></p>
+<ol type="1" start="3">
+<li>Rename the new widget to <code>RaisedButton()</code>,<br>In the RaisedButton constructor, set the child: widget to Text(&#34;Login&#34;)</li>
+<li>Add a comma after the button <em><code>Text(),</code></em> press Alt+Enter to reformat the code<br>Notice the difference with and without the <strong><code>,</code></strong></li>
+</ol>
+<pre><code>body: Center(
+child: RaisedButton(
+  child: Text(&#34;Login&#34;),
+  ),
+)</code></pre>
+<ol type="1" start="5">
+<li>Do hot reload, notice that the button is wrapped and disabled yet, that&#39;s because we didn&#39;t set an onPressed callback. We will do it in the next following steps. </li>
+</ol>
+<p class="image-container"><img style="width: 235.50px" src="img/e4c185df66524b48.png"></p>
+<p><strong>Padding and enabling</strong></p>
+<ol type="1" start="1">
+<li>Click on the RaisedButton, wrap it with Column as done above </li>
+</ol>
+<aside class="special"><p class="image-container"><img style="width: 303.50px" src="img/c1bc50ad73e8c199.png"></p>
+<p>A Column widget arrange a set of child widgets in a vertical order. </p>
+<p>It also provides size and alignment attributes </p>
+<p>to the children beneath </p>
+</aside>
+<ol type="1" start="2">
+<li>Do hot reload, the button will jump to the top of the screen, this because of the Column default behavior</li>
+<li>In the Column constructor, above the <em><code>children: &lt;Widget&gt;[]</code></em> array, add the following attributes:<br><code>mainAxisAlignment: MainAxisAlignment.center,<br>mainAxisSize: MainAxisSize.min,<br>crossAxisAlignment: CrossAxisAlignment.stretch,</code></li>
+<li>Do hot reload, the button is now centered again and stretched to all screen width</li>
+<li>Let&#39;s add some padding to the button, Select the <em><code>RaisedButton</code></em> press Alt+Enter</li>
+<li>Select <em><code>Add padding</code></em>, set the padding to <em><code>padding:</code></em><strong><em><code> const </code></em></strong><em><code>EdgeInsets.all(20.0)</code></em></li>
+<li>Do hot reload, the button should now have some padding</li>
+<li>Let&#39;s enable the button by adding onPressed callback</li>
+<li>In the button constructor, under the <em><code>child: Text()</code></em>, add <code>onPressed: (){}</code>, </li>
+<li>Add log statement <code>print(&#34;Button clicked&#34;);</code></li>
+</ol>
+<pre><code>child: RaisedButton(
+ child: Text(&#34;Login&#34;),
+ onPressed: (){
+  print(&#34;Button Clicked&#34;);
+ }, 
+), //RaisedButton</code></pre>
+<ol type="1" start="11">
+<li>Do hot reload, the button should be enabled, click the button and watch the log messages in the console. </li>
+</ol>
+<p><strong>Styling the button and text</strong></p>
+<ol type="1" start="1">
+<li>In the RaisedButton constructor add a color: argument - <em><code>color: Theme.of(context).primaryColor</code></em></li>
+<li> Set the button text color: <em><code>textColor: Theme.of(context).primaryTextTheme.button.color</code></em></li>
+<li>Do hot reload, see the button and text color. </li>
+<li>Don&#39;t forget commas, press Shift+Cmd+L to reformat the code if required. </li>
+</ol>
+<pre><code>Padding(
+ padding: const EdgeInsets.all(20.0),
+ child: RaisedButton(
+   color: Theme.of(context).primaryColor,
+   textColor:Theme.of(context).primaryTextTheme.button.color,
+   onPressed: (){
+     print(&#34;Button Pressed&#34;);
+   }, //Don&#39;t forget the commas
+   child: Text(&#34;Login&#34;), //&lt;- Yes, this comma too :)
+ ), //RaisedButton</code></pre>
+<aside class="special"><p><strong>Summary</strong>: <br>So far we have learned how to add and arrange widgets to our page.</p>
+<p>We learned a few IDE tricks: </p>
+<ul>
+<li><strong>Shift+Cmd+L</strong> - Format the code</li>
+<li><strong>Use Commas </strong><code>,</code> To help the editor reformat the code</li>
+<li><strong>Alt+Enter</strong> can help us to wrap widget with a parent widget</li>
+</ul>
+<p>For more layout widgets, check out the <a href="https://flutter.dev/docs/development/ui/widgets" target="_blank">Flutter Widget Catalog</a></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Images Page - StatefulWidget" duration="25">
+        <p><strong>What you will do here</strong></p>
+<ul>
+<li>Create a new page</li>
+<li>Learn about the StatefulWidget and State</li>
+<li>Rearrange sub widgets in a page</li>
+<li>Download images from the network</li>
+<li>Use the Flutter Navigator Widget to move between pages </li>
+</ul>
+<p><strong>Add new package and page Dart file</strong></p>
+<ol type="1" start="1">
+<li>Under the <em><code>pages</code></em><em> package, </em>create new page package<em> - </em><em><code>images_page</code></em></li>
+<li>In the new package create new dart file: <em><code>images_page.dart</code></em></li>
+<li>In the new file, create <em><code>ImagesPage</code></em> class, extends <em><code>StatefulWidget</code></em></li>
+<li>In the new class, override the <em><code>createState()</code></em> method</li>
+<li>In the ImagesPage, create another class <code>_</code><em><code>ImagesPageState</code></em> class that extends <em><code>State&lt;ImagesPage&gt;</code></em></li>
+<li>In the State class, override the <em><code>build()</code></em> method</li>
+</ol>
+<aside class="special"><p><strong>TIP1 - </strong>Use the <strong><em><code>stful</code></em></strong> shortcut to create a StateFulWidget with a State template. </p>
+<p><strong>TIP2 - </strong>In Dart, variables and class names that begins with <code>_</code> are private</p>
+</aside>
+<ol type="1" start="7">
+<li>In the <em><code>createState()</code></em> method, return a new <em><code>ImagesPageState()</code></em></li>
+</ol>
+<pre><code>class ImagesPage extends StatefulWidget {
+ @override
+ _ImagesPageState createState() =&gt; _ImagesPageState();
+}</code></pre>
+<p><strong>ImagesPage body</strong></p>
+<ol type="1" start="1">
+<li>In the State <em><code>build()</code></em> method, return <em><code>Scaffold()</code></em> widget.</li>
+<li>Set an <code>appBar: AppBar()</code> with <code>title: Text(&#34;Images Page&#34;)</code></li>
+<li>Set the page body: top widget to be Container() with padding of 8.0 points, this widget will wrap the whole page body and allows to add padding, and other decorations such as background color and border. </li>
+</ol>
+<pre><code>body: Container(
+   padding: const EdgeInsets.all(8.0),
+)</code></pre>
+<ol type="1" start="4">
+<li>Next, set the Container child: widget to Column()</li>
+<li>Set the Column attributes to:<br><code>mainAxisAlignment: MainAxisAlignment.center,<br>mainAxisSize: MainAxisSize.max,<br>crossAxisAlignment: CrossAxisAlignment.center,</code></li>
+<li>Add an children: &lt;Widget&gt;[] array, this array will contain the column child widgets vertically. </li>
+<li>The Scaffold() should now looks like this:</li>
+</ol>
+<pre><code>Scaffold(
+ appBar: AppBar(
+   title: Text(&#34;Images page&#34;),
+ ),
+ body: Container(
+   padding: const EdgeInsets.all(8.0),
+   child: Column(
+     mainAxisSize: MainAxisSize.max,
+     mainAxisAlignment: MainAxisAlignment.start,
+     crossAxisAlignment: CrossAxisAlignment.center,
+     children: &lt;Widget&gt;[
+
+     ],
+   ),
+ ),
+);</code></pre>
+<aside class="special"><p><strong>StatefulWidget - </strong>This is a mutable widget that can be changed and modified. </p>
+<p>The behavioral part of a StatefulWidget called state, and stored within its associated <strong>State&lt;&gt; </strong>class. </p>
+<ul>
+<li>When we create a StateFul widget, we should override the <em><code>createState()</code></em>method. </li>
+<li>When we create a State class, we should override the <em><code>build()</code></em> method</li>
+</ul>
+<p>A StatefulWidget is one of the building blocks of Flutter, to learn more about it<br>Check out its <a href="https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html" target="_blank">documentation</a></p>
+</aside>
+<p><strong>Open the ImagesPage </strong></p>
+<ol type="1" start="1">
+<li>In the home_page.dart file, select the Login RaisedButton</li>
+<li>In the onPressed: (){} callback, use the Flutter Navigator to open the new ImagesPage(): <br><em><code>Navigator.of(context).push(MaterialRoutePage(builder: (context){ ImagesPage()}));</code></em></li>
+</ol>
+<pre><code>onPressed: () {
+ print(&#34;Button Pressed&#34;);
+ Navigator.of(context).push(
+   MaterialPageRoute(
+     builder: (context) {
+       ImagesPage();
+     },
+   ),
+ );
+}</code></pre>
+<ol type="1" start="3">
+<li>Import the <em><code>ImagesPage()</code></em> class, use Alt+Enter and do import </li>
+<li>Do hot reload <code>r</code> or Hot Restart <code>shift+r</code></li>
+<li>Click the login button to open the ImagesPage</li>
+<li>You should now see an empty screen:</li>
+</ol>
+<p class="image-container"><img style="width: 362.99px" src="img/821303e97e87159.png"><br></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Images Page - Build the page" duration="15">
+        <p><strong>What you do here</strong></p>
+<ul>
+<li>Build the images pages UI structure</li>
+<li>Use the Image widget do fetch images from the internet.</li>
+<li>Use Row widget to place widget horizontally </li>
+<li>Learn to use IDE shortcuts and Outline menu to wrap and remove widgets</li>
+<li>Use the Padding and Expanded widgets to adjust our layout </li>
+</ul>
+<p><strong>Image Widget</strong></p>
+<ol type="1" start="1">
+<li>At the top of the <em><code>_ImagesPageState</code></em> class, declare a <code>String</code> member variable:</li>
+</ol>
+<p><code>final String _imageUrl = </code><em><code>&#34;https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg&#34;;</code></em></p>
+<aside class="special"><p><strong>Reminder: </strong>In Dart, variables starting with <code>_</code> are private.</p>
+</aside>
+<ol type="1" start="2">
+<li>Under the children widgets array, add the <code>Image.network()</code> widget</li>
+<li>Set the URL to _imageUrl variable </li>
+<li>Do hot reload or hot restart</li>
+</ol>
+<p><strong>Add Two Buttons</strong></p>
+<ol type="1" start="1">
+<li>Under the Image.network widget add a <code>Row()</code> widget.</li>
+<li>Set the Row attributes and add an empty children&lt;Widget&gt;[] array:</li>
+</ol>
+<pre><code>Image.network(
+ _imageUrl
+), //Image.network
+Row(
+ mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+ mainAxisSize: MainAxisSize.max,
+ crossAxisAlignment: CrossAxisAlignment.center,
+ children: &lt;Widget&gt;[
+ ]
+), //Row Always add a comma after the last widget</code></pre>
+<ol type="1" start="3">
+<li>In the empty &lt;Widget&gt;[] array add two RaisedButton widgets</li>
+<li>Set the first button child: to Text(&#34;Previous&#34;)</li>
+<li>Set the second button child: to Text(&#34;Next&#34;)</li>
+</ol>
+<pre><code>...
+ children: &lt;Widget&gt;[
+   RaisedButton(
+        child: Text(&#34;Previous&#34;),
+   ),
+   RaisedButton(
+        child: Text(&#34;Next&#34;),
+   ), 
+ ]
+), //Row Always add a comma after the last widget</code></pre>
+<ol type="1" start="6">
+<li>Do hot reload, watch the page with an image and two disabled buttons under it. </li>
+<li>The buttons are wrapped, let&#39;s make them stretched equally</li>
+<li>Select the first RaisedButton, press Alt+Enter select, <em><code>Wrap with widget </code></em></li>
+<li>Set the widget name to <em><code>Expanded</code></em></li>
+<li>Repeat steps 8-9 for the second button</li>
+<li>Do hot reload, the buttons should now be stretched horizontal equally </li>
+</ol>
+<p><strong>Add Buttons Padding</strong></p>
+<ol type="1" start="1">
+<li>Select the first RaisedButton, click on the Flutter Outline tab at the right side of the screen: </li>
+<li>Press the <em><code>Add padding</code></em> button </li>
+<li>Set the padding:  <em><code>padding: </code></em><strong><em><code>const </code></em></strong><em><code>EdgeInsets.all(8.0)</code></em></li>
+<li>Repeat steps 2-3 for Second button</li>
+<li>Do hot reload, buttons should now have some padding,</li>
+</ol>
+<p class="image-container"><img style="width: 366.00px" src="img/11cee95ce3307569.png"></p>
+<pre><code>Expanded(
+ child: Padding(
+   padding: const EdgeInsets.all(8.0),
+   child: RaisedButton(
+     child: Text(&#34;Previous&#34;),
+   ),
+ ),
+)</code></pre>
+<aside class="special"><p><strong>Flutter Outline: </strong>We can use the Flutter Outline tab shortcuts to manipulate and modify the widgets layout. Among other things, the outline can be used for: </p>
+<ul>
+<li>Wrapping widgets with a parent widget</li>
+<li>Add padding,</li>
+<li>Remove widgets</li>
+<li>Wrap with Column or Row</li>
+</ul>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Enable Buttons - Extract methods" duration="10">
+        <p><strong>Enabling the buttons</strong></p>
+<ol type="1" start="1">
+<li>The buttons still disabled, this because we haven&#39;t set an onPressed callback</li>
+<li>Inside the first buttons constructor, add onPressed: argument:</li>
+</ol>
+<p><code>onPressed: (){}</code></p>
+<ol type="1" start="3">
+<li>Repeat the last step for the second button</li>
+<li>Do hot reload, the buttons should be enabled and clickable </li>
+<li>Lets style the pbuttons</li>
+<li>In the first button constructor, right above the child: argument, set button color:<br><em><code>color: Theme.of(context).primaryColor</code></em></li>
+<li>Next, under the color: argument, set the textColor: <br><em><code>textColor: Theme.of(context).primaryTextTheme.button.color</code></em></li>
+</ol>
+<pre><code>RaisedButton(
+ color: Theme.of(context).primaryColor
+ textColor: Theme.of(context).primaryTextTheme.button.color
+ child: .... ,
+ onPressed: (){}
+)</code></pre>
+<p><strong>Extract buttons build to a method</strong></p>
+<ol type="1" start="1">
+<li>Let&#39;s create a method to create the buttons</li>
+<li>Select the Padding of the first button </li>
+<li>Press Command+Alt+M, ExtractMethod dialog open, set the method name to _buildButton</li>
+<li>Set the method return type to Widget</li>
+<li>Set the method to accept <code>BuildContext</code>, <code>String</code> and <code>Function() callback </code></li>
+</ol>
+<p><code>Widget _buildButton( {BuildContext context, String title, Function() callback})</code></p>
+<ol type="1" start="6">
+<li>Replace the RaisedButton parameters inside the method with the method arguments:</li>
+</ol>
+<pre><code>Widget _buildButton(
+   {BuildContext context, String title, VoidCallback callback}) {
+ return Padding(
+   padding: const EdgeInsets.symmetric(horizontal: 4),
+   child: RaisedButton(
+     color: Theme.of(context).primaryColor, //Set the context
+     textColor: Theme.of(context).primaryTextTheme.button.color,
+     child: Text(title) //Set the title,
+     onPressed: callback, //Set the callback
+   ),
+ );</code></pre>
+<ol type="1" start="7">
+<li>Replace the RaisedButton child in the Buttons Row by calling the _buildButton method for each button.</li>
+<li>At the end, the buttons Row should look like this:</li>
+</ol>
+<pre><code>children: &lt;Widget&gt;[
+ Expanded(
+   child: _buildButton(
+     context: context,
+     title: &#34;Previous&#34;,
+     callback: () {},
+   ),
+ ),
+ Expanded(
+   child: _buildButton(
+     context: context,
+     title: &#34;Next&#34;,
+     callback: () {},
+   ),
+ ),</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Buttons Business Logic" duration="15">
+        <p><strong>What you do here</strong></p>
+<ul>
+<li>Add Images list</li>
+<li>Switch between images using the navigation buttons</li>
+<li>Understand the idea of State and the use setState method</li>
+<li>Learn IDE shortcuts for selecting and extracting code</li>
+</ul>
+<p><strong>Add Images List</strong></p>
+<ol type="1" start="1">
+<li>In the State class, add a list of 3 images URLs: </li>
+<li>Next, under the images list, add an <em><code>int index = 0;</code></em> to the State class  </li>
+</ol>
+<pre><code>List&lt;String&gt; _images = [
+&#34;https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg&#34;,
+&#34;https://image.tmdb.org/t/p/w500/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg&#34;,
+&#34;https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg&#34;
+];
+int _index = 0;</code></pre>
+<ol type="1" start="3">
+<li>We will use the index to load an image from the list in the Image.network widget</li>
+<li>At the bottom of the State class, add two methods for increment and decrement</li>
+</ol>
+<pre><code>void _handleNext() {
+      setState(() {
+      index++;
+    });
+   }
+
+void _handlePrevious() {
+   setState(() {
+   index--;
+  });
+ }</code></pre>
+<ol type="1" start="5">
+<li>Notice that in these methods we call the <em><code>setState((){}).</code></em> This method is Flutter framework that cause our widget to rebuild with the new state. </li>
+<li>In the Image.network widget, replace the <code>_imageUrl</code> with <code>_images[_index]</code><br></li>
+</ol>
+<pre><code>Image.network(
+   images[index],
+   fit: BoxFit.fill,
+  ),</code></pre>
+<p><strong>Call Methods from buttons onPressed</strong></p>
+<ol type="1" start="1">
+<li>We need to prevent the user from click <em><code>Next</code></em> when reaching the last image in the list by setting the onPressed callback to null</li>
+<li>We should do the same for the <em><code>Previous</code></em> button when reaching the first image in the list.</li>
+<li>In the ‘Next&#39; RaisedButton, set the onPressed: callback to null as following: </li>
+</ol>
+<pre><code>_buildButton(
+    context: context,
+    title: &#34;Next&#34;,
+    callback: _index &lt; (_images.length - 1) ? () {
+    _handleNext();
+   } : null,
+  )</code></pre>
+<ol type="1" start="4">
+<li>In the ‘Previous&#39; RaisedButton, set the onPressed: callback to null as following:</li>
+</ol>
+<pre><code>_buildButton(
+ context: context,
+ title: &#34;Previous&#34;,
+ callback: _index &gt; 0 ? () {
+   _handlePrevious();
+ } : null,
+)</code></pre>
+<ol type="1" start="5">
+<li>You should now be able to navigate between images which are downloaded from the network! </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

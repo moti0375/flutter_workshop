@@ -26,8 +26,7 @@
       }
    7. Notice that these methods calls the setState() method, this is a Flutter framework method which cause
       the widget to rebuild with a new state.
-   8. In the Image.network widget, replace the hardcoded URL with images[index]
-
+   8. In the Image.network widget, replace the hardcoded URL with images[index]s
        Image.network(
            images[index],
            fit: BoxFit.fill,
@@ -40,9 +39,9 @@
     12  We should do the same to the 'Previous' button when reaching to index 0
     13. In the 'Next' button, set the onPressed callback to null like this:
         _buildButton(
-             context,
-             "Next",
-             index < (images.length - 1) ? () {
+             context: context,
+             title: "Next",
+             callback: index < (images.length - 1) ? () {
              _handleNext();
             } : null,
            )
@@ -50,7 +49,7 @@
        _buildButton(
           context,
           "Previous",
-          index > 0 ? () {
+          _index > 0 ? () {
             _handlePrevious();
           } : null,
         )
