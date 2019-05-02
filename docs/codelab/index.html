@@ -29,8 +29,8 @@
     
       <google-codelab-step label="Introduction" duration="2">
         <p>Welcome to Tikal&#39;s TechRadar Flutter Workshop </p>
-<p>Flutter is a great Framework for beautiful apps both for Android and IOS, and in the future, for more platform. </p>
-<p>The apps are based on a single codebase which developed in Google&#39;s Dart language. </p>
+<p>Flutter is a great Framework for beautiful apps both for Android and IOS, and in the future, for more platforms. </p>
+<p>The apps are based on a single codebase which developed in Google&#39;s Dart programming language. </p>
 <p><strong>Flutter Key Features:</strong></p>
 <ul>
 <li><strong>Single Codebase: </strong>Develop a beautiful mobile apps based on single codebase </li>
@@ -40,7 +40,11 @@
 <li><strong>Google Support</strong><strong><em> - </em></strong>Flutter developed and supported by Google </li>
 <li><strong><em>Great Documentation - </em></strong>Flutter has reach and detailed documentation </li>
 </ul>
-<p><a href="https://flutter.dev/" target="_blank"><paper-button class="colored" raised>Flutter Home Page</paper-button></a><em>                                                </em><a href="https://www.dartlang.org/" target="_blank"><paper-button class="colored" raised>Dart Home Page</paper-button></a></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><a href="https://flutter.dev/" target="_blank"><paper-button class="colored" raised>Flutter Home Page</paper-button></a><em>        </em></p>
+</td><td colspan="1" rowspan="1"><p><a href="https://www.dartlang.org/" target="_blank"><paper-button class="colored" raised>Dart Home Page</paper-button></a></p>
+</td></tr>
+</table>
 <p><strong>What you will build:</strong></p>
 <p>In this workshop - codelab you will learn to install and setup Flutter environment,  create your first app, learn the basic concepts of Flutter such as <em><code>Widget</code></em>, <em><code>Context</code></em> and <em><code>State</code></em></p>
 <p><strong>Your app will: </strong></p>
@@ -66,17 +70,18 @@
       <google-codelab-step label="Flutter SDK Setup" duration="35">
         <p><a href="https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - MAC</paper-button></a>        <a href="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.2.1-stable.tar.xz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Linux        </paper-button><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Window</paper-button></a></p>
 <ol type="1" start="1">
-<li>Extract the package into a selected folder:  <code>$HOME/development/Flutter</code></li>
+<li>Download the Flutter SDK package for you platform, use the links above</li>
+<li>Extract the package into a selected folder, e.g: <code>$HOME/development/Flutter</code></li>
 <li>Add the <code>Flutter/bin</code> path to your system <code>$PATH</code> env&#39; variable</li>
 </ol>
 <p>On a Mac, open your <em><code>~/.bash.profile</code></em> and add the following line: </p>
 <pre><code>PATH=$PATH:$HOME/Development/flutter/bin/cache/dart-sdk/bin:
 $HOME/Library/Android/sdk/platform-tools:
 $HOME/Development/flutter/bin</code></pre>
-<ol type="1" start="3">
+<ol type="1" start="4">
 <li>Once your $PATH is updated, open a new Terminal and write the following command: <em><code>flutter doctor</code></em><img style="width: 519.50px" src="img/952d046d77fbecf6.png"></li>
 </ol>
-<ol type="1" start="4">
+<ol type="1" start="5">
 <li>Flutter doctor helps us to complete the environment setup</li>
 <li>Proceed to IDE installation</li>
 </ol>
@@ -88,12 +93,13 @@ $HOME/Development/flutter/bin</code></pre>
         <p><a href="https://dl.google.com/dl/android/studio/install/3.3.2.0/android-studio-ide-182.5314842-mac.dmg" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio For Mac</paper-button></a> <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Linux</paper-button></a></p>
 <p><a href="https://dl.google.com/dl/android/studio/install/3.4.0.18/android-studio-ide-183.5452501-windows.exe" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Windows</paper-button></a></p>
 <ol type="1" start="1">
+<li>Download Android Studio installation package, use the above links</li>
 <li>Follow Android Studio wizard to complete Android Studio installation </li>
-<li>Installation is complete, open Android Studio</li>
-<li>In the welcome screen, Plugin from the Configure bottom right menu:</li>
+<li>When Installation completes, open Android Studio</li>
+<li>In the welcome screen, select Plugin from the Configure bottom right menu:</li>
 </ol>
 <p class="image-container"><img style="width: 499.43px" src="img/8a3f138759fae7f7.png"></p>
-<ol type="1" start="4">
+<ol type="1" start="5">
 <li>Install the Flutter and Dart plugins:</li>
 <li>Run flutter doctor command again, follow instructions until you will get <strong>[✓] </strong>for Android part<img style="width: 418.97px" src="img/355da2e7611db714.png"><img style="width: 419.00px" src="img/c1f8540ab7f429b1.png"></li>
 </ol>
@@ -123,8 +129,8 @@ $HOME/Development/flutter/bin</code></pre>
 <aside class="special"><p><strong>Flutter Project Structure</strong> : </p>
 <ul>
 <li><strong>Project root: </strong>Include configuration files such as: pubspec.yaml, README.md ect&#39;</li>
-<li><strong>lib - </strong>The folder is where you write app Dart code</li>
-<li><strong>android - </strong>A native android project folder. All Android configuration such as gradle and Manifest will done here</li>
+<li><strong>lib - </strong>This folder is where we write our app Dart code</li>
+<li><strong>android - </strong>A native android project folder. All Android configurations such as gradle and Manifest will be done here</li>
 <li><strong>Ios - </strong>A native IOS project </li>
 <li><strong>test - </strong>This folder used for running tests</li>
 </ul>
@@ -152,7 +158,7 @@ $HOME/Development/flutter/bin</code></pre>
 <li>This is the Flutter default demonstration app</li>
 <li>Check out the counter button operation</li>
 <li>In the project file, under the <strong><em><code>MaterialApp</code></em></strong> modify the theme color from blue to green</li>
-<li>Press <strong><em>Ctrl+S</em></strong> to save, this will do Hot Reload, notice the color change on the screen. </li>
+<li>Press <strong><em>Ctrl+S</em></strong> to save, this will do <strong><em>Hot Reload</em></strong>, notice the color change on the screen. </li>
 </ol>
 <table>
 <tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 282.56px" src="img/6a1b3b6198aa14d9.png"></p>
@@ -185,9 +191,9 @@ $HOME/Development/flutter/bin</code></pre>
 <p>Or you can clone the project: </p>
 <ul>
 <li>Open a terminal on your workspace directory, e.g. <em><code>~/HOME/Development/Projects</code></em></li>
-<li>Clone the project source code:<br></li>
+<li>Clone the project source code: run the command:</li>
 </ul>
-<pre><code>git clone https://github.com/moti0375/flutter_workshop</code></pre>
+<pre><code>MacBook-Pro:~ user$ git clone https://github.com/moti0375/flutter_workshop</code></pre>
 <p><strong>Open Workshop Project</strong></p>
 <ol type="1" start="1">
 <li>Open Android Studio</li>
@@ -670,7 +676,7 @@ Row(
 <p><strong>Add Images List</strong></p>
 <ol type="1" start="1">
 <li>In the State class, add a list of 3 images URLs: </li>
-<li>Next, under the images list, add an <em><code>int index = 0;</code></em> to the State class  </li>
+<li>Next, under the images list, add an index variable: <em><code>int index = 0;</code></em> </li>
 </ol>
 <pre><code>List&lt;String&gt; _images = [
 &#34;https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg&#34;,
@@ -727,6 +733,27 @@ void _handlePrevious() {
 <ol type="1" start="5">
 <li>You should now be able to navigate between images which are downloaded from the network! </li>
 </ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Next Steps" duration="10">
+        <p><strong>Codelab Summary</strong></p>
+<p><strong>Congratulations!! You&#39;ve reached the end of this codelab !! Cheers!</strong></p>
+<p>In this codelab you&#39;ve learned the basics of Flutter followed with hands on example app. </p>
+<p>Flutter has a lot of predefined Widgets and well known recommended architectures and State Management notions such as: </p>
+<ol type="1" start="1">
+<li>StreamBuilder</li>
+<li>Scoped Model</li>
+<li>BLoc </li>
+<li>Redux</li>
+</ol>
+<p><strong>Recommended Flutter tutorials:</strong></p>
+<p>You may find great tutorials for these topics in the <a href="https://youtu.be/u_Lyx8KJWpg" target="_blank">following playlist</a><br></p>
+<p><strong>Flutter Codelabs:</strong></p>
+<p>You may find more great Flutter codelabs in the official <a href="https://flutter.dev/docs/codelabs" target="_blank">Flutter codelab page</a>! </p>
+<p><strong>Dart pad :</strong></p>
+<p><a href="https://dartpad.dartlang.org/" target="_blank">An online dart playground</a>: You can use it for coding and learning Dart online.</p>
 
 
       </google-codelab-step>
