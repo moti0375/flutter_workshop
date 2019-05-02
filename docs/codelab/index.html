@@ -393,7 +393,7 @@ child: RaisedButton(
 <li>In the RaisedButton constructor add a color: argument - <em><code>color: Theme.of(context).primaryColor</code></em></li>
 <li> Set the button text color: <em><code>textColor: Theme.of(context).primaryTextTheme.button.color</code></em></li>
 <li>Do hot reload, see the button and text color. </li>
-<li>Don&#39;t forget commas, press Shift+Cmd+L to reformat the code if required. </li>
+<li>Don&#39;t forget commas, press Alt+Cmd+L to reformat the code if required. </li>
 </ol>
 <pre><code>Padding(
  padding: const EdgeInsets.all(20.0),
@@ -433,7 +433,7 @@ child: RaisedButton(
 <li>In the new package create new dart file: <em><code>images_page.dart</code></em></li>
 <li>In the new file, create <em><code>ImagesPage</code></em> class, extends <em><code>StatefulWidget</code></em></li>
 <li>In the new class, override the <em><code>createState()</code></em> method</li>
-<li>In the ImagesPage, create another class <code>_</code><em><code>ImagesPageState</code></em> class that extends <em><code>State&lt;ImagesPage&gt;</code></em></li>
+<li>In the ImagesPage, under the <em><code>ImagesPage class</code></em>, create another class <code>_</code><em><code>ImagesPageState</code></em> class that extends <em><code>State&lt;ImagesPage&gt;</code></em></li>
 <li>In the State class, override the <em><code>build()</code></em> method</li>
 </ol>
 <aside class="special"><p><strong>TIP1 - </strong>Use the <strong><em><code>stful</code></em></strong> shortcut to create a StateFulWidget with a State template. </p>
@@ -495,7 +495,7 @@ child: RaisedButton(
  Navigator.of(context).push(
    MaterialPageRoute(
      builder: (context) {
-       ImagesPage();
+       return ImagesPage();
      },
    ),
  );
@@ -627,19 +627,19 @@ Row(
 <li>Set the method return type to Widget</li>
 <li>Set the method to accept <code>BuildContext</code>, <code>String</code> and <code>Function() callback </code></li>
 </ol>
-<p><code>Widget _buildButton( {BuildContext context, String title, Function() callback})</code></p>
+<p><code>Widget _buildButton( {BuildContext context, String title, VoidCallback onPressed})</code></p>
 <ol type="1" start="6">
 <li>Replace the RaisedButton parameters inside the method with the method arguments:</li>
 </ol>
 <pre><code>Widget _buildButton(
-   {BuildContext context, String title, VoidCallback callback}) {
+   {BuildContext context, String title, VoidCallback onPressed}) {
  return Padding(
    padding: const EdgeInsets.symmetric(horizontal: 4),
    child: RaisedButton(
      color: Theme.of(context).primaryColor, //Set the context
      textColor: Theme.of(context).primaryTextTheme.button.color,
      child: Text(title) //Set the title,
-     onPressed: callback, //Set the callback
+     onPressed: onPressed, //Set the callback
    ),
  );</code></pre>
 <ol type="1" start="7">
@@ -651,14 +651,14 @@ Row(
    child: _buildButton(
      context: context,
      title: &#34;Previous&#34;,
-     callback: () {},
+     onPressed: () {},
    ),
  ),
  Expanded(
    child: _buildButton(
      context: context,
      title: &#34;Next&#34;,
-     callback: () {},
+     onPressed: () {},
    ),
  ),</code></pre>
 
@@ -716,7 +716,7 @@ void _handlePrevious() {
 <pre><code>_buildButton(
     context: context,
     title: &#34;Next&#34;,
-    callback: _index &lt; (_images.length - 1) ? () {
+    onPressed: _index &lt; (_images.length - 1) ? () {
     _handleNext();
    } : null,
   )</code></pre>
@@ -726,7 +726,7 @@ void _handlePrevious() {
 <pre><code>_buildButton(
  context: context,
  title: &#34;Previous&#34;,
- callback: _index &gt; 0 ? () {
+ onPressed: _index &gt; 0 ? () {
    _handlePrevious();
  } : null,
 )</code></pre>
