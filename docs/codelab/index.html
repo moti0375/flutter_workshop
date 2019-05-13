@@ -29,7 +29,7 @@
     
       <google-codelab-step label="Introduction" duration="2">
         <p>Welcome to Tikal&#39;s TechRadar Flutter Workshop </p>
-<p>Flutter is a great Framework for beautiful apps both for Android and IOS, and in the future, for more platforms. </p>
+<p>Flutter is a great framework for creating beautiful apps both for Android and IOS, and in the future, for more platforms. </p>
 <p>The apps are based on a single codebase which developed in Google&#39;s Dart programming language. </p>
 <p><strong>Flutter Key Features:</strong></p>
 <ul>
@@ -38,7 +38,7 @@
 <li><strong>No UI bridges: </strong>Flutter doesn&#39;t use platform OEM widgets such as TextView or RecyclerView, instead, Flutter draw all widgets directly on device canvas. No bridges are used. </li>
 <li><strong>Dart - </strong>Dart is an object oriented language which utilise modern programming paradigms such as asynchronous <strong><em><code>Future&lt;&gt;, await</code></em></strong>, <strong><em><code>Streams</code></em></strong> and <strong><em><code>Listeners</code></em></strong><em><br>- </em>Use JIT compiler for debug and AOT for production</li>
 <li><strong>Google Support</strong><strong><em> - </em></strong>Flutter developed and supported by Google </li>
-<li><strong><em>Great Documentation - </em></strong>Flutter has reach and detailed documentation </li>
+<li><strong>Great Documentation</strong><strong><em> - </em></strong>Flutter has reach and detailed documentation </li>
 </ul>
 <table>
 <tr><td colspan="1" rowspan="1"><p><a href="https://flutter.dev/" target="_blank"><paper-button class="colored" raised>Flutter Home Page</paper-button></a><em>        </em></p>
@@ -46,7 +46,7 @@
 </td></tr>
 </table>
 <p><strong>What you will build:</strong></p>
-<p>In this workshop - codelab you will learn to install and setup Flutter environment,  create your first app, learn the basic concepts of Flutter such as <em><code>Widget</code></em>, <em><code>Context</code></em> and <em><code>State</code></em></p>
+<p>In this workshop - codelab, you will learn to install and setup Flutter environment,  create your first app, learn the basic concepts of Flutter such as <em><code>Widget</code></em>, <em><code>Context</code></em> and <em><code>State</code></em></p>
 <p><strong>Your app will: </strong></p>
 <ul>
 <li>Contain two pages - a Login page and an Images page</li>
@@ -59,16 +59,44 @@
 <li>Flutter building blocks - <code>Stateless</code> and <code>Stateful</code> widgets</li>
 <li>Get familiar with <code>Context</code> and <code>State</code></li>
 <li>Build UI </li>
+<li>Use Flutter hot reload </li>
 <li>Handle click events and use Navigator to move between pages</li>
 <li>Learn the Dart programming language</li>
+<li>Flutter IDE tips and tricks</li>
 </ul>
 <p><a href="https://github.com/tikalk/flutter_workshop.git" target="_blank"><paper-button class="colored" raised>Get the complete Source Code Here</paper-button></a></p>
 
 
       </google-codelab-step>
     
+      <google-codelab-step label="Install Android Studio" duration="25">
+        <aside class="warning"><p>If you already have Android Studio installed, you may jump to the </p>
+<p><a href="https://tikalk.github.io/flutter_workshop/codelab/#3" target="_blank"><paper-button class="colored" raised>Flutter SDK Setup</paper-button></a></p>
+</aside>
+<p><a href="https://dl.google.com/dl/android/studio/install/3.3.2.0/android-studio-ide-182.5314842-mac.dmg" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio For Mac</paper-button></a> <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Linux</paper-button></a></p>
+<p><a href="https://dl.google.com/dl/android/studio/install/3.4.0.18/android-studio-ide-183.5452501-windows.exe" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Windows</paper-button></a></p>
+<ol type="1" start="1">
+<li>Download Android Studio installation package, use the above links</li>
+<li>Follow Android Studio wizard to complete Android Studio installation </li>
+<li>When Installation completes, open Android Studio</li>
+<li>In the welcome screen, select Plugin from the Configure bottom right menu:</li>
+</ol>
+<p class="image-container"><img style="width: 408.50px" src="img/8a3f138759fae7f7.png"></p>
+<ol type="1" start="5">
+<li>Install the Flutter and Dart plugins:</li>
+<li>Restart Android Studio to apply plugins changes</li>
+<li>Close Android Studio</li>
+</ol>
+<p class="image-container"><img style="width: 418.97px" src="img/355da2e7611db714.png"><img style="width: 419.00px" src="img/c1f8540ab7f429b1.png"></p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Flutter SDK Setup" duration="35">
-        <p><a href="https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - MAC</paper-button></a>        <a href="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.2.1-stable.tar.xz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Linux        </paper-button><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Window</paper-button></a></p>
+        <aside class="warning"><p>If you already have Flutter SDK installed, you may jump to the </p>
+<p><a href="https://tikalk.github.io/flutter_workshop/codelab/#3" target="_blank"><paper-button class="colored" raised>Next Step</paper-button></a></p>
+</aside>
+<p><a href="https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - MAC</paper-button></a>        <a href="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.2.1-stable.tar.xz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Linux        </paper-button><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Window</paper-button></a></p>
 <ol type="1" start="1">
 <li>Download the Flutter SDK package for you platform, use the links above</li>
 <li>Extract the package into a selected folder, e.g: <code>$HOME/development/Flutter</code></li>
@@ -82,35 +110,11 @@ $HOME/Development/flutter/bin</code></pre>
 <li>Once your $PATH is updated, open a new Terminal and write the following command: <em><code>flutter doctor</code></em><img style="width: 519.50px" src="img/952d046d77fbecf6.png"></li>
 </ol>
 <ol type="1" start="5">
-<li>Flutter doctor helps us to complete the environment setup</li>
-<li>Proceed to IDE installation</li>
+<li>Follow Flutter doctor instructions to complete the setup until you get [✓] in the Android toolchain and Android studio</li>
+<li>Accept Android SDK licenses if required </li>
 </ol>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Install Android Studio" duration="25">
-        <p><a href="https://dl.google.com/dl/android/studio/install/3.3.2.0/android-studio-ide-182.5314842-mac.dmg" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio For Mac</paper-button></a> <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Linux</paper-button></a></p>
-<p><a href="https://dl.google.com/dl/android/studio/install/3.4.0.18/android-studio-ide-183.5452501-windows.exe" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Windows</paper-button></a></p>
-<ol type="1" start="1">
-<li>Download Android Studio installation package, use the above links</li>
-<li>Follow Android Studio wizard to complete Android Studio installation </li>
-<li>When Installation completes, open Android Studio</li>
-<li>In the welcome screen, select Plugin from the Configure bottom right menu:</li>
-</ol>
-<p class="image-container"><img style="width: 499.43px" src="img/8a3f138759fae7f7.png"></p>
-<ol type="1" start="5">
-<li>Install the Flutter and Dart plugins:</li>
-<li>Run flutter doctor command again, follow instructions until you will get <strong>[✓] </strong>for Android part<img style="width: 418.97px" src="img/355da2e7611db714.png"><img style="width: 419.00px" src="img/c1f8540ab7f429b1.png"></li>
-</ol>
-<p><strong>Create New Flutter Project</strong></p>
-<ol type="1" start="1">
-<li>Restart Android Studio</li>
-<li>In the welcome Screen Select: Create new Flutter Project</li>
-<li>In the next screen select Flutter Application</li>
-<li>Set project name and location</li>
-<li>Next, Enable Kotlin and Swift Support </li>
-<li>Complete the project initialization<img style="width: 624.00px" src="img/43e86427a47ca7b.png"></li>
+<ol type="1" start="7">
+<li>Proceed to next step </li>
 </ol>
 
 
@@ -125,6 +129,15 @@ $HOME/Development/flutter/bin</code></pre>
 <li>Explore Flutter project structure</li>
 <li>Experience hot reload </li>
 </ul>
+<p><strong>Create New Flutter Project</strong></p>
+<ol type="1" start="1">
+<li>Open Android Studio</li>
+<li>In the welcome Screen Select: Create new Flutter Project</li>
+<li>In the next screen select Flutter Application</li>
+<li>Set project name and location</li>
+<li>Next, enable Kotlin and Swift Support </li>
+<li>Complete the project initialization<img style="width: 624.00px" src="img/43e86427a47ca7b.png"></li>
+</ol>
 <p><strong>Explore Flutter Project Structure</strong></p>
 <aside class="special"><p><strong>Flutter Project Structure</strong> : </p>
 <ul>
@@ -143,14 +156,15 @@ $HOME/Development/flutter/bin</code></pre>
 </ol>
 <p class="image-container"><img style="width: 315.63px" src="img/174da8fe84aff790.png"></p>
 <ol type="1" start="3">
-<li>Select the default emulator and click <em><code>Next </code></em><img style="width: 619.50px" src="img/4fd8f222bbd392c3.png"></li>
+<li>Select the default emulator and click <em><code>Next </code></em></li>
 <li>Select a System Image, download it if required (Recommended for this tutorial, 27 - Oreo)</li>
 </ol>
-<p class="image-container"><img style="width: 501.50px" src="img/6279091fd252c4d7.png"></p>
+<p class="image-container"><img style="width: 557.50px" src="img/6279091fd252c4d7.png"></p>
 <ol type="1" start="5">
-<li>Continue to Configuration, set the emulator name, </li>
-<li>Click Finish. </li>
-<li>Click the run button to start the emulator <img style="width: 87.81px" src="img/bf6aff87c4f9cad3.png"></li>
+<li>Continue to configuration, set the emulator name, </li>
+<li>Click Finish. <img style="width: 553.50px" src="img/4fd8f222bbd392c3.png"></li>
+<li>Click the run button to start the emulator <img style="width: 80.81px" src="img/bf6aff87c4f9cad3.png"></li>
+<li>Once emulator is running, run flutter doctor command again, notice device connected. </li>
 </ol>
 <p><strong>Run the default app</strong></p>
 <ol type="1" start="1">
@@ -200,18 +214,25 @@ $HOME/Development/flutter/bin</code></pre>
 <li>Close all projects </li>
 <li>In the welcome screen select <em><code>Open an existing Android Studio Project</code></em></li>
 </ol>
-<p class="image-container"><img style="width: 530.50px" src="img/2fd15ac6e57836cf.png"></p>
+<p class="image-container"><img style="width: 482.50px" src="img/2fd15ac6e57836cf.png"></p>
 <ol type="1" start="4">
 <li>Select the cloned project directory and click <strong><em><code>Open</code></em></strong></li>
 </ol>
 <p class="image-container"><img style="width: 382.50px" src="img/b5c888b5df19eb1b.png"></p>
 <ol type="1" start="5">
 <li>The workshop project should be opened. </li>
+<li>Set the project root to be Source Root folder:</li>
 </ol>
+<ul>
+<li>Right click on the project root: <code>flutter_workshop</code></li>
+<li>Click on <em><code>Mark Directory as</code></em> </li>
+<li>Select <em><code>Source Root</code></em></li>
+</ul>
+<p class="image-container"><img style="width: 535.50px" src="img/6ff8adbf83371ed0.png"></p>
 <p><strong>Create the Application file</strong></p>
 <ol type="1" start="1">
-<li>Under the <em><code>lib</code></em> folder, create <code>application.dart</code> file</li>
-<li>Open the new application file, import the <em><code>package:flutter/material.dart</code></em> package</li>
+<li>Under the <em><code>lib</code></em> folder, find the <code>application.dart</code> file</li>
+<li>Open the application file, import the <em><code>package:flutter/material.dart</code></em> package</li>
 <li>Create <code>MyApp</code> class and extend <code>StatelessWidget</code></li>
 <li>Override the <em><code>build()</code></em>method and return a <em><code>MaterialApp</code></em> Widget</li>
 <li>In the MaterialApp constructor, add <code>title: &#34;Flutter Workshop&#34; </code></li>
@@ -230,7 +251,7 @@ class MyApp extends StatelessWidget{
 }
 </code></pre>
 <ol type="1" start="7">
-<li>Under the lib folder, create a <code>main.dart</code> file </li>
+<li>Under the <em><code>lib</code></em> folder, create a <code>main.dart</code> file </li>
 <li>Import the material package as in section 2</li>
 <li>In the main file, add main() function and call the runApp function:</li>
 </ol>
@@ -240,14 +261,14 @@ import &#39;package:flutter_workshop/application.dart&#39;;
 void main() =&gt; runApp(MyApp());
 </code></pre>
 <ol type="1" start="10">
-<li>Open Android Studio build in terminal, run the app by typing:  <em><code>flutter run -d all</code></em><code> </code></li>
+<li>Open Android Studio terminal, run the app by typing:  <br><em><code>flutter run -d all</code></em><code> </code></li>
 </ol>
 <aside class="warning"><p><strong>NOTE</strong>: <strong>The app should run with a black screen now</strong>. This is just fine!</p>
 </aside>
-<aside class="special"><p><strong>StatelessWidget</strong> - This is an immutable widget, once it is created, it cannot be changed. To make changes in a StatelessWidget, we can create a new one with different parameters. <br>StatelessWidget is one of Flutter fundamental building blocks. To learn more about it, check out it&#39;s <a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html" target="_blank">documentation</a> </p>
+<aside class="special"><p><strong>StatelessWidget</strong> - This is an immutable widget, once it is created, it cannot be changed. To make changes in a StatelessWidget, we can create a new one with different parameters. <br>StatelessWidget is one of Flutter&#39;s fundamental building blocks. <br>To learn more about it, check out it&#39;s <a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html" target="_blank">documentation</a> </p>
 </aside>
-<aside class="special"><p><strong>Easy Import</strong> - To import a class, stand on red marked class name, press <strong>Alr+Enter</strong>, select the class to import.</p>
-<p class="image-container"><img style="width: 609.00px" src="img/6c6c8c2bee48940.png"></p>
+<aside class="special"><p><strong>Easy Import and Override</strong> - To import a class or override a method, stand on red marked class name, press <strong>Alr+Enter</strong>, select the class to import or suggested action to override.</p>
+<p class="image-container"><img style="width: 392.50px" src="img/acb43d17f41c7182.png"><img style="width: 609.00px" src="img/6c6c8c2bee48940.png"></p>
 </aside>
 
 
@@ -359,7 +380,7 @@ child: RaisedButton(
 <li>Do hot reload, notice that the button is wrapped and disabled yet, that&#39;s because we didn&#39;t set an onPressed callback. We will do it in the next following steps. </li>
 </ol>
 <p class="image-container"><img style="width: 235.50px" src="img/e4c185df66524b48.png"></p>
-<p><strong>Padding and enabling</strong></p>
+<p><strong>Add Padding and Enabling</strong></p>
 <ol type="1" start="1">
 <li>Click on the RaisedButton, wrap it with Column as done above </li>
 </ol>
@@ -444,7 +465,14 @@ child: RaisedButton(
 </ol>
 <pre><code>class ImagesPage extends StatefulWidget {
  @override
- _ImagesPageState createState() =&gt; _ImagesPageState();
+ State&lt;StatefulWidget&gt; createState() =&gt;  _ImagesPagesState();
+}
+
+class _ImagesPagesState extends State&lt;ImagesPage&gt;{
+ @override
+ Widget build(BuildContext context) {
+   return null;
+ }
 }</code></pre>
 <p><strong>ImagesPage body</strong></p>
 <ol type="1" start="1">
@@ -487,7 +515,7 @@ child: RaisedButton(
 </aside>
 <p><strong>Open the ImagesPage </strong></p>
 <ol type="1" start="1">
-<li>In the home_page.dart file, select the Login RaisedButton</li>
+<li>In the <em><code>home_page.dart</code></em> file, select the Login RaisedButton</li>
 <li>In the onPressed: (){} callback, use the Flutter Navigator to open the new ImagesPage(): <br><em><code>Navigator.of(context).push(MaterialRoutePage(builder: (context){ ImagesPage()}));</code></em></li>
 </ol>
 <pre><code>onPressed: () {
