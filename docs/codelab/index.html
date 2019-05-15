@@ -70,10 +70,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="Install Android Studio" duration="25">
-        <aside class="warning"><p>If you already have Android Studio installed, you may jump to the </p>
-<p><a href="https://tikalk.github.io/flutter_workshop/codelab/#3" target="_blank"><paper-button class="colored" raised>Flutter SDK Setup</paper-button></a></p>
-</aside>
-<p><a href="https://dl.google.com/dl/android/studio/install/3.3.2.0/android-studio-ide-182.5314842-mac.dmg" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio For Mac</paper-button></a> <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Linux</paper-button></a></p>
+        <p><a href="https://dl.google.com/dl/android/studio/install/3.3.2.0/android-studio-ide-182.5314842-mac.dmg" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio For Mac</paper-button></a> <a href="https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Linux</paper-button></a></p>
 <p><a href="https://dl.google.com/dl/android/studio/install/3.4.0.18/android-studio-ide-183.5452501-windows.exe" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Android Studio Windows</paper-button></a></p>
 <ol type="1" start="1">
 <li>Download Android Studio installation package, use the above links</li>
@@ -96,7 +93,7 @@
         <aside class="warning"><p>If you already have Flutter SDK installed, you may jump to the </p>
 <p><a href="https://tikalk.github.io/flutter_workshop/codelab/#3" target="_blank"><paper-button class="colored" raised>Next Step</paper-button></a></p>
 </aside>
-<p><a href="https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.2.1-stable.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - MAC</paper-button></a>        <a href="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.2.1-stable.tar.xz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Linux        </paper-button><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Window</paper-button></a></p>
+<p><a href="https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.5.4-hotfix.2-stable.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - MAC</paper-button></a>        <a href="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_v1.5.4-hotfix.2-stable.tar.xz" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Linux        </paper-button><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Flutter - Window</paper-button></a></p>
 <ol type="1" start="1">
 <li>Download the Flutter SDK package for you platform, use the links above</li>
 <li>Extract the package into a selected folder, e.g: <code>$HOME/development/Flutter</code></li>
@@ -154,7 +151,7 @@ $HOME/Development/flutter/bin</code></pre>
 <li>Click on the AVD manager icon: <img style="width: 22.84px" src="img/992fae44b0e7de8.png"></li>
 <li>Click on <em><code>+Create Virtual Device</code></em> button</li>
 </ol>
-<p class="image-container"><img style="width: 315.63px" src="img/174da8fe84aff790.png"></p>
+<p class="image-container"><img style="width: 294.50px" src="img/174da8fe84aff790.png"></p>
 <ol type="1" start="3">
 <li>Select the default emulator and click <em><code>Next </code></em></li>
 <li>Select a System Image, download it if required (Recommended for this tutorial, 27 - Oreo)</li>
@@ -166,6 +163,7 @@ $HOME/Development/flutter/bin</code></pre>
 <li>Click the run button to start the emulator <img style="width: 80.81px" src="img/bf6aff87c4f9cad3.png"></li>
 <li>Once emulator is running, run flutter doctor command again, notice device connected. </li>
 </ol>
+<p class="image-container"><img style="width: 1369.11px" src="img/952d046d77fbecf6.png"></p>
 <p><strong>Run the default app</strong></p>
 <ol type="1" start="1">
 <li>Run the app from the Run icon <img style="width: 30.08px" src="img/c1554848bc8a1c5b.png"></li>
@@ -253,7 +251,7 @@ class MyApp extends StatelessWidget{
 <ol type="1" start="7">
 <li>Under the <em><code>lib</code></em> folder, create a <code>main.dart</code> file </li>
 <li>Import the material package as in section 2</li>
-<li>In the main file, add main() function and call the runApp function:</li>
+<li>In the main file, add main() function and call the runApp function with MyApp() as a parameter:</li>
 </ol>
 <pre><code>import &#39;package:flutter/material.dart&#39;;
 import &#39;package:flutter_workshop/application.dart&#39;;
@@ -265,10 +263,21 @@ void main() =&gt; runApp(MyApp());
 </ol>
 <aside class="warning"><p><strong>NOTE</strong>: <strong>The app should run with a black screen now</strong>. This is just fine!</p>
 </aside>
+<aside class="special"><p><strong>Main function</strong> - The main function is the entry point of the application</p>
+</aside>
 <aside class="special"><p><strong>StatelessWidget</strong> - This is an immutable widget, once it is created, it cannot be changed. To make changes in a StatelessWidget, we can create a new one with different parameters. <br>StatelessWidget is one of Flutter&#39;s fundamental building blocks. <br>To learn more about it, check out it&#39;s <a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html" target="_blank">documentation</a> </p>
+</aside>
+<aside class="special"><p><strong>MaterialApp</strong> - In Flutter almost everything is a widget, actually the whole app is a Widget!! </p>
+<p>This widget represents the root of the whole app UI structure. In this widget we defines our app home screen and more commonly used configurations such as our app theme, debug mode and more!</p>
+<p>To learn more about the MaterialApp widget, checkout it&#39;s <a href="https://docs.flutter.io/flutter/material/MaterialApp-class.html" target="_blank">documentation</a></p>
+<p class="image-container"><img style="width: 293.50px" src="img/5e08dedfdb386c79.png"></p>
 </aside>
 <aside class="special"><p><strong>Easy Import and Override</strong> - To import a class or override a method, stand on red marked class name, press <strong>Alr+Enter</strong>, select the class to import or suggested action to override.</p>
 <p class="image-container"><img style="width: 392.50px" src="img/acb43d17f41c7182.png"><img style="width: 609.00px" src="img/6c6c8c2bee48940.png"></p>
+</aside>
+<aside class="special"><p><strong>Dart Inline Syntax - </strong>If a function execute a single operation we can use the inline synatx:<br></p>
+<p><strong><code>void main() =&gt; runApp(MyApp());</code></strong></p>
+<p><strong><code>void main() {</code></strong><br>  <strong><code>runApp(MyApp());</code></strong><br><strong><code>}</code></strong></p>
 </aside>
 
 
@@ -277,7 +286,7 @@ void main() =&gt; runApp(MyApp());
       <google-codelab-step label="Home Page" duration="20">
         <p><strong>What you will do here</strong></p>
 <ul>
-<li>Create app the app HomePage dart file</li>
+<li>Create the app HomePage dart file</li>
 <li>Learn about Flutter page structure, AppBar, Scaffold and Body</li>
 <li>Use Flutter Hot Reload </li>
 <li>Learn about the Stateless Widget</li>
@@ -287,7 +296,7 @@ void main() =&gt; runApp(MyApp());
 <li>Under the lib folder, create a new <code>pages</code> package </li>
 <li>Inside the new <code>pages</code> package, create <code>home_page</code> package</li>
 <li>Under the <em>home_page</em> package, create a new <em><code>home_page.dart</code></em> file</li>
-<li>Open the <em>home_page.dart</em> file, create the <code>HomePage</code> class, extends <code>StatelessWidget</code>, override the <code>build()</code>method and return a <code>Container()</code><br>(Import the <em>material</em> package as necessary)</li>
+<li>Open the <em><code>home_page.dart</code></em> file, create the <code>HomePage</code> class, extends <code>StatelessWidget</code>, override the <code>build()</code>method and return a <code>Container()</code><br>(Import the <em>material</em> package as necessary)</li>
 </ol>
 <pre><code>import &#39;package:flutter/material.dart&#39;;
 
@@ -297,6 +306,8 @@ class HomePage extends StatelessWidget {
    return Container();
  }
 }</code></pre>
+<aside class="special"><p><strong>Tip</strong> - Use the <strong>stless</strong> shortcut to create a Stateless Widget template</p>
+</aside>
 <ol type="1" start="5">
 <li>Go back to the <em>application.dart</em> replace the Container() with the new <em>HomePage()<br>Make import as necessary<br></em></li>
 </ol>
@@ -327,13 +338,26 @@ class HomePage extends StatelessWidget {
 <li>Inside the Scaffold constructor, under the title: argument, add the body: argument and set it to a <code>Center()</code>Widget</li>
 <li>Set the Center child: widget to Text(&#34;Hello Flutter&#34;)<br></li>
 </ol>
-<pre><code>appBar: AppBar(
- title: Text(&#34;Flutter Workshop&#34;),
-),
-body: Center(
- child:  Text(&#34;Hello Flutter&#34;),
-),
-</code></pre>
+<pre><code>return Scaffold(
+   appBar: AppBar(
+     title: Text(&#34;Flutter workshop&#34;),
+   ),
+   body: Center(
+     child: Text(&#34;Hello Flutter&#34;),
+   ),
+ );
+}</code></pre>
+<aside class="special"><p><strong>Scaffold Widget</strong> - This widget represents a Material Design style layout structure which contains material design elements such as:</p>
+<ul>
+<li>Appbar</li>
+<li>Body</li>
+<li>Floating Action Button </li>
+<li>Bottom Navigation </li>
+</ul>
+<p>Each page probably gonna have a Scaffold widget in it&#39;s root. </p>
+<p>To learn more about the Scaffold widget, checkout it&#39;s <a href="https://docs.flutter.io/flutter/material/Scaffold-class.html" target="_blank">documentation</a></p>
+<p class="image-container"><img style="width: 233.50px" src="img/5ac45848eb59d0fc.png"></p>
+</aside>
 <aside class="warning"><p>Note: In Flutter, you can add commas <code>,</code> after the last object&#39;s constructor parameter.</p>
 <p>e.g:  <code>Center(child: Text(&#34;Hello World&#34;)</code><strong><code>,</code></strong><code>)</code></p>
 <p>This helps the editor to format the code so it can be more readable.</p>
@@ -390,7 +414,7 @@ child: RaisedButton(
 <p>to the children beneath </p>
 </aside>
 <ol type="1" start="2">
-<li>Do hot reload, the button will jump to the top of the screen, this because of the Column default behavior</li>
+<li>Do hot reload, <strong>the button will jump to the top of the screen</strong>, this because of the Column default behavior</li>
 <li>In the Column constructor, above the <em><code>children: &lt;Widget&gt;[]</code></em> array, add the following attributes:<br><code>mainAxisAlignment: MainAxisAlignment.center,<br>mainAxisSize: MainAxisSize.min,<br>crossAxisAlignment: CrossAxisAlignment.stretch,</code></li>
 <li>Do hot reload, the button is now centered again and stretched to all screen width</li>
 <li>Let&#39;s add some padding to the button, Select the <em><code>RaisedButton</code></em> press Alt+Enter</li>
@@ -407,7 +431,7 @@ child: RaisedButton(
  }, 
 ), //RaisedButton</code></pre>
 <ol type="1" start="11">
-<li>Do hot reload, the button should be enabled, click the button and watch the log messages in the console. </li>
+<li>Do hot reload, <strong>the button should be enabled</strong>, click the button and watch the log messages in the console. </li>
 </ol>
 <p><strong>Styling the button and text</strong></p>
 <ol type="1" start="1">
@@ -559,7 +583,28 @@ class _ImagesPagesState extends State&lt;ImagesPage&gt;{
 <li>Under the children widgets array, add the <code>Image.network()</code> widget</li>
 <li>Set the URL to _imageUrl variable </li>
 <li>Do hot reload or hot restart</li>
+<li>Your page should look like this now:<br><img style="width: 361.76px" src="img/75f72d97e107103.png"></li>
+<li>It might show a yellow and black error, this might happen in small screens as the image overlapping the screen size. We will fix it in the next step. </li>
 </ol>
+<p><strong>Fix Image Overlap </strong></p>
+<ol type="1" start="1">
+<li>Select the Container of the Image widget.</li>
+<li>Click Alt+Enter  </li>
+<li>Select Wrap with new widget</li>
+<li>Set the name of the widget to Expanded</li>
+<li>Set the image fit to <em><code>fit: BoxFit.fill</code></em></li>
+</ol>
+<pre><code>Expanded(
+ child: Container(
+   padding: const EdgeInsets.all(8),
+   child: Image.network(_imageUrl, fit: BoxFit.fill,),
+ ),
+)
+</code></pre>
+<p class="image-container"><img style="width: 256.50px" src="img/2d5ebf7f8ee4e43.png"></p>
+<aside class="special"><p><strong>Expanded widget: </strong>This widget uses to expand a child of a Row or Column</p>
+<p>To learn more about it checkout for its <a href="https://flutter.dev/docs/development/ui/widgets/layout" target="_blank">documentation</a></p>
+</aside>
 <p><strong>Add Two Buttons</strong></p>
 <ol type="1" start="1">
 <li>Under the Image.network widget add a <code>Row()</code> widget.</li>
