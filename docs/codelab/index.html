@@ -28,14 +28,15 @@
                   feedback-link="https://github.com/tikalk/flutter_workshop">
     
       <google-codelab-step label="Introduction" duration="2">
-        <p>Welcome to Tikal&#39;s TechRadar Flutter Workshop </p>
+        <p>Welcome to Tikal&#39;s Flutter Workshop </p>
 <p>Flutter is a great framework for creating beautiful apps both for Android and IOS, and in the future, for more platforms. </p>
-<p>The apps are based on a single codebase which developed in Google&#39;s Dart programming language. </p>
+<p>Flutter apps are based on a single codebase developed in Google&#39;s Dart programming language. </p>
 <p><strong>Flutter Key Features:</strong></p>
 <ul>
 <li><strong>Single Codebase: </strong>Develop a beautiful mobile apps based on single codebase </li>
 <li><strong>Open source: </strong>Flutter is an open source SDK</li>
-<li><strong>No UI bridges: </strong>Flutter doesn&#39;t use platform OEM widgets such as TextView or RecyclerView, instead, Flutter draw all widgets directly on device canvas. No bridges are used. </li>
+<li><strong>No UI bridges: </strong>Flutter doesn&#39;t use platform OEM widgets such as TextView or RecyclerView, instead, Flutter draws all widgets directly on device canvas. <br>No bridges are used. <strong>Flutter owns every pixel on screen!</strong></li>
+<li><strong>Performance - </strong>Flutter UI and animation are great </li>
 <li><strong>Dart - </strong>Dart is an object oriented language which utilise modern programming paradigms such as asynchronous <strong><em><code>Future&lt;&gt;, await</code></em></strong>, <strong><em><code>Streams</code></em></strong> and <strong><em><code>Listeners</code></em></strong><em><br>- </em>Use JIT compiler for debug and AOT for production</li>
 <li><strong>Google Support</strong><strong><em> - </em></strong>Flutter developed and supported by Google </li>
 <li><strong>Great Documentation</strong><strong><em> - </em></strong>Flutter has reach and detailed documentation </li>
@@ -53,7 +54,11 @@
 <li>Download and show images from the internet</li>
 <li>Use the Flutter <code>Navigator</code> to move between pages</li>
 </ul>
-<p class="image-container"><img style="width: 279.50px" src="img/590393cbfbb25c9b.png"><img style="width: 283.50px" src="img/7445087cdfdfecd2.png"></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 279.50px" src="img/590393cbfbb25c9b.png"></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 283.50px" src="img/7445087cdfdfecd2.png"></p>
+</td></tr>
+</table>
 <p><strong>What you will learn:</strong></p>
 <ul>
 <li>Flutter building blocks - <code>Stateless</code> and <code>Stateful</code> widgets</li>
@@ -90,7 +95,7 @@
 <p><strong>Explore Flutter Project Structure</strong></p>
 <aside class="special"><p><strong>Flutter Project Structure</strong> : </p>
 <ul>
-<li><strong>Project root: </strong>Include configuration files such as: pubspec.yaml, README.md ect&#39;</li>
+<li><strong>Project root: </strong>Include configuration files such as: <strong>pubspec.yaml,</strong> README.md ect&#39;</li>
 <li><strong>lib - </strong>This folder is where we write our app Dart code</li>
 <li><strong>android - </strong>A native android project folder. All Android configurations such as gradle and Manifest will be done here</li>
 <li><strong>Ios - </strong>A native IOS project </li>
@@ -113,7 +118,7 @@
 <li>Continue to configuration, set the emulator name, </li>
 <li>Click Finish. <img style="width: 553.50px" src="img/4fd8f222bbd392c3.png"></li>
 <li>Click the run button to start the emulator <img style="width: 80.81px" src="img/6eada933b44fbe58.png"></li>
-<li>Once emulator is running, run flutter doctor command again, notice device connected. </li>
+<li>Once the emulator is running, run flutter doctor command, notice device connected. </li>
 </ol>
 <p class="image-container"><img style="width: 1369.11px" src="img/952d046d77fbecf6.png"></p>
 <p><strong>Run the default app</strong></p>
@@ -145,9 +150,9 @@
       <google-codelab-step label="Create Application" duration="20">
         <p><strong>What you will do here:</strong></p>
 <ul>
-<li>Create the project Application root </li>
+<li>Create the project root Application</li>
 <li>Learn about the MaterialApp Widget</li>
-<li>Create the main function which is the entry point of the app</li>
+<li>Create the <em><code>main()</code></em> function which is the entry point of the app</li>
 <li>Run Flutter app from the command line</li>
 </ul>
 <p><strong>Get Project Source Code</strong></p>
@@ -213,21 +218,22 @@ void main() =&gt; runApp(MyApp());
 <ol type="1" start="10">
 <li>Open Android Studio terminal, run the app by typing:  <br><em><code>flutter run -d all</code></em><code> </code></li>
 </ol>
-<aside class="warning"><p><strong>NOTE</strong>: <strong>The app should run with a black screen now</strong>. This is just fine!</p>
+<aside class="warning"><p><strong>NOTE</strong>: <strong>The app should run with a black screen now</strong>. </p>
+<p>This is just fine!</p>
 </aside>
 <aside class="special"><p><strong>Main function</strong> - The main function is the entry point of the application</p>
 </aside>
 <aside class="special"><p><strong>StatelessWidget</strong> - This is an immutable widget, once it is created, it cannot be changed. To make changes in a StatelessWidget, we can create a new one with different parameters. <br>StatelessWidget is one of Flutter&#39;s fundamental building blocks. <br>To learn more about it, check out it&#39;s <a href="https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html" target="_blank">documentation</a> </p>
 </aside>
-<aside class="special"><p><strong>MaterialApp</strong> - In Flutter almost everything is a widget, actually the whole app is a Widget!! </p>
-<p>This widget represents the root of the whole app UI structure. In this widget we defines our app home screen and more commonly used configurations such as our app theme, debug mode and more!</p>
+<aside class="special"><p><strong>MaterialApp</strong> - In Flutter almost everything is a Widget, actually the whole app is a Widget!! </p>
+<p>This widget represents the root of the whole app UI structure. In this widget we define our app home screen and more commonly used configurations such as our app theme, debug mode and more!</p>
 <p>To learn more about the MaterialApp widget, checkout it&#39;s <a href="https://docs.flutter.io/flutter/material/MaterialApp-class.html" target="_blank">documentation</a></p>
 <p class="image-container"><img style="width: 293.50px" src="img/68226b7e7fde0bbd.png"></p>
 </aside>
 <aside class="special"><p><strong>Easy Import and Override</strong> - To import a class or override a method, stand on red marked class name, press <strong>Alr+Enter</strong>, select the class to import or suggested action to override.</p>
 <p class="image-container"><img style="width: 392.50px" src="img/70f6852cef01e8c.png"><img style="width: 609.00px" src="img/b1e39625269f4420.png"></p>
 </aside>
-<aside class="special"><p><strong>Dart Inline Syntax - </strong>If a function execute a single operation we can use the inline synatx:<br></p>
+<aside class="special"><p><strong>Dart Inline Syntax - </strong>If a function execute a single operation we can use the inline syntax:<br></p>
 <p><strong><code>void main() =&gt; runApp(MyApp());</code></strong></p>
 <p><strong><code>void main() {</code></strong><br>  <strong><code>runApp(MyApp());</code></strong><br><strong><code>}</code></strong></p>
 </aside>
@@ -261,13 +267,12 @@ class HomePage extends StatelessWidget {
 <aside class="special"><p><strong>Tip</strong> - Use the <strong>stless</strong> shortcut to create a Stateless Widget template</p>
 </aside>
 <ol type="1" start="5">
-<li>Go back to the <em>application.dart</em> replace the Container() with the new <em>HomePage()<br>Make import as necessary<br></em></li>
+<li>Go back to the <em><code>application.dart</code></em> replace the Container() with the new <em>HomePage()<br>Make import as necessary<br></em></li>
 </ol>
 <pre><code>return MaterialApp(
  title: &#34;Flutter workshop&#34;,
  home: HomePage(),
-);
-</code></pre>
+)</code></pre>
 <ol type="1" start="6">
 <li>Do Hot Reload - In the terminal type <em><code>r</code></em>, <strong>app still has black screen</strong>. </li>
 </ol>
@@ -299,21 +304,21 @@ class HomePage extends StatelessWidget {
    ),
  );
 }</code></pre>
-<aside class="special"><p><strong>Scaffold Widget</strong> - This widget represents a Material Design style layout structure which contains material design elements such as:</p>
+<aside class="special"><p><strong>Scaffold Widget</strong> - This widget represents a Material Design page layout structure which contains material design elements such as:</p>
 <ul>
 <li>Appbar</li>
 <li>Body</li>
 <li>Floating Action Button </li>
 <li>Bottom Navigation </li>
 </ul>
-<p>Each page probably gonna have a Scaffold widget in it&#39;s root. </p>
+<p>Each of our app pages probably gonna have a Scaffold widget in its root. </p>
 <p>To learn more about the Scaffold widget, checkout it&#39;s <a href="https://docs.flutter.io/flutter/material/Scaffold-class.html" target="_blank">documentation</a></p>
 <p class="image-container"><img style="width: 233.50px" src="img/cacb906108c61aa3.png"></p>
 </aside>
 <aside class="warning"><p>Note: In Flutter, you can add commas <code>,</code> after the last object&#39;s constructor parameter.</p>
-<p>e.g:  <code>Center(child: Text(&#34;Hello World&#34;)</code><strong><code>,</code></strong><code>)</code></p>
+<p>e.g:  <em><code>Center(child: Text(&#34;Hello World&#34;)</code></em><strong><em><code>,</code></em></strong><em><code>)</code></em></p>
 <p>This helps the editor to format the code so it can be more readable.</p>
-<p>To reformat the code, press Cmd+Shift+L</p>
+<p>To reformat the code, press <em><code>Cmd+Shift+L</code></em></p>
 </aside>
 <ol type="1" start="6">
 <li>Do hot reload, you should now see the homepage  now: </li>
