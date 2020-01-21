@@ -4,9 +4,9 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2019-05-15T07:40:38Z",
+  "updated": "2020-01-21T12:02:27Z",
   "id": "Flutter Workshop",
-  "duration": 212,
+  "duration": 152,
   "title": "Tikal TechRadar Flutter Workshop",
   "authors": "Moti Bartov",
   "summary": "In this Flutter codelab, we will create a first Flutter app. \nThe app has two pages, a Login page and an Images page were the user forward after login. \nDuring this codelab, we will learn the basics of creating a Flutter application.\nUnderstand the basic Flutter notions such as Widget, Context and State. \nUI design and event handling, and more.",
@@ -24,6 +24,6 @@
     "flutter",
     "ios"
   ],
-  "feedback": "https://github.com/moti0375/flutter_workshop",
+  "feedback": "https://github.com/tikalk/flutter_workshop",
   "url": "Flutter Workshop"
 }
