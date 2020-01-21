@@ -1,5 +1,3 @@
-# flutter_workshop
-
 # Flutter Workshop
 Flutter is a great framework for creating beautiful apps both for Android and IOS, and in the future, for more platforms. 
 The apps are based on a single codebase which developed in Google’s Dart programming language. 
