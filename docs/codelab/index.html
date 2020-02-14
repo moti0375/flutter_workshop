@@ -500,7 +500,7 @@ Scaffold(
 <p><strong>Open the GalleryPage </strong></p>
 <ol type="1" start="1">
 <li>In the <em><code>home_page.dart</code></em> file, select the Login RaisedButton</li>
-<li>In the onPressed: (){} callback, use the Flutter Navigator to open the new ImagesPage(): <br><em><code>Navigator.of(context).push(MaterialPageRoute(builder: (context){ return GalleryPage();}));</code></em></li>
+<li>In the onPressed: (){} callback, use the Flutter Navigator to open the new <em><code>GalleryPage()</code></em>: <br><em><code>Navigator.of(context).push(MaterialPageRoute(builder: (context){ return GalleryPage();}));</code></em></li>
 </ol>
 <pre><code>//home_page.dart
 //...
@@ -615,7 +615,9 @@ onPressed: () {
 <li>Under the <em><code>Expanded</code></em> widget add a <code>Row()</code> widget.</li>
 <li>Set the Row attributes and add an empty children&lt;Widget&gt;[] array:</li>
 </ol>
-<pre><code>Expanded(
+<pre><code>//galerry_page.dart
+...
+Expanded(
  child: Container(
    padding: EdgeInsets.all(8),
    child: Image.network(_imageUrl, fit: BoxFit.fill,),
@@ -634,7 +636,8 @@ Row(
 <li>Set the text style to: <em><code>Text(&#34;Previous&#34;, style: TextStyle(fontSize: 25))</code></em></li>
 <li>Set the second button child: to Text(&#34;Next&#34;)</li>
 </ol>
-<pre><code>...
+<pre><code>//galerry_page.dart
+...
  children: &lt;Widget&gt;[
    RaisedButton(
         child: Text(&#34;Previous&#34;, style: TextStyle(fontSize: 25)),
@@ -661,7 +664,9 @@ Row(
 <li>Do hot reload, buttons should now have some padding,</li>
 </ol>
 <p class="image-container"><img style="width: 366.00px" src="img/11cee95ce3307569.png"></p>
-<pre><code>Expanded(
+<pre><code>//galerry_page.dart
+...
+Expanded(
  child: Padding(
    padding: const EdgeInsets.symeetric(horizontal: 8.0),
    child: RaisedButton(
@@ -695,7 +700,9 @@ Row(
 <li>In the first button constructor, right above the child: argument, set button color:<br><em><code>color: Theme.of(context).primaryColor</code></em></li>
 <li>Next, under the color: argument, set the textColor: <br><em><code>textColor: Theme.of(context).primaryTextTheme.button.color</code></em></li>
 </ol>
-<pre><code>RaisedButton(
+<pre><code>//gallery_page.dart
+...
+RaisedButton(
  color: Theme.of(context).primaryColor
  textColor: Theme.of(context).primaryTextTheme.button.color
  child: .... ,
@@ -785,7 +792,9 @@ void _handlePrevious() {
 <li>Notice that in these methods we call the <em><code>setState((){}).</code></em> <br>This method is the Flutter framework that causes our widget to rebuild with the new state. </li>
 <li>In the Image.network widget, replace the <code>_imageUrl</code> with <code>_images[_index]</code><br></li>
 </ol>
-<pre><code>Image.network(
+<pre><code>//gallery_page.dart
+//...
+Image.network(
    images[index],
    fit: BoxFit.fill,
   ),</code></pre>
@@ -795,7 +804,9 @@ void _handlePrevious() {
 <li>We should do the same for the <em><code>Previous</code></em> button when reaching the first image in the list.</li>
 <li>In the ‘Next&#39; RaisedButton, set the onPressed: callback to null as following: </li>
 </ol>
-<pre><code>_buildButton(
+<pre><code>//gallery_page.dart
+//...
+_buildButton(
     context: context,
     title: &#34;Next&#34;,
     onPressed: _index &lt; (_images.length - 1) ? () {
@@ -805,7 +816,9 @@ void _handlePrevious() {
 <ol type="1" start="4">
 <li>In the ‘Previous&#39; RaisedButton, set the onPressed: callback to null as following:</li>
 </ol>
-<pre><code>_buildButton(
+<pre><code>//gallery_page.dart
+//...
+_buildButton(
  context: context,
  title: &#34;Previous&#34;,
  onPressed: _index &gt; 0 ? () {
@@ -833,7 +846,9 @@ void _handlePrevious() {
 <li>In the new package, create a <em><code>custom_raised_button.dart</code></em> file </li>
 <li>In the new file, create a CustomRaisedButton class extends StatelessWidger</li>
 </ol>
-<pre><code>class CustomRaisedButton extends StatelessWidget {
+<pre><code>//custom_raised_button.dart
+...
+class CustomRaisedButton extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
    return Container();
@@ -842,15 +857,19 @@ void _handlePrevious() {
 <ol type="1" start="4">
 <li>Go to the app home_page.dart file</li>
 <li>Copy the content of the login RaisedButton (use Option+UpArrow for easy selection) <img style="width: 624.00px" src="img/1dd6a88961c1ca09.png"></li>
-<li>Go back to the new CustomRaisedButton class and past it instead the Container widget</li>
+<li>Go back to the new CustomRaisedButton class and paste it instead the Container widget</li>
 <li>At the top of the class declare the following class members:<br><em><code>final VoidCallback onPressed;<br>final Widget child;</code></em></li>
 <li>Create a named constructor for these members:</li>
 </ol>
-<pre><code>const CustomRaisedButton({Key key, this.onPressed, this.child}) : super(key: key);</code></pre>
+<pre><code>//custom_raised_button.dart
+...
+const CustomRaisedButton({Key key, this.onPressed, this.child}) : super(key: key);</code></pre>
 <ol type="1" start="9">
 <li>Replace the button onPressed and child widget with the class members</li>
 </ol>
-<pre><code>class CustomRaisedButton extends StatelessWidget {
+<pre><code>//custom_raised_button.dart
+...
+class CustomRaisedButton extends StatelessWidget {
 
  final VoidCallback onPressed;
  final Widget child;
@@ -875,7 +894,9 @@ void _handlePrevious() {
 <ol type="1" start="2">
 <li>Set the RoundedRectangleBorder</li>
 </ol>
-<pre><code>shape: RoundedRectangleBorder(
+<pre><code>//custom_raised_button.dart
+...
+shape: RoundedRectangleBorder(
  borderRadius: BorderRadius.all(Radius.circular(10)),
  side: BorderSide(color: Theme.of(context).buttonColor)
 )</code></pre>
@@ -884,7 +905,9 @@ void _handlePrevious() {
 <li>Go to the home_page.dart</li>
 <li>Replace the RaisedButton with the new CustomRaisedButton</li>
 </ol>
-<pre><code>CustomRaisedButton(
+<pre><code>//custom_raised_button.dart
+...
+CustomRaisedButton(
  child: Text(
    &#34;Login&#34;,
    style: TextStyle(fontSize: 25),
@@ -901,7 +924,9 @@ void _handlePrevious() {
 <li>In <em><code>gallery_page.dart</code></em> file replace the RaisedButton in the <em><code>_buildGalleryButton</code></em> method with the new <em><code>CustomRaisedButton</code></em> </li>
 <li>Remove the BuildContext parameter from the method and from method callers</li>
 </ol>
-<pre><code>Widget _buildGalleryButton(String title, VoidCallback onPressed) {
+<pre><code>//galerry_page.dart
+...
+Widget _buildGalleryButton(String title, VoidCallback onPressed) {
  return Padding(
      padding: const EdgeInsets.symmetric(horizontal: 8.0),
      child: CustomRaisedButton(
