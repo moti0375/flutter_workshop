@@ -33,7 +33,8 @@
 <p>Flutter apps are based on a single codebase developed in Google&#39;s Dart programming language. </p>
 <p><strong>Flutter Key Features:</strong></p>
 <ul>
-<li><strong>Single Codebase: </strong>Develop a beautiful mobile apps based on single codebase </li>
+<li><strong>Cross Platform: </strong>Developing for IOS, Android and more in the future</li>
+<li><strong>Single Codebase: </strong>Develop a beautiful cross platform apps based on single codebase </li>
 <li><strong>Open source: </strong>Flutter is an open source SDK</li>
 <li><strong>Fast Development Cycle: </strong>Fast development cycle with HotReload</li>
 <li><strong>No UI bridges: </strong>Flutter doesn&#39;t use platform OEM widgets such as TextView or RecyclerView, instead, Flutter draws all widgets directly on device canvas. <br>No bridges are used. <strong>Flutter owns every pixel on screen!</strong></li>
@@ -324,7 +325,7 @@ return Scaffold(
 </ol>
 <p class="image-container"><img style="width: 324.36px" src="img/c74a3dd68cddf15.png"></p>
 <ol type="1" start="3">
-<li>Rename the new widget to <code>RaisedButton()</code>,<br>In the RaisedButton constructor, set the child: widget to Text(&#34;Login&#34;)</li>
+<li>Rename the new widget to <code>RaisedButton()</code>,<br>In the RaisedButton constructor, set the child: widget to <strong><em><code>Text(&#34;Login&#34;)</code></em></strong></li>
 <li>Add a comma after the button <em><code>Text(),</code></em> press Alt+Enter to reformat the code<br>Notice the difference with and without the <strong><code>,</code></strong></li>
 </ol>
 <pre><code>//home_page.dart
@@ -790,7 +791,7 @@ void _handlePrevious() {
  }</code></pre>
 <ol type="1" start="5">
 <li>Notice that in these methods we call the <em><code>setState((){}).</code></em> <br>This method is the Flutter framework that causes our widget to rebuild with the new state. </li>
-<li>In the Image.network widget, replace the <code>_imageUrl</code> with <code>_images[_index]</code><br></li>
+<li>In the <em><code>Image.network</code></em> widget, replace the <em><code>_imageUrl</code></em> with <em><code>_images[_index]</code></em><br></li>
 </ol>
 <pre><code>//gallery_page.dart
 //...
@@ -832,7 +833,7 @@ _buildButton(
 
       </google-codelab-step>
     
-      <google-codelab-step label="Custom Raised Button" duration="25">
+      <google-codelab-step label="Custom Raised Button" duration="15">
         <p><strong>What you do here</strong></p>
 <ul>
 <li>Create a custom decorated raised button with rounded corners </li>
@@ -1073,6 +1074,8 @@ Navigator.of(context).push(MaterialPageRoute(builder: (context) {return GalleryP
 <p>You may find more great Flutter codelabs in the official <a href="https://flutter.dev/docs/codelabs" target="_blank">Flutter codelab page</a>! </p>
 <p><strong>Dart pad :</strong></p>
 <p><a href="https://dartpad.dartlang.org/" target="_blank">An online dart playground</a>: You can use it for coding and learning Dart online.</p>
+<p><strong>Flutter Studio :</strong></p>
+<p><a href="https://flutterstudio.app/" target="_blank">An online Flutter widget editor</a>: <br>This cool page lets you design and create Flutter widgets and pages, with a cool visual editor. It also generates the Flutter code for you. (Just like Android Studio XML layout editor)</p>
 
 
       </google-codelab-step>
