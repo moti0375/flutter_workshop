@@ -270,7 +270,7 @@ return MaterialApp(
 <li>Body </li>
 </ul>
 <ol type="1" start="2">
-<li>Inside the Scaffold constructor, under the title: argument, add the <em><code>body:</code></em> argument and set it to a <code>Center()</code>Widget</li>
+<li>Inside the Scaffold constructor, add the <em><code>body:</code></em> argument and set it to a <code>Center()</code> Widget</li>
 <li>Set the Center child: widget to Text(&#34;Hello Flutter&#34;)<br></li>
 </ol>
 <pre><code>//main_page.dart
@@ -404,7 +404,7 @@ Container(
 <ul>
 <li>Create a new page</li>
 <li>Learn about the StatefulWidget and State</li>
-<li>Rearrange sub widgets in a page</li>
+<li>Arrange widgets in a page</li>
 <li>Download images from the network</li>
 <li>Use the Flutter Navigator Widget to move between pages </li>
 </ul>
@@ -415,9 +415,9 @@ Container(
 <p class="image-container"><img style="width: 348.50px" src="img/cd37b844c35cd4b4.png"></p>
 <ol type="1" start="2">
 <li>In the new package create new dart file: <em><code>gallery_page.dart</code></em></li>
-<li>In the new file, create <em><code>ImagesPage</code></em> class, extends <em><code>StatefulWidget</code></em></li>
+<li>In the new file, create <em><code>GalleryPage</code></em> class, extends <em><code>StatefulWidget</code></em></li>
 <li>In the new class, override the <em><code>createState()</code></em> method</li>
-<li>In the ImagesPage, under the <em><code>ImagesPage class</code></em>, create another class <code>_</code><em><code>GalleryPageState</code></em> class that extends <em><code>State&lt;ImagesPage&gt;</code></em></li>
+<li>In the ImagesPage, under the <em><code>GalleryPage class</code></em>, create another class <code>_</code><em><code>GalleryPageState</code></em> class that extends <em><code>State&lt;GalleryPage&gt;</code></em></li>
 <li>In the State class, override the <em><code>build()</code></em> method</li>
 </ol>
 <aside class="special"><p><strong>TIP1 - </strong>Use the <strong><em><code>stful</code></em></strong> shortcut to create a StateFulWidget with a State template. </p>
@@ -496,7 +496,7 @@ Scaffold(
 </aside>
 <aside class="special"><p><strong>Column - </strong>A Column widget arranges a set of child widgets in a vertical order. </p>
 <p>It also provides size and alignment attributes </p>
-<p>to the children beneath </p>
+<p>to the children widgets beneath </p>
 </aside>
 <p><strong>Open the GalleryPage </strong></p>
 <ol type="1" start="1">
@@ -516,7 +516,7 @@ onPressed: () {
  );
 }</code></pre>
 <ol type="1" start="3">
-<li>Import the <em><code>ImagesPage()</code></em> class, use Alt+Enter and do import </li>
+<li>Import the <em><code>GalleryPage()</code></em> class, use Alt+Enter and do import </li>
 <li>Do hot reload <code>r</code> or Hot Restart <code>shift+r</code></li>
 <li>Click the login button to open the ImagesPage</li>
 <li>You should now see an empty screen:</li>
@@ -560,9 +560,9 @@ onPressed: () {
       <google-codelab-step label="Gallery Page - Build the page" duration="15">
         <p><strong>What you do here</strong></p>
 <ul>
-<li>Build the gallery pagesUI structure</li>
+<li>Build the gallery pages UI structure</li>
 <li>Use the Image widget to fetch images from the internet.</li>
-<li>Use Row widget to place widget horizontally </li>
+<li>Use Row widget to arrange widget horizontally </li>
 <li>Learn to use IDE shortcuts and Outline menu to wrap and remove widgets</li>
 <li>Use the Padding and Expanded widgets to adjust our layout </li>
 </ul>
