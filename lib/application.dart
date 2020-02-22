@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/pages/gallery_page/gallery_page.dart';
 import 'package:flutter_workshop/pages/home_page/home_page.dart';
 
 class MyApp extends StatelessWidget{
@@ -10,7 +11,11 @@ class MyApp extends StatelessWidget{
         primaryColor: Colors.white,
         buttonColor: Colors.lightBlue
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/gallery_page': (context) => GalleryPage()
+      },
     );
   }
 }

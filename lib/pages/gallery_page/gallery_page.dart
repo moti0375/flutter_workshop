@@ -42,9 +42,9 @@ class _GalleryPageState extends State<GalleryPage> {
                     boxShadow: <BoxShadow>[
                       BoxShadow(
                           color: Colors.black38,
-                          blurRadius: 10.0,
-                          offset: Offset(0.4, 0.4),
-                          spreadRadius: 0.4)
+                          blurRadius: 20.0,
+                          offset: Offset(0.5, 0.5),
+                          spreadRadius: 0.5)
                     ],
                   ),
                   padding: const EdgeInsets.all(8.0),

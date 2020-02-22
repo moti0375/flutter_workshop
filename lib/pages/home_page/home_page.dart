@@ -34,13 +34,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigateToGalleryPage(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) {
-          return GalleryPage();
-        },
-      ),
-    );
+    Navigator.pushNamed(context, '/gallery_page');
   }
 
   void _login(BuildContext context){
