@@ -27,5 +27,5 @@ In this workshop - codelab, you will learn to install and setup Flutter environm
 * Handle click events and use Navigator to move between pages
 * Learn the Dart programming language
 * Flutter IDE tips and tricks
-
-# [Workshop Codelab](https://github.com/moti0375/flutter_workshop/tree/master/docs/codelab/#0)
+ 
+# [Workshop Codelab](https://tikalk.github.io/flutter_workshop/codelab/#0)
