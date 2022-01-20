@@ -29,4 +29,3 @@ In this workshop - codelab, you will learn to install and setup Flutter environm
 * Flutter IDE tips and tricks
  
 # [Workshop Codelab](https://tikalk.github.io/flutter_workshop/codelab/#0)
-
