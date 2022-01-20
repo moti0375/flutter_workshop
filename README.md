@@ -28,4 +28,4 @@ In this workshop - codelab, you will learn to install and setup Flutter environm
 * Learn the Dart programming language
 * Flutter IDE tips and tricks
  
-# [Workshop Codelab](https://moti0375.github.io/flutter_workshop/docs/codelab)
+# [Workshop Codelab](https://moti0375.github.io/flutter_workshop/codelab)
