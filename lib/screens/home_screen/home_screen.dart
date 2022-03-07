@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/screens/gallery_screen/gallery_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,9 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                child: Text("Hello Flutter"),
+                child: Text("Login"),
                 onPressed: (){
                   print("Button Pressed");
+                  Navigator.of(context).push( MaterialPageRoute(builder: (context) => GalleryScreen()));
                 },
               ),
             ),

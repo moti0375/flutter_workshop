@@ -7,7 +7,7 @@
 //TODO 3. In the new file create ImagesPage class,
 //TODO 4. Make the class extends StatefulWidget
 //TODO 5. Override the createState method.
-//TODO 6. In the images_page.dart, create another class ImagesPageState, extends State<ImagesPage>
+//TODO 6. In the gallery_screen.dart, create another class GalleryPageState, extends State<GalleryScreen>
 //TODO 7. In new class, override the build method
 
 ///  TIP: when dart file is empty, type 'stful' + enter, IDE will generate a
@@ -15,7 +15,7 @@
 ///
 
 //TODO 8. In the State class, replace the Container() with a Scaffold() widget.
-//TODO 9. Add an AppBar with a title: "Images page" (checkout Ex_3 for reminder)
+//TODO 9. Add an AppBar with a title: "Gallery Screen" (checkout Ex_3 for reminder)
 //TODO 10. Add a body, with a Container() widget
 //TODO 11. Expand the Container constructor, add padding:
 ///    body: Container(
@@ -25,7 +25,8 @@
 ///      child: Column(
 ///        mainAxisSize: MainAxisSize.max,
 ///        mainAxisAlignment: MainAxisAlignment.center,
-///        crossAxisAlignment: CrossAxisAlignment.center ...
+///        crossAxisAlignment: CrossAxisAlignment.stretched,
+///        ....
 //TODO 14. Add children empty array to the Column
 ///    The Scaffold now should look like this:
 ///    Container(
@@ -34,7 +35,7 @@
 ///           mainAxisSize: MainAxisSize.max,
 ///           mainAxisAlignment: MainAxisAlignment.center,
 ///           crossAxisAlignment: CrossAxisAlignment.center,
-///           children: <Widget>[
+///           children: [
 ///
 ///            ],
 ///         ),
@@ -46,11 +47,15 @@
  * Lets use the Flutter Navigator to open the new ImagesPage
  */
 
-//TODO  15. In the home_page.dart file, go to the Login RaisedButton
-//TODO  16. In the onPressed: (){}, call the Flutter Navigator to open the ImagesPage
-///    Navigator.of(context).push(context, MaterialPageRoute(
-///       builder: (context){ new ImagesPage() }
-///    ))
+//TODO  15. In the home_screen.dart file, go to the Login ElevatedButton
+//TODO  16. In the onPressed: (){}, call the Flutter Navigator to open the GalleryScreen
+///     Navigator.of(context).push( MaterialPageRoute(builder: (context) => GalleryScreen()))
+//TODO 17. Q: What does Navigator.of(context) means?
+//TODO 18: A: Flutter Navigator is actually a Widget! Or more percisly, an InheritedWidget, when using the of(context) method, we ask the framework to go up
+//TODO        in the WidgetTree from the current Widget and find the nearest Widget of Navigator type.
+//TODO        The Navigator Widget is created for us when we use the MaterialApp Widget and placed as an ancestor for all Widgets down
+//TODO        the widget tree.
+//TODO        To learn more about Flutter InheritedWidget concept, checkout for the documentation: https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html
 ///*********************
 ///    onPressed: () {
 ///    print("Button Pressed");
@@ -60,7 +65,7 @@
 ///       ),
 ///     );
 ///    }
-//TODO  17. Import the ImagesPage(), use Alt+Enter
+//TODO  17. Import the GalleryScreen(), use Alt+Enter
 //TODO  18. Do hot reload
 //TODO  19. Press the login button, the images page should be opened with white screen.
 
