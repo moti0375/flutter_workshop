@@ -85,8 +85,8 @@ class _GalleryPageState extends State<GalleryPage> {
     );
   }
 
-  Padding _buildButton(
-      BuildContext context, String title, VoidCallback onPressed) {
+  Widget _buildButton(
+      BuildContext context, String title, VoidCallback? onPressed) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: CustomRaisedButton(

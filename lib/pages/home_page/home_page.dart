@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workshop/pages/gallery_page/gallery_page.dart';
 import 'package:flutter_workshop/ui/custom_raised_button.dart';
 
 class HomePage extends StatefulWidget {

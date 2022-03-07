@@ -66,7 +66,6 @@ class _ImagesPageState extends State<ImagesPage> {
         children: <Widget>[
           Expanded(
             child: _buildButton(
-              Theme.of(context).primaryColor,
               "Previous",
               index > 0 ? () {
                       _handlePrevious();
@@ -75,8 +74,7 @@ class _ImagesPageState extends State<ImagesPage> {
           ),
           Expanded(
             child: _buildButton(
-              Theme.of(context).primaryColor,
-              "Next",
+             "Next",
               index < (images.length - 1)
                   ? () {
                       _handleNext();
@@ -89,12 +87,11 @@ class _ImagesPageState extends State<ImagesPage> {
     ];
   }
 
-  Padding _buildButton(Color color, String title, Function() callback) {
+  Padding _buildButton(String title, Function()? callback) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
-      child: RaisedButton(
+      child: ElevatedButton(
         child: Text(title),
-        color: color,
         onPressed: callback,
       ),
     );

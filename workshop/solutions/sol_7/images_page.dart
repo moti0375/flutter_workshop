@@ -51,12 +51,10 @@ class _ImagesPageState extends State<ImagesPage> {
   }
 
   Widget _buildButton(
-      {BuildContext context, String title, Function() callback}) {
+      {required BuildContext context, required String title, required Function() callback}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: RaisedButton(
-        color: Theme.of(context).primaryColor,
-        textColor: Theme.of(context).primaryTextTheme.button.color,
+      child: ElevatedButton(
         child: Text(title),
         onPressed: callback,
       ),

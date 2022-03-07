@@ -32,8 +32,9 @@ class _ImagesPageState extends State<ImagesPage> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         child: Text("Previous"),
+                        onPressed: null,
                       ),
                     ),
                   ),
@@ -50,8 +51,9 @@ class _ImagesPageState extends State<ImagesPage> {
   Padding _buildButton() {
     return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
+                    child: ElevatedButton(
                       child: Text("Next"),
+                      onPressed: null,
                     ),
                   );
   }

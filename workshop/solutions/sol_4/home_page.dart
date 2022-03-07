@@ -17,15 +17,13 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: RaisedButton(
-                color: Theme.of(context).primaryColor,
-                textColor: Theme.of(context).primaryTextTheme.button.color,
+              child: ElevatedButton(
                 onPressed: () {
                   print("Button Pressed");
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        ImagesPage();
+                        return ImagesPage();
                       },
                     ),
                   );
