@@ -1,8 +1,8 @@
 /**
  *              Home Page
  */
- //TODO 1. Under lib directory, create new package with the name 'pages' (right click, Package)
- //TODO 2. Under the new pages package, create home_page package
+ //TODO 1. Under the lib directory, create new package with the name 'screens' (right click, New --> Directory/Package)
+ //TODO 2. Under the new screens directory, create home_page package
  //TODO 3. Inside the home_page package, create new home_page.dart file
  //TODO 4. Open home_page.dart, create HomePage class which extends StatelessWidget
  //TODO 5. Override the build method
