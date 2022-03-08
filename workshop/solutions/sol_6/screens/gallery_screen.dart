@@ -31,21 +31,23 @@ class _GalleryScreenState extends State<GalleryScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4),
-                    child: ElevatedButton(onPressed: null, child: Text("Previous")),
-                  ),
+                  child: _buildPageButton(title: "Previous", onPressed: () {}),
                 ),
                 Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: ElevatedButton(onPressed: null, child: Text("Next")),
-                    ))
+                  child: _buildPageButton(title: "Next", onPressed: () {}),
+                )
               ],
             )
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildPageButton({required String title, Function()? onPressed}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 4),
+      child: ElevatedButton(onPressed: onPressed, child: Text(title)),
     );
   }
 }

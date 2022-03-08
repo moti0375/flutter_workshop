@@ -33,13 +33,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 4),
-                    child: ElevatedButton(onPressed: null, child: Text("Previous")),
+                    child: ElevatedButton(onPressed: (){}, child: Text("Previous")),
                   ),
                 ),
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: ElevatedButton(onPressed: null, child: Text("Next")),
+                  child: ElevatedButton(onPressed: (){}, child: Text("Next")),
                 ))
               ],
             )
