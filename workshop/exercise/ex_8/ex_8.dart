@@ -26,25 +26,24 @@
 ///    }
 //TODO 7. Notice that these methods calls the setState() method, this is a Flutter framework method which cause
 ///    the widget to rebuild with a new state.
-//TODO 8. In the Image.network widget, replace the hardcoded URL with images[index]s
+//TODO 8. In the Image.network widget, replace the hardcoded URL with images[index]
 ///    Image.network(
 ///        images[index],
 ///        fit: BoxFit.fill,
 ///     ),
 //TODO 9. This will load an image from the list according to the index
-
 //TODO 10. We need to prevent user from click Next when reaching the last image in the array and
 ///        when reaching the first image in the array.
 //TODO 11. We should set the onPressed callback of the 'Next' button to null when reaching (array size - 1)
 //TODO 12  We should do the same to the 'Previous' button when reaching to index 0
-//TODO 13. In the 'Next' button, set the onPressed callback to null like this:
+//TODO 13. In the 'Next' button, use a ternary statement to set the onPressed callback to null like this:
 ///       _buildPageButton(
 ///           title: "Next",
 ///           onPressed: index < (images.length - 1) ? () {
 ///          _handleNext();
 ///          } : null,
 ///       )
-//TODO 14. In the 'Previous' button, set the onPressed callback to null like this:
+//TODO 14. Do the same for 'Previous' button, set the onPressed callback to null like this:
 ///     _buildPageButton(
 ///      title: "Previous",
 ///        _index > 0 ? () {
