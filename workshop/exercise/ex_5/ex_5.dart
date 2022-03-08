@@ -44,7 +44,7 @@
 
 
 /**
- * Lets use the Flutter Navigator to open the new ImagesPage
+ * Lets use the Flutter Navigator to open the new GalleryScreen
  */
 
 //TODO  15. In the home_screen.dart file, go to the Login ElevatedButton
