@@ -8,6 +8,26 @@ class GalleryScreen extends StatefulWidget {
 }
 
 class _GalleryScreenState extends State<GalleryScreen> {
+  List<String> _images = [
+    "https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg",
+    "https://image.tmdb.org/t/p/w500/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg",
+    "https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg"
+  ];
+
+  int _index = 0;
+
+  void _handleNext(){
+    setState(() {
+      _index++;
+    });
+  }
+
+  void _handlePrevious(){
+    setState(() {
+      _index--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +42,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.network(
-              "https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg",
+              _images[_index],
               fit: BoxFit.fill,
             ),
             Row(
@@ -33,13 +53,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 4),
-                    child: ElevatedButton(onPressed: (){}, child: Text("Previous")),
+                    child: ElevatedButton(onPressed: _index > 0 ? _handlePrevious : null, child: Text("Previous")),
                   ),
                 ),
                 Expanded(
                     child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: ElevatedButton(onPressed: (){}, child: Text("Next")),
+                  child: ElevatedButton(onPressed: _index < (_images.length - 1) ? _handleNext : null, child: Text("Next")),
                 ))
               ],
             )
