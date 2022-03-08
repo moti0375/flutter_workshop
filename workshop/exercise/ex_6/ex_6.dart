@@ -41,7 +41,6 @@
 //TODO 18. Select the first RaisedButton, press Alt+Enter, select, Wrap with padding
 //TODO 19. Set the padding to: padding: const EdgeInsets.symmetric(horizontal: 4)
 //TODO 20. Follow steps 17-18 for the second button.
-
 /// Expanded(
 ///    child: Padding(
 ///    padding: EdgeInsets.symmetric(horizontal: 4),
