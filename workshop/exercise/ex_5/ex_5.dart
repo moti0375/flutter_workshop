@@ -51,22 +51,18 @@
 //TODO  16. In the onPressed: (){}, call the Flutter Navigator to open the GalleryScreen
 ///     Navigator.of(context).push( MaterialPageRoute(builder: (context) => GalleryScreen()))
 //TODO 17. Q: What does Navigator.of(context) means?
-//TODO 18: A: Flutter Navigator is actually a Widget! Or more percisly, an InheritedWidget, when using the of(context) method, we ask the framework to go up
-//TODO        in the WidgetTree from the current Widget and find the nearest Widget of Navigator type.
+//TODO 18: A: Flutter Navigator is actually a Widget! Or more precisely, an InheritedWidget, when using the of(context) method, we ask the framework to go up
+//TODO        in the WidgetTree from the current Widget and find the nearest ancestor Widget of type Navigator
 //TODO        The Navigator Widget is created for us when we use the MaterialApp Widget and placed as an ancestor for all Widgets down
-//TODO        the widget tree.
+//TODO        the WidgetTree.
 //TODO        To learn more about Flutter InheritedWidget concept, checkout for the documentation: https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html
 ///*********************
 ///    onPressed: () {
-///    print("Button Pressed");
-///    Navigator.push(MaterialPageRoute( builder: (context) {
-///         return ImagesPage();
-///        },
-///       ),
-///     );
+///       print("Button Pressed");
+///       Navigator.of(context).push( MaterialPageRoute(builder: (context) => GalleryScreen()));
 ///    }
 //TODO  17. Import the GalleryScreen(), use Alt+Enter
 //TODO  18. Do hot reload
-//TODO  19. Press the login button, the images page should be opened with white screen.
+//TODO  19. Press the login button, the Gallery screen should be opened with white screen.
 
 
