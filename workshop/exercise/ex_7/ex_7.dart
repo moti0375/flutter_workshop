@@ -21,7 +21,7 @@
 
 //TODO 12. We still need to fix the _buildButton method
 //TODO 13. In the method, replace the Text("") with Text(title)
-//TODO 14. Replace the onPressed: (){} with onPressed: callback
+//TODO 14. Replace the onPressed: (){} with onPressed: onPressed
 //TODO 15. The method should now look like this:
 ///    Widget _buildButton({BuildContext context, String title, Function() callback}) {
 ///     return Padding(padding: const EdgeInsets.symmetric(horizontal: 4),
