@@ -1,10 +1,9 @@
 /**
- *              Images Page - Build the page
+ *    Images Page - Build the page
  */
 
 //TODO 1. Under the children Widgets array, add:
 ///    Image.network() with the following URL :"https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg"
-
 //TODO 2. Set the image fit: to fit: BoxFit.fill
 ///    Image.network("https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg", fit: BoxFit.fill,)
 //TODO 3. Do hot reload
