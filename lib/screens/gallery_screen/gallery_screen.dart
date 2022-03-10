@@ -16,13 +16,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   int _index = 0;
 
-  void _handleNext(){
+  void _handleNext() {
     setState(() {
       _index++;
     });
   }
 
-  void _handlePrevious(){
+  void _handlePrevious() {
     setState(() {
       _index--;
     });
@@ -36,36 +36,41 @@ class _GalleryScreenState extends State<GalleryScreen> {
       ),
       body: Container(
         padding: EdgeInsets.all(8),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image.network(
-              _images[_index],
-              fit: BoxFit.fill,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4),
-                    child: ElevatedButton(onPressed: _index > 0 ? _handlePrevious : null, child: Text("Previous")),
-                  ),
-                ),
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: ElevatedButton(onPressed: _index < (_images.length - 1) ? _handleNext : null, child: Text("Next")),
-                ))
-              ],
-            )
-          ],
-        ),
+        child: _buildContent(),
       ),
     );
+  }
+
+  Column _buildContent() {
+    return Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image.network(
+            _images[_index],
+            fit: BoxFit.fill,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4),
+                  child: ElevatedButton(onPressed: _index > 0 ? _handlePrevious : null, child: Text("Previous")),
+                ),
+              ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
+                child: ElevatedButton(
+                    onPressed: _index < (_images.length - 1) ? _handleNext : null, child: Text("Next")),
+              ))
+            ],
+          )
+        ],
+      );
   }
 }

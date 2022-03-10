@@ -69,9 +69,10 @@
  *  Extracting the page body build to a method
  */
 
-//TODO 19. Click somewhere in the Column children array.
+//TODO 19. Click the Column Widget
 //TODO 20. Press Alt + Up/Down arrows to select the content of the children array
 //TODO 21. Notice that the framework helps you to select blocks with separated by commas.
-//TODO 22. When the children array is marked, press Alt+Cmd+Enter
+//TODO 22. When the children array is marked, press Options+Cmd+M
 //TODO 23. In the Extract Method dialog, set the method name to _buildContent
-//TODO 24. Check out for the new created method, which is now called in the place where the children array was.
+//TODO 24. Check out for the new created method, which is now called where the Column was.
+//TODO 25. Do Hot Reload, checkout that the the gallery works properly
