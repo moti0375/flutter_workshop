@@ -43,34 +43,41 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   Column _buildContent() {
     return Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Image.network(
-            _images[_index],
-            fit: BoxFit.fill,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4),
-                  child: ElevatedButton(onPressed: _index > 0 ? _handlePrevious : null, child: Text("Previous")),
-                ),
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.network(
+          _images[_index],
+          fit: BoxFit.fill,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: _buildPageButton(
+                title: "Previous",
+                onPressed: _index > 0 ? _handlePrevious : null,
               ),
-              Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: ElevatedButton(
-                    onPressed: _index < (_images.length - 1) ? _handleNext : null, child: Text("Next")),
-              ))
-            ],
-          )
-        ],
-      );
+            ),
+            Expanded(
+              child: _buildPageButton(
+                title: "Next",
+                onPressed: _index < (_images.length - 1) ? _handleNext : null,
+              ),
+            )
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget _buildPageButton({required String title, Function()? onPressed}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 4),
+      child: ElevatedButton(onPressed: onPressed, child: Text(title)),
+    );
   }
 }
