@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/ui/custom_elevated_button.dart';
 
 class GalleryScreen extends StatefulWidget {
   const GalleryScreen({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Widget _buildPageButton({required String title, Function()? onPressed}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 4),
-      child: ElevatedButton(onPressed: onPressed, child: Text(title)),
+      child: CustomElevatedButton(onPressed: onPressed, child: Text(title)),
     );
   }
 }

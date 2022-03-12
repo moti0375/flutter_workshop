@@ -12,7 +12,6 @@
 /// final VoidCallback? onPressed;
 /// final Widget child;
 /// final double height;
-/// final bool loading;
 //TODO 8 - Create named constructor with these members, make the child required:
 /// const CustomRaisedButton({Key? key,
 ///                           this.onPressed,
@@ -38,7 +37,7 @@
  */
 
 //TODO 11 - For now, we will style the button locally in the Widget, later we will learn how to
-///        give buttons theme to the entire application, include support in Dark mode!
+///        give buttons theme for the entire application, include support in Dark mode!
 //TODO 12 - Inside the ElevatedButton constructor, add a style property
 //TODO 13 - Define the style using the styleForm function as following:
 /// style: ElevatedButton.styleFrom(
@@ -62,7 +61,7 @@
 ///             ) // Text,
 ///      onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => GalleryScreen()}),
 ///     )//CustomElevatedButton
-//TODO 15 - Repeat step 13 for both buttons in the GalleryScreen, inside the _buildPageButton method
+//TODO 14 - Repeat step 13 for both buttons in the GalleryScreen, inside the _buildPageButton method
 /// Widget _buildPageButton({required String title, Function()? onPressed}) {
 ///     return Padding(
 ///           padding: EdgeInsets.symmetric(horizontal: 4),
@@ -70,4 +69,4 @@
 ///           );
 ///     }
 ///
-//TODO 16 - Do Hot reload, check that all buttons working properly
+//TODO 16 - Do Hot reload, check that all buttons shaped and working working properly

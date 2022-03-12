@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/screens/gallery_screen/gallery_screen.dart';
+import 'package:flutter_workshop/ui/custom_elevated_button.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
+              child: CustomElevatedButton(
                 child: Text("Login"),
                 onPressed: (){
                   print("Button Pressed");
