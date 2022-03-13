@@ -9,7 +9,7 @@
  * */
 
 //TODO 1 - Open application.dart file, reminder, in this file we set our app root Widget, the MaterialApp
-///        This widget has planty of properties which effect the entire app,
+///        This widget has plenty of properties which effect the entire app,
 ///        We will use the MaterialApp properties to give themes to our app.
 //TODO 2 - In the MaterialApp constructor, add theme: property, the theme property receives ThemeData object which contains
 ///        may theme properties such as colorScheme, textTheme and more.
