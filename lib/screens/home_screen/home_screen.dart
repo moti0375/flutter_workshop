@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_workshop/screens/gallery_screen/gallery_screen.dart';
 import 'package:flutter_workshop/ui/custom_elevated_button.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
