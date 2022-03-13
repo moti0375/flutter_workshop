@@ -25,7 +25,7 @@
 ///         ),
 //TODO 4 - Do hot reload, notice that the image now expanded, we still need to add some padding between the image and the buttons.
 ///        Notice that in IOS the layout is overflow on the device bottom side. We shall fix it in the next steps
-//TODO 5 - Select/click on the Row widget, press Options+Enter
+//TODO 5 - Select/click on the Row widget, press Option+Enter
 //TODO 6 - From the help menu, select Wrap with Padding
 //TODO 7 - Set the padding value to be EdgeInsets.only(top: 8.0), This will add some padding between the bottom of the image and the buttons row
 //TODO 8 - Do hot reload, look for the better looking layout

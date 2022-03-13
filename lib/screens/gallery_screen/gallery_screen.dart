@@ -35,9 +35,12 @@ class _GalleryScreenState extends State<GalleryScreen> {
       appBar: AppBar(
         title: Text("Gallery Screen"),
       ),
-      body: Container(
-        padding: EdgeInsets.all(8),
-        child: _buildContent(),
+      body: SafeArea(
+        bottom: true,
+        child: Container(
+          padding: EdgeInsets.all(8),
+          child: _buildContent(),
+        ),
       ),
     );
   }
@@ -48,28 +51,49 @@ class _GalleryScreenState extends State<GalleryScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.network(
-          _images[_index],
-          fit: BoxFit.fill,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: _buildPageButton(
-                title: "Previous",
-                onPressed: _index > 0 ? _handlePrevious : null,
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+                boxShadow: [
+                               BoxShadow(
+                                 color: Colors.black38,
+                                 offset: Offset(4.0, 4.0),
+                                 blurRadius: 10.0,
+                                 spreadRadius: 0.4,
+                               ),
+                             ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              child: Image.network(
+                _images[_index],
+                fit: BoxFit.fill,
               ),
             ),
-            Expanded(
-              child: _buildPageButton(
-                title: "Next",
-                onPressed: _index < (_images.length - 1) ? _handleNext : null,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: _buildPageButton(
+                  title: "Previous",
+                  onPressed: _index > 0 ? _handlePrevious : null,
+                ),
               ),
-            )
-          ],
+              Expanded(
+                child: _buildPageButton(
+                  title: "Next",
+                  onPressed: _index < (_images.length - 1) ? _handleNext : null,
+                ),
+              )
+            ],
+          ),
         )
       ],
     );
