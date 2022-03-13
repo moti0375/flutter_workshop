@@ -47,7 +47,7 @@
 //TODO 9 - Above the theme: property, add darkTheme: property
 ///   darkTheme:
 ///   theme: ThemeData.from...
-//TODO 10 - Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration for the dark mode:
+//TODO 10 - Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration:
 ///  darkTheme: ThemeData.from(colorScheme: ColorScheme.dark(onPrimary: Colors.white)).copyWith(
 ///        appBarTheme: AppBarTheme(elevation: 0),
 ///        textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
