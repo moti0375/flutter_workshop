@@ -19,7 +19,6 @@ class CustomElevatedButton extends StatelessWidget {
     return Container(
       height: this.height,
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
         child: loading ? CircularProgressIndicator() : this.child,
         onPressed: loading ? null : this.onPressed,
       ),

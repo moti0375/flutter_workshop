@@ -5,22 +5,23 @@
  * In addition, it also has support for Dark mode.
  *
  * In this chapter we will set our app theme both for light and dark mode
- * and set buttons default shape and corners and text default size across the amm
+ * and set buttons default shape and corners and text default size across the app
  * */
 
-//TODO 1 - Open application.dart file, reminder, in this file where we created our app root Widget, the MaterialApp
-///        This widget has plenty of properties which effect the entire app, such as orientation, navigation routes, themes and more.
-///        We will use the MaterialApp properties to give themes to our app.
-//TODO 2 - In the MaterialApp constructor, add theme: property, the theme property receives ThemeData object which contains
+//TODO 1 - Open application.dart file, reminder, in this file we created our app root Widget, the MaterialApp
+///        This widget has plenty of properties which effect the entire app such as: orientation, navigation routes, themes and more.
+///        We will use the MaterialApp properties to define themes to our app.
+//TODO 2 - In the MaterialApp constructor, under the title: "Flutter Workshop", add theme: property, the theme property receives ThemeData object which contains
 ///        theme properties such as colorScheme, textTheme and more.
 //TODO 3 - Set the theme: property as follow ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black))
-//TODO 4 - Lets add some more styling by using the copyWith pattern in the end of the ThemeData.from()
+//TODO 4 - Do Hot Reload, look how the appBar and Buttons color has changed
+//TODO 5 - Lets add some more styling by using the copyWith pattern in the end of the ThemeData.from()
 //TODO 5 - Set appBar elevation to 0 with AppBarTheme
 /// ThemeData.from(colorScheme: ...).copyWith(appBarTheme: AppBarTheme(elevation: 0))
-//TODO 6 - Set TextTheme, we want to set all buttons text to size of 25, and appBar text to 22 (appBar text is defined with headline6 theme attribute)
+//TODO 7 - Set TextTheme, we want to set all buttons text to size of 25, and appBar text to 22 (appBar text is defined with headline6 theme attribute)
 /// ThemeData.from(colorScheme: ...).copyWith(appBarTheme: ...
 ///                                          textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22),),)
-//TODO 7 - Set ElevatedButtonTheme, set primary color and onPrimary (which set the button text color) and also the button shape
+//TODO 8 - Set ElevatedButtonTheme, set primary color and onPrimary (which set the button text color) and also the button shape with rounded corners
 ///
 /// ThemeData.from(colorScheme: ...).copyWith(appBarTheme: ...
 ///                           textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
@@ -33,7 +34,11 @@
 ///                        ),
 ///                       )
 ///
-//TODO 8 - Final Theme.data for light:
+//TODO 10 - Do hot reload, notice the buttons style changed..
+/// Q: Why the button's rounded corners hasn't changed?
+/// A: As you remember, we set the button style internally inside the CustomElevatedButton, this overrides the theme. We will fix shortly
+///
+//TODO 9 - Final Theme.data for light:
 /// theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black)).copyWith(appBarTheme: ...
 ///                           textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
 ///                           elevatedButtonTheme: ElevatedButtonThemeData(
@@ -44,10 +49,10 @@
 ///                                     ),
 ///                                   ),
 ///                                 )
-//TODO 9 - Above the theme: property, add darkTheme: property
+//TODO 10 - Above the theme: property, add darkTheme: property
 ///   darkTheme:
 ///   theme: ThemeData.from...
-//TODO 10 - Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration:
+//TODO 11 - Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration:
 ///  darkTheme: ThemeData.from(colorScheme: ColorScheme.dark(onPrimary: Colors.white)).copyWith(
 ///        appBarTheme: AppBarTheme(elevation: 0),
 ///        textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
@@ -65,12 +70,12 @@
  *  Lets create methods for providing the themes and use them in the MaterialApp
  * */
 
-//TODO 11 - Click on the light theme content ThemeData.from(colorScheme: ColorScheme.light...
-//TODO 12 - Press and hold Option while click the up arrow on the keyboard, this will start to mark the ThemeData content, mark the entire content of the ThemeData object
-//TODO 13 - Press Option+Cmd+M, this will open the extract method dialog
-//TODO 14 - Set method name to _buildLightTheme and press Enter
-//TODO 15 - Repeat steps 11 - 14 for darkTheme property, name the method _buildDarkTheme
-//TODO 16 - At the end your MaterialApp should look as follow:
+//TODO 12 - Click on the light theme content ThemeData.from(colorScheme: ColorScheme.light...
+//TODO 13 - Press and hold Option while click the up arrow on the keyboard, this will start to mark the ThemeData content, mark the entire content of the ThemeData object
+//TODO 14 - Press Option+Cmd+M, this will open the extract method dialog
+//TODO 15 - Set method name to _buildLightTheme and press Enter
+//TODO 16 - Repeat steps 11 - 14 for darkTheme property, name the method _buildDarkTheme
+//TODO 17 - At the end your MaterialApp should look as follow:
 /// MaterialApp(
 ///       title: "Flutter Workshop",
 ///       theme: _buildLightTheme(),
@@ -87,11 +92,12 @@
  *
  * */
 
-//TODO 17 - Open the CustomElevatedButton class
-//TODO 18 - Remove the style property
+//TODO 18 - Open the CustomElevatedButton class
+//TODO 19 - Remove the style property
 /// ElevatedButton(
 ///         child: loading ? CircularProgressIndicator() : this.child,
 ///         onPressed: ...
 ///         )
-//TODO 19 - Do Hot reload, checkout the buttons, appBar and text styling
-//TODO 20 - From the device settings, switch to dark mode and watch how app look changed with dark theme
+//TODO 20 - Do Hot reload, checkout the buttons rounded corners
+//TODO 21 - From the device settings, switch to dark mode and watch how app look changed with dark theme
+
