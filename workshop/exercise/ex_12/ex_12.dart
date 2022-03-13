@@ -83,7 +83,7 @@
  *
  *  Remember that we set the buttons rounded corners from the CustomElevatedButton, but this is no
  *  longer required as we are now providing the buttons stying from the app theme.
- *  That's why we should remove the styling from the class itself, as it will override the theme which comes from the App theme
+ *  That's why we should remove the styling from the class itself, otherwise it will override the theme which comes from the App theme
  *
  * */
 
