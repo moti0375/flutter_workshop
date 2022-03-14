@@ -42,6 +42,8 @@
 
 //TODO 5 - After adding dependencies in the pubspec.yaml, click Pub get to sync the dependencies
 //TODO 6 - In the gallery_screen directory, create new gallery_store.dart file
+//TODO 7 - At the top of the file, import the mobx.dart package:
+/// import 'package:mobx/mobx.dart';
 //TODO 7 - In the new file, create an abstract class _GalleryStore, this will be the class which will contain the logic for the gallery
 /// abstract class _GalleryStore with Store {
 ///
@@ -84,10 +86,11 @@
 /// class GalleryStore = _GalleryStore with _$GalleryStore;
 ///
 /// abstract class _GalleryStore with Store{...
-//TODO 17 - Add the part statement below the file import:
+//TODO 18 - You may get a compilation error, this is fine for now.
+//TODO 19 - Add the part statement below the file import:
 /// import 'package:mobx/mobx.dart';
 /// part 'gallery_store.g.dart';
-//TODO 18 - Notice that currently you should have compilation error as the gallery_store.g.dart file not exists yet.
+//TODO 20 - Notice that currently you should have compilation error as the gallery_store.g.dart file not exists yet.
 
 /**
  * Running the build runner script to generate code.
@@ -100,10 +103,10 @@
  *
  * */
 
-//TODO 19 - Open terminal in the project directory
-//TODO 20 - Run the following command to run the build runner script:
+//TODO 21 - Open terminal in the project directory
+//TODO 22 - Run the following command to run the build runner script:
 /// flutter pub run build_runner build
-//TODO 21 - Wait for the script to complete with Succeeded result:
-///  [INFO] Succeeded after 1.5s with 2 outputs (3 actions)
-//TODO 22 - Go back to the gallery_store.dart file, see that all errors are gone and look for the gallery_store.g.dart file that was created in the same directory.
-//TODO 23 - As we've created the store, it still not in use, the GalleryScreen still works with setState, in the next lesson we will integrated the Store using the Provider library.
+//TODO 23 - Wait for the script to complete with Succeeded result:
+///   [INFO] Succeeded after 11.9s with 2 outputs (15 actions)
+//TODO 24 - Go back to the gallery_store.dart file, see that all errors are gone and look for the gallery_store.g.dart file that was created in the same directory.
+//TODO 25 - As we've created the store, it still not in use, the GalleryScreen still works with setState, in the next lesson we will integrated the Store using the Provider library.
