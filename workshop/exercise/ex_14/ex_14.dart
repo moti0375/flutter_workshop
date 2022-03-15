@@ -21,17 +21,17 @@
  *
  * A Typical tree using provider:
  *
- *                Provider<GalleryStore> <- -|
- *                       |                   |
- *                       |                   |
- *                  MaterialApp              |
- *                       |                   |
- *                       |                   |
- *                       |                   |
- *               -----------------           |
- *               |               |           |
- *               |               |           |
- *          HomeScreen     GalleryScreen ----Provider.of<GalleryStore>(context)
+ *                Provider<GalleryStore> <- -------------- -|
+ *                       |                                  |
+ *                       |                                  |
+ *                  MaterialApp                             |
+ *                       |                                  |
+ *                       |                                  |
+ *                       |                                  |
+ *               -----------------                          |
+ *               |               |                          |
+ *               |               |                          |
+ *          HomeScreen     GalleryScreen ------------ -> Provider.of<GalleryStore>(context)
  *
  * */
 
@@ -74,7 +74,7 @@
 ///           ...
 ///
 //TODO 18 - Lets now use the store in our page
-//TODO 19 - Replace the Image.network content from _images[_index] to _store.image
+//TODO 19 - Replace the Image.network content from _images[_index] --> _store.image
 /// Image.network(
 ///                _store.image,
 ///                 fit: BoxFit.fill,

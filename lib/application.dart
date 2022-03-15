@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/screens/gallery_screen/gallery_store.dart';
 import 'package:flutter_workshop/screens/home_screen/home_screen.dart';
+import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Flutter Workshop",
-      darkTheme: _buildDarkTheme(),
-      theme: _buildLightTheme(),
-      home: HomeScreen(),
+    return MultiProvider(
+      providers: [
+        Provider<GalleryStore>(create: (_) => GalleryStore(),)
+      ],
+      child: MaterialApp(
+        title: "Flutter Workshop",
+        darkTheme: _buildDarkTheme(),
+        theme: _buildLightTheme(),
+        home: HomeScreen(),
+      ),
     );
   }
 
