@@ -1,5 +1,5 @@
 /**
- *              Home Page Body
+ *              Home Screen Body
  */
  //TODO 1. Open the home_screen.dart file
  //TODO 2. In the build method, replace the Container() widget with a Scaffold() widget
