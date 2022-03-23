@@ -1,13 +1,13 @@
 /**
- *    Images Page - StatefulWidget
+ *    Gallery Screen - StatefulWidget
  */
 
 //TODO 1. Under screens directory/package, create new gallery_screen directory
 //TODO 2. In the new gallery_screen directory, create new gallery_screen.dart file
-//TODO 3. In the new file create ImagesPage class,
+//TODO 3. In the new file create GalleryScreen class,
 //TODO 4. Make the class extends StatefulWidget
 //TODO 5. Override the createState method.
-//TODO 6. In the gallery_screen.dart, create another class GalleryPageState, extends State<GalleryScreen>
+//TODO 6. In the gallery_screen.dart, create another class GalleryScreenState, extends State<GalleryScreen>
 //TODO 7. In new class, override the build method
 
 ///  TIP: when dart file is empty, type 'stful' + enter, IDE will generate a
@@ -20,7 +20,7 @@
 //TODO 11. Expand the Container constructor, add padding:
 ///    body: Container(
 ///    padding: const EdgeInsets.all(8.0), ...
-//TODO 12. Next, set the Container child to Column()
+//TODO 12. Next, set the Container child to be Column()
 //TODO 13. Set the Column attributes to:
 ///      child: Column(
 ///        mainAxisSize: MainAxisSize.max,
