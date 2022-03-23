@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
               child: ElevatedButton(
                 child: Text("Hello Flutter"),
                 onPressed: (){
