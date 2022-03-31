@@ -7,13 +7,14 @@
 //TODO 3. Repeat last step for the second button
 //TODO 4. Do hot reload, the buttons are now enabled and clickable.
 //TODO 5. Lets extract the buttons creation to a method which takes parameters, and return a Widget object.
-//TODO 6. Select the Padding of the first ElevatedButton, press option+command+M, the extract method dialog will be shown.
+//TODO 6. Select the Padding of the first ElevatedButton (Use Option+UpArrow for easy selection),
+//TODO 7. Press option+command+M, the extract method dialog will be shown.
 //TODO 7. Select ExtractMethod, set the method name to _buildPageButton
-//TODO 8. Modify the method as following:
-/// Widget _buildPageButton({required String title, Function()? onPressed})
+//TODO 8. Modify the method signature as following:
+/// Widget _buildGalleryButton({required String title, VoidCallback()? onPressed})
 //TODO 9. Fix the compilation errors in the location were the button was as following:
 ///     Expanded(
-///             child: _buildPageButton(title: "Previous", onPressed: () {},) //_buildPageButton,
+///             child: _buildGalleryButton(title: "Previous", onPressed: () {},) //_buildGalleryButton,
 ///     ) //Expanded,
 //TODO 9.1 Q: What does _ at the method name means?
 //TODO 9.2 A: In Dart, classes, variables and method names which begins with _ are private
@@ -32,3 +33,17 @@
 ///                                          onPressed: onPressed,),
 ///                    );
 ///      }
+//TODO 15. Final buttons Row now looks like this:
+///         Row(
+///               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+///               mainAxisSize: MainAxisSize.max,
+///               crossAxisAlignment: CrossAxisAlignment.center,
+///               children: [
+///                 Expanded(
+///                   child: _buildPageButton(title: "Previous", onPressed: () {}),
+///                 ),
+///                 Expanded(
+///                   child: _buildPageButton(title: "Next", onPressed: () {}),
+///                 )
+///               ],
+///             )
