@@ -1,29 +1,31 @@
 {
   "environment": "web",
-  "source": "1-3Nq7cxCCyNkDgbQXgmatcwu2E03j2JCiTUeXiw6zuY",
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2020-02-22T20:18:42Z",
-  "id": "Flutter Workshop",
-  "duration": 97,
-  "title": "Flutter Workshop",
+  "updated": "2022-04-03T06:26:57Z",
+  "id": "https://github.com/moti0375/flutter_workshop",
+  "duration": 0,
+  "title": "Flutter Codelab",
   "authors": "Moti Bartov",
-  "summary": "In this Flutter codelab, we will create a first Flutter app. \nThe app has two pages, a Login page and an Images page were the user forward after login. \nDuring this codelab, we will learn the basics of creating a Flutter application.\nUnderstand the basic Flutter notions such as Widget, Context and State. \nUI design and event handling, and more.",
-  "theme": "sw-development",
+  "summary": "In this workshop - codelab, you will learn to install and setup Flutter environment, create your first app, learn the basic concepts of Flutter such as Widget, Context and State",
+  "source": "1i2z-3500CbtbafWE3jpUih7kpqf1KXleZS6_OE8Y27k",
+  "theme": "mobile",
   "status": [
-    "draft"
+    "published"
   ],
   "category": [
-    "SW Development"
+    "mobile"
   ],
   "tags": [
     "android",
-    "android studio",
     "dart",
     "flutter",
-    "ios"
+    "mobile"
   ],
-  "feedback": "https://github.com/tikalk/flutter_workshop",
-  "url": "Flutter Workshop"
+  "feedback": "moti.bartov@anagog.com",
+  "extra": {
+    "": ""
+  },
+  "url": "https://github.com/moti0375/flutter_workshop"
 }
