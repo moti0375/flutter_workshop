@@ -10,7 +10,7 @@
 //TODO 6 - Paste the code as the child of the Container in the new CustomElevatedButton Widget
 //TODO 7 - At the top of the CustomElevatedButton class, declare to class members:
 /// final VoidCallback? onPressed;
-/// final Widget child;
+/// final String title;
 /// final double height;
 /// final bool loading;
 //TODO 8 - Create named constructor with these members, make the child required:
@@ -27,7 +27,7 @@
 /// )
 //TODO 10 - Replace the onPressed and the child with the class members:
 /// ElevatedButton(
-///    child: this.child
+///    child: this.title
 ///    onPressed: this.onPressed
 /// )
 ///
@@ -45,28 +45,25 @@
 ///               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)
 /// )
 /// ElevatedButton(
-///     style: ElevatedButton.styleFrom(...
-///     child: ...
-///     onPressed:.import 'package:flutter/material.dart';
+///     style: ElevatedButton.styleFrom(...),
+///     Text(this.title)
+///     onPressed:this.onPressed;
 /// )
 ///
 /**
  *   Use new CustomElevatedButton in code
  */
 
-//TODO 14 - Go to home_screen, replace the ElevatedButton with the new CustomElevatedButton we've jsut created.
+//TODO 14 - Go to home_screen, replace the ElevatedButton with the new CustomElevatedButton you've just created.
 ///   CustomElevatedButton(
-///     child: Text(
-///             "Login",
-///             style: TextStyle(fontSize: 25),
-///             ) // Text,
+///     title: "Login",
 ///      onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => GalleryScreen()}),
 ///     )//CustomElevatedButton
 //TODO 15 - Repeat step 13 for both buttons in the GalleryScreen, inside the _buildPageButton method
 /// Widget _buildPageButton({required String title, Function()? onPressed}) {
 ///     return Padding(
-///           padding: EdgeInsets.symmetric(horizontal: 4),
-///           child: ElevatedButton(onPressed: onPressed, child: Text(title)),
+///              padding: EdgeInsets.symmetric(horizontal: 4),
+///              child: CustomElevatedButton(onPressed: onPressed, title: title),
 ///           );
 ///     }
 ///
