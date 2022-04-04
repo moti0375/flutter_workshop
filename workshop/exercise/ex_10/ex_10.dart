@@ -69,7 +69,7 @@
 //TODO 20 - To the new Container, set decoration: BoxDecoration() property
 /// Container(
 ///               decoration: BoxDecoration(),
-///               child: Image.network(
+///               child: ClipRRect(
 //TODO 21 -  Inside the BoxDecoration, set the borderRadius as follow:
 /// decoration: BoxDecoration(
 ///                 borderRadius: BorderRadius.all(Radius.circular(10)),
