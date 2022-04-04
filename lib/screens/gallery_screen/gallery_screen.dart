@@ -102,7 +102,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Widget _buildPageButton({required String title, Function()? onPressed}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 4),
-      child: CustomElevatedButton(onPressed: onPressed, child: Text(title)),
+      child: CustomElevatedButton(onPressed: onPressed, title: title),
     );
   }
 }

@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomElevatedButton(
-                child: Text("Login"),
+                title: "Login",
                 onPressed: (){
                   print("Button Pressed");
                   Navigator.of(context).push( MaterialPageRoute(builder: (context) => GalleryScreen()));

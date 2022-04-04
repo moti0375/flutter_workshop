@@ -24,7 +24,7 @@
 ///   }) : super(key: key);
 ///
 //TODO 4 - Set the button child depends the loading property, use the ternary statement
-/// child: loading ? CircularProgressIndicator() : this.child
+/// child: loading ? CircularProgressIndicator() : Text(this.title)
 //TODO 5 - We also want to disable the button during loading state
 ///        We can do this by setting the onPressed to null while loading
 //TODO 6 - Use the ternary statement to set the onPressed to null while loading
@@ -57,13 +57,11 @@
 ///     });
 ///   }
 ///
-//TODO 12 - setLoading method, create another _login() method
+//TODO 12 - Under setLoading method, create another _login() method
 /// void _login() {
-///     setState(() {
-///       _loading = true;
-///     });
+///     _setLoading(true)
 ///     Future.delayed(Duration(seconds: 3), (){
-///       _loading = false;
+///       _setLoading(false)
 ///     });
 ///   }
 //TODO 13 - Move the call to navigate GalleryScreen to the end of the _login method
