@@ -1,7 +1,7 @@
 /**
  * Theme and Dark Mode
  *
- * Flutter has a built in Themeing framework which allows us to style our app it a modular way!
+ * Flutter has a built in Themeing framework which allows us to style our app in a modular way!
  * In addition, it also has support for Dark mode.
  *
  * In this chapter we will set our app theme both for light and dark mode
@@ -13,7 +13,8 @@
 ///        We will use the MaterialApp properties to define themes to our app.
 //TODO 2 - In the MaterialApp constructor, under the title: "Flutter Workshop", add theme: property, the theme property receives ThemeData object which contains
 ///        theme properties such as colorScheme, textTheme and more.
-//TODO 3 - Set the theme: property as follow ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black))
+//TODO 3 - Set the theme: property as follow
+///        theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black))
 //TODO 4 - Do Hot Reload, look how the appBar and Buttons color has changed
 //TODO 5 - Lets add some more styling by using the copyWith pattern in the end of the ThemeData.from()
 //TODO 5 - Set appBar elevation to 0 with AppBarTheme
@@ -99,5 +100,5 @@
 ///         onPressed: ...
 ///         )
 //TODO 20 - Do Hot reload, checkout the buttons rounded corners
-//TODO 21 - From the device settings, switch to dark mode and watch how app look changed with dark theme
+//TODO 21 - From the device settings, switch to dark mode and watch how app look changed in dark theme
 
