@@ -31,7 +31,7 @@
 //TODO 8 - Do hot reload, look for the better looking layout
 
 /// Padding(
-///           padding: const EdgeInsets.all(8.0),
+///           padding: const EdgeInsets.only(top: 8.0),
 ///           child: Row(...
 ///
 /**
