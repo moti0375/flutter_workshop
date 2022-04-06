@@ -17,7 +17,7 @@
 ///        theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black))
 //TODO 4 - Do Hot Reload, look how the appBar and Buttons color has changed
 //TODO 5 - Lets add some more styling by using the copyWith pattern in the end of the ThemeData.from()
-//TODO 5 - Set appBar elevation to 0 with AppBarTheme
+//TODO 6 - Set appBar elevation to 0 with AppBarTheme
 /// ThemeData.from(colorScheme: ...).copyWith(appBarTheme: AppBarTheme(elevation: 0))
 //TODO 7 - Set TextTheme, we want to set all buttons text to size of 25, and appBar text to 22 (appBar text is defined with headline6 theme attribute)
 /// ThemeData.from(colorScheme: ...).copyWith(appBarTheme: ...
@@ -35,12 +35,12 @@
 ///                        ),
 ///                       )
 ///
-//TODO 10 - Do hot reload, notice the buttons style changed..
+//TODO 9 - Do hot reload, notice the buttons style changed..
 /// Q: Why the button's rounded corners hasn't changed?
 /// A: As you remember, we set the button style internally inside the CustomElevatedButton, this overrides the theme. We will fix shortly
 ///
-//TODO 9 - Final Theme.data for light:
-/// theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black)).copyWith(appBarTheme: ...
+//TODO 10 - Final Theme.data for light:
+/// theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black)).copyWith(AppBarTheme(elevation: 0)
 ///                           textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
 ///                           elevatedButtonTheme: ElevatedButtonThemeData(
 ///                                        style: ElevatedButton.styleFrom(
@@ -50,10 +50,10 @@
 ///                                     ),
 ///                                   ),
 ///                                 )
-//TODO 10 - Above the theme: property, add darkTheme: property
+//TODO 11 - Above the theme: property, add darkTheme: property
 ///   darkTheme:
 ///   theme: ThemeData.from...
-//TODO 11 - Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration:
+//TODO 12 - Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration:
 ///  darkTheme: ThemeData.from(colorScheme: ColorScheme.dark(onPrimary: Colors.white)).copyWith(
 ///        appBarTheme: AppBarTheme(elevation: 0),
 ///        textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
@@ -63,7 +63,7 @@
 ///                 borderRadius: BorderRadius.all(Radius.circular(40)),
 ///               ),
 ///            )),
-///         );
+///         )
 ///
 ///
 /**
@@ -71,12 +71,12 @@
  *  Lets create methods for providing the themes and use them in the MaterialApp
  * */
 
-//TODO 12 - Click on the light theme content ThemeData.from(colorScheme: ColorScheme.light...
-//TODO 13 - Press and hold Option while click the up arrow on the keyboard, this will start to mark the ThemeData content, mark the entire content of the ThemeData object
-//TODO 14 - Press Option+Cmd+M, this will open the extract method dialog
-//TODO 15 - Set method name to _buildLightTheme and press Enter
-//TODO 16 - Repeat steps 11 - 14 for darkTheme property, name the method _buildDarkTheme
-//TODO 17 - At the end your MaterialApp should look as follow:
+//TODO 13 - Click on the light theme content ThemeData.from(colorScheme: ColorScheme.light...
+//TODO 14 - Press and hold Option while click the up arrow on the keyboard, this will start to mark the ThemeData content, mark the entire content of the ThemeData object
+//TODO 15 - Press Option+Cmd+M, this will open the extract method dialog
+//TODO 16 - Set method name to _buildLightTheme and press Enter
+//TODO 17 - Repeat steps 11 - 14 for darkTheme property, name the method _buildDarkTheme
+//TODO 18 - At the end your MaterialApp should look as follow:
 /// MaterialApp(
 ///       title: "Flutter Workshop",
 ///       theme: _buildLightTheme(),
@@ -93,12 +93,12 @@
  *
  * */
 
-//TODO 18 - Open the CustomElevatedButton class
-//TODO 19 - Remove the style property
+//TODO 19 - Open the CustomElevatedButton class
+//TODO 20 - Remove the style property
 /// ElevatedButton(
 ///         child: loading ? CircularProgressIndicator() : this.child,
 ///         onPressed: ...
 ///         )
-//TODO 20 - Do Hot reload, checkout the buttons rounded corners
-//TODO 21 - From the device settings, switch to dark mode and watch how app look changed in dark theme
+//TODO 21 - Do Hot reload, checkout the buttons rounded corners
+//TODO 22 - From the device settings, switch to dark mode and watch how app look changed in dark theme
 
