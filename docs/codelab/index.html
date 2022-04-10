@@ -27,7 +27,7 @@
                   environment="web"
                   feedback-link="moti.bartov@anagog.com">
     
-      <google-codelab-step label="Introduction" duration="0">
+      <google-codelab-step label="Introduction" duration="6">
         <p>Flutter is a great framework for creating beautiful apps both for Android, IOS, Web and Desktop apps.</p>
 <p>Flutter apps are based on a single codebase developed in Google&#39;s Dart programming language.</p>
 <p><strong>Flutter Key Features:</strong></p>
@@ -38,16 +38,16 @@
 <li>Fast Development Cycle: Fast development cycle with HotReload</li>
 <li>No UI bridges: Flutter doesn&#39;t use platform OEM widgets such as TextView or RecyclerView, instead, Flutter draws all widgets directly on device canvas.<br>No bridges are used. Flutter owns every pixel on screen!</li>
 <li>Performance: Flutter aims to provide 60 frames per second (fps) performance, or 120 fps performance on devices capable of 120Hz updates. Animations in Flutter are just great. </li>
-<li>Dart: Dart is an object oriented language which utilize modern expressive programming paradigms such as asynchronous Future&lt;&gt;, await, Streams, Listeners and lambda expressions - Use JIT compiler for debug and AOT for production</li>
+<li>Dart: Dart is an object oriented language which utilize modern programming paradigms such as asynchronous Future&lt;&gt;, await, Streams, Listeners and lambda expressions, declarative statement - Use JIT compiler for debug and AOT for release</li>
 <li>Google Support:  Flutter developed and supported by Google</li>
 <li>Great Documentation:  Flutter has rich and detailed documentation</li>
 </ul>
 <p><a href="https://flutter.dev/" target="_blank"><paper-button class="colored" raised>Flutter Dev Home Page</paper-button></a> <a href="https://dart.dev/" target="_blank"><paper-button class="colored" raised>Dart Dev Home Page</paper-button></a></p>
 <p><strong>What you will build:</strong></p>
-<p>In this workshop - codelab, you will create your first Flutter app, learn the basic concepts of Flutter such as <strong><em>Widget</em></strong>, <strong><em>Context</em></strong> and <strong><em>State</em></strong></p>
+<p>In this workshop - codelab, you will get hands on coding and create your first Flutter app, learn the basic concepts of Flutter such as <strong><em>Widget</em></strong>, <strong><em>Context</em></strong> and <strong><em>State</em></strong></p>
 <p><strong>Your App Will:</strong></p>
 <ul>
-<li>Contain 2 pages, a login page and a gallery page</li>
+<li>Contain 2 screes, a login screen and a gallery screen</li>
 <li>Download and show images from the internet</li>
 <li>Support dark mode theme!!</li>
 <li>The app will run on Android, IOS and Web!</li>
@@ -67,17 +67,18 @@
 <li>Use Flutter hot reload</li>
 <li>Handle click events and use Flutter Navigator </li>
 <li>Flutter app theming and Dark Mode!!</li>
-<li>State management with setState, MobX and Provider!</li>
+<li>Simple State management with setState, </li>
+<li>Advanced State Management with MobX and Provider!</li>
 <li>Learn the Dart programming language </li>
 <li>Flutter IDE tips and tricks</li>
 </ul>
 <aside class="warning"><p><strong>Note:</strong> Before we get started, in order to do this tutorial, it is required that you will have the Flutter environment installed! Please follow the <a href="https://docs.flutter.dev/get-started/install" target="_blank">Flutter getting started instructions</a> and install it on your machine. </p>
 <p>Make sure flutter commands working on terminal:</p>
-<p>Open the terminal, run <code>flutter doctor</code> command and see that it works. </p>
+<p>Open the terminal, run the <code>flutter doctor</code> command and see that it works with <code>No issues found!</code>.  </p>
 </aside>
-<aside class="special"><p><strong>Note:</strong> Flutter supports Android Studio and Visual Studio IDE&#39;s. You may use the IDE you prefer, However, this tutorial will be Android Studio and Mac oriented. </p>
+<aside class="warning"><p><strong>Note:</strong> Flutter supports Android Studio and Visual Studio IDE&#39;s. You may use the IDE you prefer, However, this tutorial will be Android Studio and Mac oriented. </p>
 </aside>
-<aside class="special"><p><strong>Note:</strong> If you want to run the app on IOS, make sure you have XCode IDE installed. </p>
+<aside class="warning"><p><strong>Note:</strong> If you want to run the app on IOS, make sure you have XCode IDE installed. </p>
 <p>Follow <code>flutter doctor</code> instructions to complete IOS environment ready</p>
 </aside>
 <p class="image-container"><img style="width: 624.00px" src="img/d35d4e91d9280282.png"></p>
@@ -90,20 +91,19 @@
         <ul>
 <li>This tutorial is built on exercises</li>
 <li>Each exercise has a branch in the repository. </li>
-<li>Each exercise branch is followed by a solution branch like: ex_1 and sol_1.</li>
+<li>Each branch is followed by a solution branch like: ex_1 and sol_1.</li>
 <li>The master branch has the complete app.</li>
-<li>On each branch, there are TODO comments which instruct you what you should do.</li>
+<li>On each branch, there is a TODO comments file which instructs you what you should do.</li>
 <li>In Android Studio, you can see all the TODO&#39;s in the TODO&#39;s tab on the bottom left side of the screen:<br><img style="width: 624.00px" src="img/ef4b011c73f4622c.png"></li>
-<li>Follow the TODO&#39;s comments to complete exercise.</li>
+<li>Follow the TODO&#39;s comments or the instructions on this document to complete the exercise.</li>
 </ul>
-<p>This document will give you additional tips and further instructions.</p>
-<aside class="special"><p><strong>Note:</strong> Cloning the project source code is optional!<br>You may create a new project and follow the instructions on this document.  </p>
+<aside class="warning"><p><strong>Note:</strong> Cloning the project source code is optional!<br>You may create a brand new project and follow the instructions on this document.  </p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create New Flutter Project" duration="0">
+      <google-codelab-step label="Create New Flutter Project" duration="10">
         <p><strong>What you will do here:</strong></p>
 <ul>
 <li>Create new Flutter project</li>
@@ -111,7 +111,7 @@
 <li>Run Flutter app from IDE</li>
 <li>Run flutter app from command line</li>
 <li>Explore Flutter project structure</li>
-<li>Experience hot reload</li>
+<li>Use Hot Reload</li>
 </ul>
 <p><strong>Create New Flutter Project</strong></p>
 <ol type="1" start="1">
@@ -132,7 +132,7 @@
 <ul>
 <li><strong>Project root:</strong> Include configuration files such as: pubspec.yaml, README.md etc&#39;</li>
 <li><strong>lib</strong>: This folder is where we write our app Dart code</li>
-<li><strong>android</strong>: A native android project module. All Android configurations such as gradle and Manifest will be done here</li>
+<li><strong>android</strong>: A native android project module. All Android configurations such as gradle and Manifest and permissions will be done here</li>
 <li><strong>ios:</strong> A native IOS project module, All IOS configurations such as Info.plist and Podfile will be done here</li>
 <li><strong>web</strong>:  Web project </li>
 <li><strong>windows:  </strong>A Windows project module</li>
@@ -158,11 +158,11 @@
 <li>Once the emulator is running, run <code>flutter doctor</code> command, notice for <em>connected device<br></em><img style="width: 624.00px" src="img/d35d4e91d9280282.png"></li>
 </ol>
 <p><strong>Run the Flutter default app</strong></p>
-<p>If you look now inside the lib folder you will see the default Flutter application.</p>
+<p>If you look now inside the <code>lib</code> folder you will see the default Flutter sample application.</p>
 <p><strong>Run the app from IDE</strong></p>
 <ol type="1" start="1">
 <li>Run the app from the Run icon <img style="width: 24.24px" src="img/26aaec2cc57cca7e.png"></li>
-<li>This is the Flutter default demonstration app</li>
+<li>This is the Flutter default demonstration app (the counter app)</li>
 <li>Check out the counter button operation</li>
 <li>In the project file, under the <em>MaterialApp</em> modify the theme color from blue to green</li>
 <li>Press <em>Ctrl+S</em> to save, this will do <em>Hot Reload</em>, notice the color change on the screen.</li>
@@ -188,7 +188,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_1 - Create The Workshop Application" duration="0">
+      <google-codelab-step label="Ex_1 - Create The Workshop Application" duration="15">
         <p><strong>What you will do here:</strong></p>
 <ul>
 <li>Create the tutorial project root Application entry point</li>
@@ -198,7 +198,7 @@
 </ul>
 <p><strong>Create the Application file</strong></p>
 <ol type="1" start="1">
-<li>Delete all code in <em><code>main.dart</code></em> which given by the flutter sample project</li>
+<li>Delete the entire content code in <em><code>main.dart</code></em> which given by the flutter sample project</li>
 <li>Under the <em><code>lib</code></em> folder, create new <code>application.dart</code> file</li>
 <li>Open the <code>application.dart</code> file, import the <em>package:flutter/material.dart</em> package</li>
 <li>Create <code>MyApp</code> class which extends StatelessWidget</li>
@@ -231,7 +231,7 @@ import &#39;package:flutter_workshop/application.dart&#39;;
 void main() =&gt; runApp(MyApp());
 </code></pre>
 <ol type="1" start="11">
-<li>Open a terminal, type: <code>flutter run -d all</code> to run the app (You should get black screen now)</li>
+<li>Open a terminal, run: <code>flutter run -d all</code> to run the app (You should get black screen now)</li>
 </ol>
 <aside class="warning"><p><strong>NOTE</strong>: The app should run with a black screen now.</p>
 <p>This is just fine!</p>
@@ -248,12 +248,12 @@ void main() =&gt; runApp(MyApp());
 <p>To learn more about the MaterialApp widget, checkout it&#39;s <a href="https://docs.flutter.io/flutter/material/MaterialApp-class.html" target="_blank">documentation</a></p>
 <p class="image-container"><img style="width: 231.50px" src="img/68226b7e7fde0bbd.png"></p>
 </aside>
-<aside class="special"><p><strong>Easy Import and Override</strong> - To import a class or override a method, stand on the red marked class name, press Alr+Enter, select the class to import or suggest action to override.</p>
+<aside class="special"><p><strong>Easy Import and Override</strong> - To import a class or override a method, stand on the red marked class name, press Alt+Enter, select the class to import or suggest action to override.</p>
 <p class="image-container"><img style="width: 610.00px" src="img/70f6852cef01e8c.png"><img style="width: 610.00px" src="img/b1e39625269f4420.png"></p>
 </aside>
 <aside class="special"><p><strong>Dart Inline Syntax</strong> - If a function execute a single operation we can use the inline syntax:</p>
 <p><em><code>void main() {</code></em></p>
-<p><em><code>runApp(MyApp());</code></em></p>
+<p><em><code>  runApp(MyApp());</code></em></p>
 <p><em><code>}</code></em></p>
 <p>The above code can be replaced by the following code:</p>
 <p><em><code>void main() => runApp(MyApp());</code></em></p>
@@ -262,7 +262,7 @@ void main() =&gt; runApp(MyApp());
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_2 - Home Screen" duration="0">
+      <google-codelab-step label="Ex_2 - Home Screen" duration="7">
         <p><strong>What you will do here</strong></p>
 <ul>
 <li>Create the app HomeScreen dart file</li>
@@ -281,7 +281,7 @@ void main() =&gt; runApp(MyApp());
 <pre><code>//home_screen.dart
 import &#39;package:flutter/material.dart&#39;;
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
    return Container();
@@ -303,7 +303,7 @@ return MaterialApp(
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_3 - Home Screen Body" duration="0">
+      <google-codelab-step label="Ex_3 - Home Screen Body" duration="8">
         <p><strong>What you will do here</strong></p>
 <ul>
 <li>Learn about Flutter page structure, Scaffold, AppBar, and Body</li>
@@ -361,7 +361,7 @@ Scaffold(
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_4 - Elevated Button" duration="0">
+      <google-codelab-step label="Ex_4 - Elevated Button" duration="8">
         <p><strong>What you will do here</strong></p>
 <table>
 <tr><td colspan="1" rowspan="1"><ul>
@@ -374,13 +374,13 @@ Scaffold(
 </table>
 <p><strong>Add ElevatedButton </strong></p>
 <ol type="1" start="1">
-<li>Go over the Text widget and click Alt+Enter</li>
+<li>Go over the Text widget and click Option+Enter</li>
 <li>From the drop down menu, select ‘Wrap with widget&#39; option<br><img style="width: 263.50px" src="img/ce5d9195b23b1d5b.png"></li>
 <li>Rename the new widget to ElevatedButton, add a ‘ ,  &#39; after the Text widget inside the ElevatedButton</li>
 <li>Notice that ElevatedButton requires onPressed callback, for now set in to be null</li>
-<li>Reformat the code by pressing Alt+Cmd+L, notice the difference with or without the last comma ‘ , &#39;</li>
+<li>Reformat the code by pressing Ctrl+Cmd+L, notice the difference with or without the last comma ‘ , &#39;</li>
 <li>Do hot reload, notice the new disabled button, the button disabled because the onPressed property is null<br><img style="width: 298.99px" src="img/71787d5d2ec4a2.png"></li>
-<li>Let&#39;s set the button stretched to the screen width</li>
+<li>Let&#39;s set the button be stretched to the screen width</li>
 <li>Wrap the button with a <code>Column</code>, click on the ElevatedButton, select wrap with Column</li>
 <li>Do hot reload, the button jumped to the left of the screen</li>
 <li>In the Column constructor above the children[] property, add the following:</li>
@@ -442,7 +442,7 @@ Column(
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_5 - Gallery Screen, Stateful Widget" duration="0">
+      <google-codelab-step label="Ex_5 - Gallery Screen, Stateful Widget" duration="10">
         <p><strong>What you will do here:</strong></p>
 <ul>
 <li>Create a new page widget</li>
@@ -552,7 +552,7 @@ ElevatedButton(
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_6 - Gallery Screen body" duration="0">
+      <google-codelab-step label="Ex_6 - Gallery Screen Body" duration="10">
         <p><strong>What you do here</strong></p>
 <ul>
 <li>Build the gallery pages UI structure</li>
@@ -629,7 +629,7 @@ class _GalleryScreenState extends State&lt;GalleryScreen&gt; {
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_7 - Enabling Buttons, Extracting Methods" duration="0">
+      <google-codelab-step label="Ex_7 - Enabling Buttons, Extracting Methods" duration="8">
         <p><strong>What you will do here</strong></p>
 <ul>
 <li>Enable the gallery buttons</li>
@@ -722,7 +722,7 @@ Row(
 
       </google-codelab-step>
     
-      <google-codelab-step label="Ex_8 - Gallery buttons business logic" duration="0">
+      <google-codelab-step label="Ex_8 - Gallery buttons business logic" duration="10">
         <p><strong>What you will do here</strong></p>
 <ul>
 <li>Add Images list</li>
@@ -867,6 +867,668 @@ class _GalleryScreenState extends State&lt;GalleryScreen&gt; {
             );
  }
 }</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_9 - Custom Elevated Button" duration="10">
+        <p>When building UI in Flutter, it is highly recommended to divide our UI elements into structures and custom components which can be reused and easily maintained. This helps us to make our app modular and easy to expand. </p>
+<p>For example, in this app, we have 3 buttons, the Login button, and 2 buttons in the gallery screen. We will create a custom button widget with a progress indicator which shares design and functionality. Then use it on all screens. </p>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Create a custom decorated ElevatedButton with rounded corners</li>
+<li>Create a class named arguments constructor</li>
+<li>Add CircularProgressIndicator to the button for loading state</li>
+<li>Replace buttons in app with new custom elevated button</li>
+</ul>
+<p><strong>Create Custom Elevated Button widget</strong></p>
+<ol type="1" start="1">
+<li>Under the lib directory, create new ui folder/package<br><img style="width: 476.50px" src="img/81add2934a4ee4c2.png"></li>
+<li>In the new directory, create custom_elevated_button.dart file<img style="width: 376.00px" src="img/7b7fe9b14d9b41c0.png"></li>
+<li>In the new file, create CustomElevatedButton class which extends StatelessWidget</li>
+<li>Override the <code>build</code> method and return <code>Container()</code></li>
+<li>Go to the home_screen.dart, copy all ElevatedButton login button code</li>
+<li>Use the option+upArrow to select all the code<br><img style="width: 624.00px" src="img/654be87da7ce3aa8.png"></li>
+<li>Paste the code as the child of the Container in the new CustomElevatedButton Widget</li>
+<li>At the top, inside the CustomElevatedButton class, declare to class members:<br><code>final VoidCallback? onPressed;<br>final String title;<br>final double height;<br>final bool loading;</code></li>
+<li>These members will be used to configure the new widget</li>
+<li>Create named constructor with these members, make the child required<br></li>
+</ol>
+<pre><code>//custom_elevated_button.dart
+Class CustomElevatedButton extends StatelessWidget{
+final VoidCallback? onPressed;
+final String title;
+final double height;
+final bool loading;
+
+const CustomRaisedButton({Key? key,
+                          this.onPressed,
+                          required this.title,
+                          this.height = 50.0,
+                          this.loading = false,
+                          },) : super(key: key); //Named constructor
+...
+@override
+Widget build(BuildContext context){</code></pre>
+<ol type="1" start="11">
+<li>Notice in the constructor we can set default values, and use the <em><code>required</code></em> keyword to prevent nullables values</li>
+<li>Set the Container height</li>
+<li>Replace the onPressed and the Text content :<br></li>
+</ol>
+<pre><code>//custom_elevated_button.dart
+Class CustomElevatedButton extends StatelessWidget{
+
+final VoidCallback? onPressed;
+... 
+
+@override
+Widget build(BuildContext context) {
+ return Container(
+   height: this.height,
+   child: ElevatedButton(
+     child: Text(this.title),
+     onPressed: this.onPressed,
+   ),
+ );
+}</code></pre>
+<p><strong>Styling the button</strong></p>
+<p>For now, we will style the button locally, later we will  use the app theme for that.</p>
+<ol type="1" start="14">
+<li>Inside the ElevatedButton constructor, add a style property</li>
+<li>Define the style using the styleForm function as following:<br><code>style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))</code></li>
+</ol>
+<pre><code>//custom_elevated_button.dart
+Container(
+ height: ...,
+ chid: ElevatedButton(
+    style: ElevatedButton.styleFrom(...),
+    Text(this.title),
+    onPressed:this.onPressed;
+  ), //ElevatedButton
+) //Container</code></pre>
+<p><strong>Use CustomElevatedButton in code</strong></p>
+<ol type="1" start="16">
+<li>Go to home_screen, replace the ElevatedButton with the new CustomElevatedButton you&#39;ve just created:</li>
+</ol>
+<pre><code>//home_screen.dart
+Padding(
+ padding: ...,
+ child: CustomElevatedButton(
+   title: &#34;Login&#34;,
+   onPressed: (){
+     print(&#34;Button Pressed&#34;);
+     Navigator.of(context).push( MaterialPageRoute(builder: (context) =&gt; GalleryScreen()));
+   },
+ ),
+)</code></pre>
+<ol type="1" start="17">
+<li>Repeat step 16 for both buttons in the GalleryScreen, inside the _buildGalleryButton method</li>
+</ol>
+<pre><code>//gallery_screen.dart
+Widget _buildPageButton({required String title, Function()? onPressed}) {
+     return Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              child: CustomElevatedButton(onPressed: onPressed, title: title),
+         );
+     }</code></pre>
+<ol type="1" start="18">
+<li>Do Hot reload, check that all buttons looks and work properly</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_10 - Gallery Screen Layout and Decoration" duration="10">
+        <p>The gallery screen works properly but it has some problems. The buttons top side might touch the bottom of the image, when we navigate to the screen, the buttons jump to the middle of the screen until the first image is loaded.</p>
+<p>The image is flat, we want to give it rounded corners and apply some shadow.</p>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Rearrange layout using Expanded widget</li>
+<li>Use ClipRRect widget to make rounded corners</li>
+<li>Apply shadow effect</li>
+<li>Use SafeArea widget</li>
+</ul>
+<p><strong>Fix buttons jump problem</strong></p>
+<ol type="1" start="1">
+<li>In the gallery screen, click/select Image.network Widget</li>
+<li>Press Options+Enter and select Wrap with Widget option</li>
+<li>Set the widget to Expanded</li>
+</ol>
+<pre><code>//gallery_screen.dart
+Expanded(
+          child: Image.network(
+            _images[_index],
+             fit: BoxFit.fill,
+           ),
+        ),</code></pre>
+<ol type="1" start="4">
+<li>Do hot reload, notice that the image now expanded, we still need to add some padding between the image and the buttons.</li>
+<li>Notice that on IOS the layout might overflow on the device bottom side. We shall fix it in the next steps</li>
+<li>Select/click on the Row widget, press Options+Enter</li>
+<li>From the help menu, select Wrap with Padding</li>
+<li>Set the padding value to be EdgeInsets.only(top: 8.0), This will add some padding between the bottom of the image and the buttons row</li>
+<li>Do hot reload, look for the better looking layout</li>
+</ol>
+<pre><code>//gallery_screen.dart
+Padding(
+           padding: const EdgeInsets.only(top: 8.0),
+             child: Row(...
+                 children:[] ,
+             ) //Row
+      )// Padding</code></pre>
+<p><strong>Add SafeArea </strong></p>
+<p>On IOS, you might see that the layout reached to the bottom of the screen, we can fix this by using the SafeArea widget.</p>
+<ol type="1" start="10">
+<li>Select/Click on the <code>body: Container</code> widget</li>
+<li>Press options+Enter, select Wrap with widget</li>
+<li>Set the widget to be SafeArea</li>
+<li>Set the SafeArea <code>bottom: true</code></li>
+</ol>
+<pre><code>//gallery_screen.dart
+body: SafeArea(
+        bottom: true,
+        child: Container(
+             padding: EdgeInsets.all(8),
+              child: _buildContent()
+          ), //Container
+        ) //SafeArea</code></pre>
+<ol type="1" start="14">
+<li>Do hot reload, look for the final layout</li>
+</ol>
+<p><strong>Image decoration and shadow </strong></p>
+<p>Now that we fixed the layout, it&#39;s time to decorate the image, Let&#39;s add some shadow and rounded corners</p>
+<ol type="1" start="15">
+<li>​​Select the Image.network widget, wrap it with a widget (As we did in previous steps)</li>
+<li>Set the widget to be ClipRRect()</li>
+<li>Add borderRadius: property to the new ClipRRect</li>
+<li>Set the border radius to 10 points as following</li>
+</ol>
+<pre><code>//gallery_screen.dart
+ClipRRect(
+             borderRadius: BorderRadius.all(Radius.circular(10)),
+             child: Image.network(_images[_index]),
+)</code></pre>
+<ol type="1" start="19">
+<li>Wrap the ClipRRect widget with a Container</li>
+<li>To the new Container, set decoration: BoxDecoration() property</li>
+</ol>
+<pre><code>//gallery_screen.dart
+Container(
+   decoration: BoxDecoration(
+   
+   ),
+   child: ClipRRect(
+             borderRadius: BorderRadius.all(Radius.circular(10)),
+             child: Image.network(_images[_index]),
+  ), //ClipRRect
+), //Container</code></pre>
+<ol type="1" start="21">
+<li>Inside the BoxDecoration, border radius:<br><code>BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),)</code></li>
+<li>Under the borderRadius: add boxShadow: property</li>
+</ol>
+<pre><code>//gallery_screen.dart
+Container(
+ decoration: BoxDecoration(
+               borderRadius: BorderRadius.all(Radius.circular(10)),
+               boxShadow: [
+                 BoxShadow(
+                   color: Colors.black38,
+                   offset: Offset(4.0, 4.0),
+                   blurRadius: 10.0,
+                   spreadRadius: 0.4,
+                 ), //BoxShadow
+               ],
+             ), //BoxDecoration
+), //Container</code></pre>
+<ol type="1" start="23">
+<li>Do hot reload, look for the changes</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_11 - Login Progress Indicator" duration="10">
+        <p>In this exercise, we will add progress indicator to the CustomElevatedButton and use it to simulate login progress when click the login button in the HomeScreen</p>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Add property to a widget and use it</li>
+<li>Use Future for simulating long operation</li>
+<li>Refactor a Stateless widget to Stateful widget</li>
+</ul>
+<p><strong>Add loading state to CustomElevatedButton</strong></p>
+<ol type="1" start="1">
+<li>Open the custom_elevated_button.dart file</li>
+<li>Add a boolean loading property to the class</li>
+<li>Add the new property to the class named constructor, set the default value to be false</li>
+</ol>
+<pre><code>//custom_elevated_button.dart
+class CustomElevatedButton extends StatelessWidget{
+  final String title;
+  final double height;
+  final double loading; //Add this property
+
+  const CustomElevatedButton({
+     Key? key,
+     this.onPressed,
+     required this.title,
+     this.height = 50,
+     this.loading = false, //Add loading to named constructor
+   }) : super(key: key);
+
+}</code></pre>
+<ol type="1" start="4">
+<li>Set the button child depends the loading property, use the ternary statement<br><code>child: loading ? CircularProgressIndicator() : Text(this.title)</code></li>
+<li>We also want to disable the button during loading state, we can do this by setting the onPressed to be null while loading</li>
+<li>Use the ternary statement to set the onPressed to null while loading<br><code>onPressed: loading ? null : this.onPressed</code></li>
+</ol>
+<pre><code>//custom_elevated_button.dart
+ElevatedButton(
+   style: ElevatedButton.styleFrom(...),
+   child: loading ? CircularProgressIndicator() : Text(this.title),
+   onPressed: loading ? null : this.onPressed,
+)</code></pre>
+<p><strong>Simulate long login operation in HomeScreen</strong></p>
+<p>Lets simulate a long operation and show the loading indicator in the home screen. </p>
+<p>Before we do this, we need to refactor the HomeScreen from Stateless to Stateful widget. After doing this, we will add the loading state property to the home screen and pass it to the CustomElevatedButton as a parameter. </p>
+<p>We will use Future.delayed with setState  to simulate logging in.</p>
+<ol type="1" start="7">
+<li>Open the HomeScreen widget</li>
+<li>Stand on the HomeScreen class name</li>
+<li>Press Option+Enter, from the dialog select Convert to StateFul Widget<img style="width: 399.00px" src="img/d88eed680c36f20a.png"></li>
+<li>Notice that the Widget changed to a Stateful widget with a State&lt;&gt; class automatically.</li>
+<li>Inside the new State class, above the <code>build</code> method, add bool _loading property and set it to false<br></li>
+</ol>
+<pre><code>//home_screen.dart
+class _HomeScreenState extends State&lt;HomeScreen&gt; { 
+  bool _loading = false;
+  @override
+  Widget build(BuildContext context){.
+
+.}</code></pre>
+<ol type="1" start="12">
+<li>Under the new property and above the build method create _setLoading method</li>
+<li>Under setLoading method, create another _login() method</li>
+<li>Move the call to navigate GalleryScreen to the end of the _login method</li>
+</ol>
+<pre><code>//home_screen.dart
+...
+bool _loading = false;
+
+void _setLoading(bool loading){
+    setState(() {
+      _loading = loading;
+    });
+}
+
+void _login(){
+   _setLoading(true)
+   Future.delayed(Duration(seconds: 3), (){
+      _setLoading(false)
+      Navigator.of(context).push( MaterialPageRoute(builder: (context) =&gt; GalleryScreen()));
+   });
+}
+
+@override
+Widget build(BuildContext context){
+...</code></pre>
+<ol type="1" start="15">
+<li>Add the _loading property to the Login button</li>
+<li>In the Login button, call the _login method from the onPressed callback<br></li>
+</ol>
+<pre><code>//home_screen.dart
+...
+CustomElevatedButton(
+                 loading: _loading,
+                 child: Text(&#34;Login&#34;),
+                 onPressed: ()=&gt; _login(), //Call _login function
+               )
+...</code></pre>
+<ol type="1" start="18">
+<li>Do hot reload, click on the login button and watch the progress indicator and navigation happens after 3 seconds. </li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_12 - Theme and Dark Mode" duration="15">
+        <p>Flutter has a built-in Theming framework which allows us to style our app in a modular way!</p>
+<p>In addition, it also has support for Dark mode.</p>
+<p>In this chapter we will set our app theme base colors both for light and dark mode, as well buttons default shape and corners, text style and size for all across the app.</p>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Learn about theme properties in the MaterialApp</li>
+<li>Use the copyWith pattern to chain and create new Theme objects from an existing one</li>
+<li>Extract theming to methods</li>
+</ul>
+<aside class="special"><p><strong>Flutter MaterialApp widget:<br></strong>As you remember, the MaterialApp widget is the root widget of our app. This widget has plenty of properties which affect the entire app such as: </p>
+<ul>
+<li>Orientation, </li>
+<li>Navigation routes, </li>
+<li>Themes</li>
+<li>Localization and more..<br></li>
+</ul>
+<p>We will use the MaterialApp properties to define themes to our app.</p>
+</aside>
+<p><strong>Define base light theme with colors</strong></p>
+<ol type="1" start="1">
+<li>Open application.dart file, reminder, in this file we created our app root Widget, the MaterialApp</li>
+<li>In the MaterialApp constructor, under the <code>title: "Flutter Workshop"</code>, add <code>theme:</code> property, the theme property receives <code>ThemeData</code> object which contains, theme properties such as colorScheme, textTheme and more</li>
+<li>Set the base theme: property as follow<br><code>theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black))</code></li>
+<li>Do Hot Reload, look how the appBar and Buttons color has changed</li>
+<li>Let&#39;s add some more styling by using the <code>copyWith</code> pattern at the end of the <code>ThemeData.from()</code>statement</li>
+<li>Set the app bar elevation to 0<br><em><code>ThemeData.from(colorScheme: ...).</code></em><strong><em><code>copyWith(appBarTheme: AppBarTheme(elevation: 0))</code></em></strong></li>
+<li>Next, set TextTheme, we want to set all buttons text to size of 25, and appBar text to 22 (appBar text is defined with headline6 theme attribute by default)<br><em><code>ThemeData.from(colorScheme: ...).copyWith(appBarTheme: ...                                          textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22),),)</code></em></li>
+<li>Next, let&#39;s set the default theme for ElevatedButtons! This will be done with the <em><code>ElevatedButtonTheme<br>ElevatedButtonThemeData(style: ElevatedButton.styleFrom(<br>       shape: RoundedRectangleBorder(borderRadius:<br>                                   BorderRadius.all(Radius.circular(40)),),<br>                                   primary: Colors.lightBlue,<br>                                   onPrimary: Colors.white,),</code></em></li>
+<li>Finally, app theme should look like this:</li>
+</ol>
+<pre><code>//application.dart
+...
+theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black)).copyWith(
+                          appBarTheme: ...
+                          textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
+                          elevatedButtonTheme: ElevatedButtonThemeData(
+                                                Style: ElevatedButton.styleFrom( shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40))),
+                          primary: Colors.lightBlue,
+                          onPrimary: Colors.white,
+                        ),
+                       ),
+                     )
+...</code></pre>
+<ol type="1" start="10">
+<li>Do hot reload, look on app look with the theme we just applied</li>
+</ol>
+<aside class="warning"><p><strong>Q:</strong> Why the button&#39;s rounded corners hasn&#39;t changed?</p>
+<p><strong>A:</strong> As you remember, we set the button style internally inside the CustomElevatedButton, this overrides the theme. We will fix this shortly</p>
+</aside>
+<p><strong>Define base dark theme</strong></p>
+<p>After setting the default theme, let&#39;s set the dark mode theme.</p>
+<ol type="1" start="11">
+<li>Above the theme: property add <code>darkTheme:</code> property<br><code>darkTheme:<br>theme: ThemeData.from...</code></li>
+<li><em><code>Repeat steps 5 - 8 for the darkTheme, at the end you should have the following configuration<br></code></em></li>
+</ol>
+<pre><code>//application.dart
+...
+darkTheme: ThemeData.from(colorScheme: ColorScheme.dark(onPrimary: Colors.white)).copyWith(
+       appBarTheme: AppBarTheme(elevation: 0),
+        textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                 shape: RoundedRectangleBorder(
+                 borderRadius: BorderRadius.all(Radius.circular(40)),
+              ),
+            )),
+         ),
+theme: ThemeData.from(...),
+...</code></pre>
+<ol type="1" start="13">
+<li>Do hot reload, switch your device to dark mode, watch how the app looks in dark mode!</li>
+</ol>
+<p><strong>Extract theme creation to methods<br></strong>The theming code adds some boilerplate code to the material app widget. It will be nicer if we can have some util methods for this. </p>
+<ol type="1" start="14">
+<li>Click on the light theme content <code>ThemeData.from(colorScheme: ColorScheme.light...</code></li>
+<li>Press and hold Option while press the up arrow on the keyboard, this will start to mark the ThemeData content, mark the entire content of the ThemeData object</li>
+<li>Press Option+Cmd+M, this will open the extract method dialog</li>
+<li>Set method name to <code>_buildLightTheme</code> and press Enter</li>
+<li>Repeat steps 14 - 17 for darkTheme property, name the method <code>_buildDarkTheme</code></li>
+<li>At the end your MaterialApp should look as follow:</li>
+</ol>
+<pre><code>//application.dart
+MaterialApp(
+       title: &#34;Flutter Workshop&#34;,
+       theme: _buildLightTheme(),
+       darkTheme: _buildDarkTheme(),
+       home: HomeScreen(),
+     );</code></pre>
+<p><strong>Removing the style: attribute from CustomElevatedButton<br></strong>In previous chapters we&#39;ve created a CustomElevatedButton with a progress indicator. We&#39;ve also defined an internal style attribute for it. Since we defined an elevatedButtonTheme in the app root, we no longer need a local styling in the widget itself. (This actually overrides the theme defined in the app root). Lets remove the local styling from the widget. </p>
+<ol type="1" start="20">
+<li>Open the custom_elevated_button.dart file</li>
+<li>Remove the style property</li>
+</ol>
+<p><em><code>ElevatedButton(<br>child: loading ? CircularProgressIndicator() : this.child,<br>onPressed: ... )</code></em></p>
+<ol type="1" start="22">
+<li>Do Hot reload, checkout the buttons rounded corners</li>
+<li>From the device settings, switch to dark mode and watch how app look changed in dark theme</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_13 - State Management with MobX and Provider" duration="20">
+        <aside class="special"><p>State management is one of the most important and interesting topic in Flutter</p>
+<p>In Flutter there are many ways to manage the state of a widget and the app. The most simple way is a Stateful widget with setState, which we  already used in the HomeScreen and the GalleryScreen.</p>
+<p>However, there are many better ways rather than setState.</p>
+<p>In this lesson, we will use the MobX + Provider libraries to manage the state of the GalleryScreen.</p>
+<p>As mentioned, in Flutter, there are many State Management techniques such as BLoC, Riverpod, Provider, MobX, setState and more.</p>
+<p>Each one has its own benefits and cons. As you get experienced with Flutter, you will have the knowledge to decide which is the best for your use case.</p>
+<p>For this app, I&#39;ve chosen MobX + Provider which are quite simple to implement and understand</p>
+</aside>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Add dependencies to flutter app</li>
+<li>Learn about flutter build runner code generation</li>
+<li>Learn to concept of InheritedWidget </li>
+<li>Decouple UI from business logic</li>
+</ul>
+<aside class="special"><p><strong>MobX StateManagement<br></strong>MobX is a state-management library that makes it simple to connect the reactive data of your application with the UI. This wiring is completely automatic and feels very natural. As the application-developer, you focus purely on what reactive-data needs to be consumed in the UI (and elsewhere) without worrying about keeping the two in sync.</p>
+<p>MobX core concepts:</p>
+<ul>
+<li><strong>Observables</strong> - The UI will update when any of the Observables has a change</li>
+<li><strong>Actions</strong> - The UI will trigger the actions </li>
+<li><strong>Reaction</strong> - Side effect operations that will be executed when an observable is changing</li>
+<li><strong>Store</strong> - The container class which will holds the logic and MobX elements</li>
+</ul>
+<p><strong>MobX Workflow Diagram:</strong></p>
+<p class="image-container"><img style="width: 511.50px" src="img/f738514cd5777964.png"></p>
+<p>To learn more about MobX <a href="https://pub.dev/packages/mobx" target="_blank">checkout their documentation</a></p>
+</aside>
+<p><strong>Add MobX and Provider dependencies to our project</strong></p>
+<ol type="1" start="1">
+<li>Open the project pubspec.yaml file. In this file we can define dependencies, set our project version, define assets and more!</li>
+<li>Add the flutter_mobx library to the project dependencies, in the pubspec.yaml file: https://pub.dev/packages/flutter_mobx</li>
+<li>Add mobx_codegen dependency</li>
+<li>Add Provider package dependency</li>
+<li>Add build_runner to dev_dependencies,</li>
+</ol>
+<pre><code>//pubspec.yaml
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_mobx: ^2.0.4
+  mobx_codegen:
+  provider: ^6.0.2
+  # The following ...
+  cupertino_icons: ^0.1.2 //This one was already there by default
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner:</code></pre>
+<ol type="1" start="6">
+<li>After adding dependencies in the pubspec.yaml, click Pub get to sync the dependencies</li>
+</ol>
+<aside class="warning"><p><strong>Yaml indentations</strong></p>
+<p>When working with yaml files, it is extremely important that all indentations will be correct or yaml won&#39;t be sync and dependencies might not be loaded properly.  </p>
+</aside>
+<p><strong>Create the Gallery Screen Store</strong></p>
+<ol type="1" start="1">
+<li>In the gallery_screen directory, create new gallery_store.dart file</li>
+<li>At the top of the file, import the mobx.dart package:<br><code>import 'package:mobx/mobx.dart';</code></li>
+<li>In the new file, create an <code>abstract class _GalleryStore</code>, this will be the class which will contain the logic for the gallery</li>
+</ol>
+<pre><code>//gallery_store.dart
+import &#39;package:mobx/mobx.dart&#39;;
+
+abstract class _GalleryStore with Store {
+
+}</code></pre>
+<ol type="1" start="4">
+<li>Copy _images list from the gallery screen and place it inside the GalleryStore class</li>
+</ol>
+<pre><code>//gallery_store.dart
+import &#39;package:mobx/mobx.dart&#39;;
+
+abstract class _GalleryStore with Store {
+List&lt;String&gt; _images = [
+  &#34;https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg&#34;,
+  &#34;https://image.tmdb.org/t/p/w500/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg&#34;,
+  &#34;https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg&#34; 
+ ];
+}</code></pre>
+<aside class="special"><p>Mobx store works with predefined components types such as: <br>* <strong>@computed <br></strong>* <strong>@action<br></strong>* <strong>@observable</strong></p>
+</aside>
+<ol type="1" start="5">
+<li>Below the _images list create the _index @observable<br><code>@observable<br>int _index = 0;</code></li>
+<li>Next, create the _image @computed field:<br><code>@computed<br>String get image => _images[_index];</code></li>
+<li>Next, create the <code>first</code> and <code>last</code> @computed fields:<br><code>@computed<br>bool get first => _index == 0;<br>@computed<br>bool get last => _index == (_images.length - 1);</code></li>
+<li>Now, let&#39;s create @action methods for next and previous, these methods will be called from the Widget when user clicks the gallery buttons</li>
+</ol>
+<pre><code>//gallery_store.dart
+import &#39;package:mobx/mobx.dart&#39;;
+
+abstract class _GalleryStore with Store{
+
+ List&lt;String&gt; _images = [
+   &#34;https://image.tmdb.org/t/p/w500/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg&#34;,
+   &#34;https://image.tmdb.org/t/p/w500/svIDTNUoajS8dLEo7EosxvyAsgJ.jpg&#34;,
+   &#34;https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg&#34;
+ ];
+ @observable
+ int _index = 0;
+
+ @computed
+ String get image =&gt; _images[_index];
+
+ @computed
+ bool get first =&gt; _index == 0;
+
+ @computed
+ bool get last =&gt; _index == (_images.length - 1);
+
+ @action
+ void next() =&gt; _index++;
+ 
+ @action
+ void previous() =&gt; _index--;
+}</code></pre>
+<p>The store class is ready, however, as you notice, this is an abstract private class, we should create a concrete class for it. </p>
+<ol type="1" start="9">
+<li>At the top of the file, above the abstract class define a concrete class for it:<br><em><code>class GalleryStore = _GalleryStore with _$GalleryStore;<br><br>abstract class _GalleryStore with Store{...</code></em></li>
+<li>You should now see some compilation errors, this is fine for now</li>
+<li>At the top of the file, below <code>import</code> add the <code>part<br></code><em><code>import 'package:mobx/mobx.dart';<br>part 'gallery_store.g.dart';</code></em></li>
+<li>Notice that currently you should have compilation error as the <code>gallery_store.g.dart</code> file not exists yet</li>
+</ol>
+<p><strong>Running build runner for code generation</strong></p>
+<aside class="special"><p>In Flutter, code generation is very popular.</p>
+<p>As you notice in our GalleryStore class, we defined a few annotations like @computed, @action and @observable which came from the MobX library. <br></p>
+<p>These annotations means that there should be some generated code which will be created for these annotations and for this class. <br><br>Currently, In Flutter, code generated isn&#39;t created automatically like in Kotlin for example, for this we need to run the build runner command.</p>
+<p><em><code>flutter pub run build_runner build</code></em></p>
+</aside>
+<ol type="1" start="13">
+<li>Open the terminal in the project directory</li>
+<li>Run the build runner command:<br><em><code>flutter pub run build_runner build</code></em></li>
+<li>Wait for the script to complete with Succeeded result:<img style="width: 499.00px" src="img/b6178b31c873b55d.png"></li>
+<li>Go back to the gallery_store.dart file, see that all errors are gone and look for the gallery_store.g.dart file that was created in the same directory.<br></li>
+</ol>
+<aside class="special"><p>As we&#39;ve created the GalleryStore, it is still not in use and the GalleryScreen still works with setState. </p>
+<p>In the next lesson we will refactor the GallerScreen and integrate the Store using the Provider library. Then we can remove all the logic code from the widget, and even we can set it to be StatelessWidget! </p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_14 - Use GalleryStore with Provider" duration="20">
+        <aside class="special"><p>In the last lesson, we&#39;ve created the GalleryStore class which contains all the logic for the gallery page</p>
+<p>Now, we want to use it in the GalleryScreen. For this, we will use the Provider library.</p>
+<p>The Provider library is the most popular state management library for Flutter. It is a wrapper and implementation for Flutter InheritedWidget concept, which utilizes the Flutter Widget Tree structure to create ancestor Widgets so child Widgets can access these ancestors from anywhere down the tree. <br><br>A typical Flutter Widget tree:</p>
+<p class="image-container"><img style="width: 747.48px" src="img/7c19a116da060f9e.png"></p>
+<p>An illustration of WidgetTree with Provider:</p>
+<p class="image-container"><img style="width: 611.00px" src="img/df3e7e62d2349ea.png"></p>
+</aside>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Create ancestor using Provider</li>
+<li>Access ancestor from a widget using Provider.of(context)</li>
+<li>Use the Observer widget to listen Store changes</li>
+</ul>
+<p><strong>Make MobX Store as AppAncestor </strong></p>
+<ol type="1" start="1">
+<li>Open the application.dart file</li>
+<li>Select the MaterialApp, press option+Enter and select Wrap with widget</li>
+<li>Set the new Widget <code>MultiProvider</code></li>
+<li>In the create widget, add the <code>providers: []</code> property array</li>
+<li>The MultiProvider allows creating a list of providers which will be ancestors for all child widgets below.</li>
+<li>In the providers: [] array, create a Provider for the GalleryStore which we created in the last lesson.</li>
+</ol>
+<pre><code>//application.dart
+import &#39;package:mobx/mobx.dart&#39;;
+
+providers: [
+  Provider&lt;GalleryStore&gt;(create: (_) =&gt; GalleryStore()) //Here we&#39;ve created an instance of the GalleryStore and set it as an ancestor of the entire app widget tree
+]</code></pre>
+<aside class="warning"><p><strong>Q: </strong>How can we now access the GalleryStore</p>
+<p><strong>A:</strong> We can use the Provider.of&lt;GalleryStore&gt;(context), to access it anywhere down the widget tree </p>
+</aside>
+<p><strong>Use Provider to access GalleryStore</strong></p>
+<ol type="1" start="7">
+<li>Open the <code>gallery_screen.dart</code></li>
+<li>In the <code>GalleryState<></code> class, create late GalleryStore _store class member<br><code>late GalleryStore _store;</code></li>
+<li>In the state class, above the <code>build</code> method override the didChangeDependencies method</li>
+<li>Initialize the _store object with Provider as following:</li>
+</ol>
+<pre><code>//gallery_screen.dart
+import &#39;package:mobx/mobx.dart&#39;;
+
+@override
+   void didChangeDependencies() {
+     super.didChangeDependencies();
+     _store = Provider.of&lt;GalleryStore&gt;(context);
+   }</code></pre>
+<p><strong>Use Observer widget to listen to changes in the Store</strong></p>
+<aside class="special"><p>The Observer widget will be rebuild its children when any of the MobX elements in the Store are changing: <strong>@observable, @computed, @action</strong></p>
+</aside>
+<ol type="1" start="11">
+<li>Select the Column of the inside the _buildContent method, press option+Enter and select Wrap with widget</li>
+<li>Set the wrapping Widget to <code>Observer</code>, change the method return type to Widget (Instead of Column)</li>
+<li>The Observer widget should take a builder: property.</li>
+<li>Inside the Observer, define a builder: property as follow:</li>
+</ol>
+<pre><code>//gallery_screen.dart
+import &#39;package:mobx/mobx.dart&#39;;
+...
+Observer(
+    builder: (context) =&gt; Column
+)</code></pre>
+<ol type="1" start="15">
+<li>Mark the Column widget (use option + UpArrow), cut and paste the content in the builder: as shown shown in step 15</li>
+<li>The _buildContent method now should look like this:</li>
+</ol>
+<pre><code>//gallery_screen.dart
+import &#39;package:mobx/mobx.dart&#39;;
+...
+Widget _buildContent() {
+      return Observer(
+         builder: (_) =&gt; Column(
+           mainAxisSize: MainAxisSize.max,
+           ...</code></pre>
+<p><strong>Use GalleryStore in GalleryScreen</strong></p>
+<ol type="1" start="17">
+<li>Mark the Column widget (use option + UpArrow), cut and paste the content in the builder: as shown shown in step 15</li>
+<li>Replace the Image.network content from <code>_images[_index]</code> with <code>_store.image<br>Image.network(store.image, fit: BoxFit.fill)</code></li>
+<li>Replace the the buttons onPressed to invoke <code>_store.next</code> and <code>_store.previous</code></li>
+</ol>
+<pre><code>//gallery_screen.dart
+import &#39;package:mobx/mobx.dart&#39;;
+_buildPageButton(title: &#34;Previous&#34;, onPressed: _store.first ?  null : store.previous,)
+
+_buildPageButton(title: &#34;Next&#34;, onPressed: _store.last ? null : _store.next,)</code></pre>
+<p><strong>Clean Gallery Unused Code</strong></p>
+<ol type="1" start="20">
+<li>Delete the images list, </li>
+<li>Delete the _index variable</li>
+<li>Delete the _handleNext and _handlePrevious methods</li>
+</ol>
 
 
       </google-codelab-step>
