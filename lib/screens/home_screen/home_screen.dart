@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/app_routes.dart';
 import 'package:flutter_workshop/screens/gallery_screen/gallery_screen.dart';
 import 'package:flutter_workshop/ui/custom_elevated_button.dart';
 
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _setLoading(true);
     Future.delayed(Duration(seconds: 3), (){
       _setLoading(false);
-      Navigator.of(context).push( MaterialPageRoute(builder: (context) => GalleryScreen()));
+      Navigator.pushNamed(context, GALLERY_ROUTE);
     });
   }
 
