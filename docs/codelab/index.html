@@ -104,7 +104,9 @@
       </google-codelab-step>
     
       <google-codelab-step label="Create New Flutter Project" duration="10">
-        <p><strong>What you will do here:</strong></p>
+        <aside class="warning"><p>If you&#39;ve already created Flutter sample project and you have a device or emulator ready, you may skip this part and jump to <a href="https://moti0375.github.io/flutter_workshop/codelab/#3" target="_blank">Ex_1</a></p>
+</aside>
+<p><strong>What you will do here:</strong></p>
 <ul>
 <li>Create new Flutter project</li>
 <li>Create and run Android emulator</li>
@@ -1529,6 +1531,99 @@ _buildPageButton(title: &#34;Next&#34;, onPressed: _store.last ? null : _store.n
 <li>Delete the _index variable</li>
 <li>Delete the _handleNext and _handlePrevious methods</li>
 </ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Ex_15 - Bonus, Navigator Named Routes" duration="10">
+        <aside class="special"><p>In the previous exercises we used Flutter Navigator to navigate between screens in the app.<br>When did so, we created as-hoc routes and used the <code>push()</code>method for navigation. </p>
+<p>However, in a real world app, this solution may cause us code duplications and add boilerplate code anywhere we want to navigate.</p>
+<p>In addition, we might want to navigate to a destination screen from a few sources, this, again, will cause us to have code duplication and therefore our app will become harder to maintain.</p>
+<p>It will be much more efficient if we can define all routes in one place and then use them anywhere in our code, in a much more easy way. </p>
+<p>Flutter offers a rich in-app navigation solutions, including Navigator 2.0 which has already been introduced.<br></p>
+<p>Nevertheless, for this tutorial app, we can use the named routes api</p>
+</aside>
+<p><strong>What you do here</strong></p>
+<ul>
+<li>Define named routes in one place</li>
+<li>Define initial route of our app (entry point)</li>
+<li>Use pushNamed api for in-app navigation</li>
+</ul>
+<p><strong>Define named routes constants</strong></p>
+<ol type="1" start="1">
+<li>Under the lib folder, create new app_routes.dart file</li>
+<li>In the new app_routes.dart file create 2 global routes constants<br></li>
+</ol>
+<pre><code>//app_routes.dart
+const HOME_SCREEN = &#39;./&#39;;
+const GALLERY_SCREEN = &#39;/gallery_screen&#39;;</code></pre>
+<ol type="1" start="3">
+<li>Open the application.dart file</li>
+<li>In the MaterialApp constructor, above the themes definition, add initialRoute: HOME_SCREEN</li>
+<li>Next, add routes: property<br><code>routes: {<br>   INITIAL_ROUTE: (context) => HomeScreen(),<br>   GALLERY_ROUTE: (context) => GalleryScreen()<br>}</code></li>
+<li>After we define the app routes, delete the home: property</li>
+</ol>
+<pre><code>//application.dart
+import &#39;package:flutter/material.dart&#39;;
+import &#39;package:flutter_workshop/app_routes.dart&#39;;
+
+MaterialApp(
+  title: &#34;Flutter Workshop&#34;,
+  initialRoute: INITIAL_ROUTE,
+  routes: {
+    INITIAL_ROUTE: (context) =&gt; HomeScreen(),
+    GALLERY_ROUTE: (context) =&gt; GalleryScreen()
+  },
+  darkTheme: _buildDarkTheme(),
+  theme: _buildLightTheme()
+)</code></pre>
+<p><strong>Refactor navigation with pushNamed</strong></p>
+<ol type="1" start="7">
+<li>In the home_screen.dart, replace the Navigator.of(context).push() with .pushNamed()<br><code>Navigator.pushNamed(context, GALLERY_ROUTE)<br></code></li>
+</ol>
+<pre><code>//home_screen.dart
+import &#39;package:flutter_workshop/app_routes.dart&#39;;
+
+...
+void _login(){
+ _setLoading(true);
+ Future.delayed(Duration(seconds: 3), (){
+   _setLoading(false);
+   Navigator.pushNamed(context, GALLERY_ROUTE);
+  });
+}</code></pre>
+<ol type="1" start="8">
+<li>Do hot reload</li>
+<li>Check that in-app navigation works properly</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Summary" duration="0">
+        <p><strong>Congratulations!!</strong> You&#39;ve reached the end of this codelab !! Cheers!</p>
+<p>Throughout this codelab we&#39;ve learned the basics of Flutter such as Stateless and Stateful widgets, Column and Rows, decorations, themes, Image download and more.</p>
+<p>In addition, we&#39;ve experienced IDE shortcuts and tips such as widget selection, refactoring a Stateless widget to Stateful widget, creating custom widgets and using them in code.</p>
+<p>Last but not least, we&#39;ve tasted the cool and easy to learn Dart programming language and its unique syntax which was designed especially for Flutter.</p>
+<p><strong>What&#39;s Next</strong></p>
+<p>Flutter has a lot of topics which hasn&#39;t covered in this tutorial and already well known recommended architectures and State Management patterns such as:</p>
+<ol type="1" start="1">
+<li><a href="https://docs.flutter.dev/development/data-and-backend/state-mgmt/simple#changenotifier" target="_blank">ChangeNotifier</a></li>
+<li><a href="https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html" target="_blank">StreamBuilder</a></li>
+<li><a href="https://pub.dev/packages/flutter_bloc" target="_blank">BLoc</a></li>
+<li><a href="https://riverpod.dev/" target="_blank">Riverpod</a></li>
+</ol>
+<p>Flutter also has its own DI techniques which are based on InheritedWidget and the Provider package along with understanding the widget tree structure and how it can help us to manage our app state.</p>
+<p>To become a professional Flutter developer, it is extremely important to learn these topics.</p>
+<p>Recommended Flutter tutorials:</p>
+<p>You may find great tutorials for these topics in the <a href="https://youtu.be/u_Lyx8KJWpg" target="_blank">following playlist</a></p>
+<p><strong>Flutter Codelabs:</strong></p>
+<p>You may find more great Flutter codelabs in the official <a href="https://flutter.dev/docs/codelabs" target="_blank">Flutter codelab page</a>!</p>
+<p><strong>Dart pad :</strong></p>
+<p><a href="https://dartpad.dartlang.org/" target="_blank">An online dart playground</a>: You can use it for coding and learning Dart online.</p>
+<p><strong>Flutter Studio :</strong></p>
+<p><a href="https://flutterstudio.app/" target="_blank">An online Flutter widget editor</a>:</p>
+<p>This cool page lets you design and create Flutter widgets and pages, with a cool visual editor. It also generates the Flutter code for you. (Just like Android Studio XML layout editor)</p>
 
 
       </google-codelab-step>
