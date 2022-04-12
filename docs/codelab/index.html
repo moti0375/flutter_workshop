@@ -238,6 +238,9 @@ void main() =&gt; runApp(MyApp());
 <aside class="warning"><p><strong>NOTE</strong>: The app should run with a black screen now.</p>
 <p>This is just fine!</p>
 </aside>
+<aside class="warning"><p><strong>NOTE</strong>: In Dart language you should put <code>;</code> at the end of the line</p>
+</aside>
+<p class="image-container"><img style="width: 278.22px" src="img/8b3434d67f2dff34.png"></p>
 <p><strong>Summary</strong></p>
 <aside class="special"><p><strong>Main function</strong> - The main function is the entry point of the application  </p>
 </aside>
@@ -276,7 +279,7 @@ void main() =&gt; runApp(MyApp());
 <ol type="1" start="1">
 <li>Under the lib directory, create new package with the name &#39;screens&#39; (right click, New --&gt; Directory/Package)</li>
 <li>Under the new screens directory, create home_screen package</li>
-<li>Inside the home_screen package, create new <code>home_screen.dart</code> file</li>
+<li>Inside the home_screen package, create new <code>home_screen.dart</code> file<br><br><img style="width: 306.50px" src="img/99d0477ae1eee3d9.png"><br></li>
 <li>Open home_screen.dart, create HomeScreen class which extends StatelessWidget</li>
 <li>Override the <code>build()</code> methodReturn a <code>Container()</code> Widget</li>
 </ol>
@@ -356,7 +359,7 @@ Scaffold(
 <p>This helps the editor to format the code so it can be more readable.</p>
 <p>To reformat the code, press <em><code>Cmd+Shift+L</code></em></p>
 </aside>
-<aside class="special"><p class="image-container"><img style="width: 279.50px" src="img/555ad7465e7a1bee.png"></p>
+<aside class="special"><p class="image-container"><img style="width: 290.00px" src="img/555ad7465e7a1bee.png"><img style="width: 214.50px" src="img/cc4405fbbf3691e8.png"></p>
 <p><strong>Congratulations - You&#39;ve just created your very first Flutter app!</strong></p>
 </aside>
 
@@ -384,7 +387,7 @@ Scaffold(
 <li>Do hot reload, notice the new disabled button, the button disabled because the onPressed property is null<br><img style="width: 298.99px" src="img/71787d5d2ec4a2.png"></li>
 <li>Let&#39;s set the button be stretched to the screen width</li>
 <li>Wrap the button with a <code>Column</code>, click on the ElevatedButton, select wrap with Column</li>
-<li>Do hot reload, the button jumped to the left of the screen</li>
+<li>Do hot reload, the button jumped to the top of the screen</li>
 <li>In the Column constructor above the children[] property, add the following:</li>
 </ol>
 <ul>
@@ -425,6 +428,9 @@ Column(
  ],
 )</code></pre>
 <p class="image-container"><img style="width: 251.50px" src="img/5f2f210b6f6e7875.png"></p>
+<aside class="warning"><p><strong>Q:</strong> How do the ElevatedButton and AppBar Scaffold surface get their default colors (light blue and white text and surface)?</p>
+<p><strong>A: </strong>The default colors are set by the app theme, later we will see how we can change default colors and look by setting the app theme. </p>
+</aside>
 <aside class="special"><p><strong>Summary </strong></p>
 <p>So far we have learned how to add and arrange widgets to our page.</p>
 <ul>
@@ -598,7 +604,7 @@ class _GalleryScreenState extends State&lt;GalleryScreen&gt; {
 <li>For now, set each button onPressed: to null and child: to Text()</li>
 <li>Set the first button child to: Text(&#34;Previous&#34;),</li>
 <li>Set the second button child to Text(&#34;Next&#34;),<br><code>ElevatedButton(onPressed: null, child: Text("Next"))<br>ElevatedButton(onPressed: null, child: Text("Previous"))</code></li>
-<li>Do hot reload, watch the page with image, and two disabled buttons.</li>
+<li>Do hot reload, watch the page with image, and two disabled buttons.<br><img style="width: 238.19px" src="img/67c47a4fbca02361.png"><br></li>
 <li>Let&#39;s make the buttons expand with some padding</li>
 <li>Click on the first ElevatedButton, press Alt+Enter, select Wrap with new Widget</li>
 <li>Set the new Widget name to Expanded</li>
@@ -627,6 +633,7 @@ class _GalleryScreenState extends State&lt;GalleryScreen&gt; {
 <li>Wrap with Column or Row</li>
 </ul>
 </aside>
+<p class="image-container"><img style="width: 237.68px" src="img/5773517564a21c8f.png"></p>
 
 
       </google-codelab-step>
@@ -661,7 +668,7 @@ class _GalleryScreenState extends State&lt;GalleryScreen&gt; {
 <li>Select the Padding of the first ElevatedButton, press Option+UpArrow for easy selection<img style="width: 455.83px" src="img/5c32f0f5591a1f29.png"><br></li>
 <li>Press option+command+M, Extract Method dialog will open</li>
 <li>Set the method name to _buildGalleryButton<br><img style="width: 320.00px" src="img/926cf7e75548d19c.png"></li>
-<li>Modify the method signature as following:<br><code>Widget _buildPageButton({required String title, VoidCallback()? onPressed})</code></li>
+<li>Modify the method signature as following:<br><code>Widget _buildPageButton({required String title, VoidCallback? onPressed})</code></li>
 <li>Fix the compilation errors in place where the button calls it as following:</li>
 </ol>
 <pre><code>//gallery_screen.dart
@@ -869,6 +876,7 @@ class _GalleryScreenState extends State&lt;GalleryScreen&gt; {
             );
  }
 }</code></pre>
+<p class="image-container"><img style="width: 211.31px" src="img/59a26ed0d6a023bd.png"></p>
 
 
       </google-codelab-step>
@@ -1085,6 +1093,7 @@ Container(
 <ol type="1" start="23">
 <li>Do hot reload, look for the changes</li>
 </ol>
+<p class="image-container"><img style="width: 238.32px" src="img/c2dbab397ae65c50.png"></p>
 
 
       </google-codelab-step>
@@ -1216,7 +1225,7 @@ CustomElevatedButton(
 <li>Open application.dart file, reminder, in this file we created our app root Widget, the MaterialApp</li>
 <li>In the MaterialApp constructor, under the <code>title: "Flutter Workshop"</code>, add <code>theme:</code> property, the theme property receives <code>ThemeData</code> object which contains, theme properties such as colorScheme, textTheme and more</li>
 <li>Set the base theme: property as follow<br><code>theme: ThemeData.from(colorScheme: ColorScheme.light(primary: Colors.white, onPrimary: Colors.black))</code></li>
-<li>Do Hot Reload, look how the appBar and Buttons color has changed</li>
+<li>Do Hot Reload, look how the appBar and Buttons color has changed<br><br><img style="width: 241.14px" src="img/f5c253f72e612094.png"><br></li>
 <li>Let&#39;s add some more styling by using the <code>copyWith</code> pattern at the end of the <code>ThemeData.from()</code>statement</li>
 <li>Set the app bar elevation to 0<br><em><code>ThemeData.from(colorScheme: ...).</code></em><strong><em><code>copyWith(appBarTheme: AppBarTheme(elevation: 0))</code></em></strong></li>
 <li>Next, set TextTheme, we want to set all buttons text to size of 25, and appBar text to 22 (appBar text is defined with headline6 theme attribute by default)<br><em><code>ThemeData.from(colorScheme: ...).copyWith(appBarTheme: ...                                          textTheme: TextTheme(button: TextStyle(fontSize: 25), headline6: TextStyle(fontSize: 22),),)</code></em></li>
@@ -1291,6 +1300,11 @@ MaterialApp(
 <li>Do Hot reload, checkout the buttons rounded corners</li>
 <li>From the device settings, switch to dark mode and watch how app look changed in dark theme</li>
 </ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 298.00px" src="img/e6472a825031a2.png"></p>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 298.00px" src="img/2ad9ff29080406b5.png"></p>
+</td></tr>
+</table>
 
 
       </google-codelab-step>
