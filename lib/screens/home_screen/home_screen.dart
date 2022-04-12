@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/app_routes.dart';
-import 'package:flutter_workshop/screens/gallery_screen/gallery_screen.dart';
 import 'package:flutter_workshop/ui/custom_elevated_button.dart';
+import 'package:flutter_workshop/app_routes.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
